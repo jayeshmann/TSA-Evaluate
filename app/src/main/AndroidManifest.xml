@@ -121,7 +121,7 @@
             android:name=".NOSPracticalActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
-        
+
         </activity>
 
 
