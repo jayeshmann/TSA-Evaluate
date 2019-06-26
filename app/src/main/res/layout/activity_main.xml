@@ -1,0 +1,1475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.tsa.exam.MainActivity" />
+
+        <variable
+            name="questionModel"
+            type="com.tsa.exam.model.QuestionModel" />
+
+        <variable
+            name="isVisible"
+            type="boolean" />
+
+        <data>
+
+            <import type="android.text.Html" />
+        </data>
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:openDrawer="start"
+        android:fitsSystemWindows="true">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/LightGrey"
+                android:gravity="top|center"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <include
+                    android:id="@+id/toolbar"
+                    layout="@layout/main_header" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="589dp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:background="@drawable/payment_ui_drawable">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginLeft="@dimen/_14sdp"
+                        android:layout_marginRight="@dimen/_14sdp"
+                        android:gravity="center"
+                        android:text="@={questionModel.sector}"
+                        android:textAlignment="gravity"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout2"
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_2sdp"
+                        android:layout_marginLeft="@dimen/_14sdp"
+                        android:layout_marginRight="@dimen/_14sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/LightGrey"
+                        android:orientation="vertical"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="@dimen/_222sdp"
+                        android:layout_height="@dimen/_14sdp"
+                        android:layout_marginLeft="@dimen/_14sdp"
+                        android:layout_marginRight="@dimen/_14sdp"
+                        android:gravity="center"
+                        android:text="@={questionModel.jobrole}"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintHorizontal_bias="0.227"
+                        app:layout_constraintLeft_toLeftOf="@+id/linearLayout2"
+                        app:layout_constraintRight_toRightOf="@+id/linearLayout2"
+                        app:layout_constraintTop_toTopOf="@+id/linearLayout2" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginLeft="@dimen/_2sdp"
+                    android:layout_marginRight="@dimen/_2sdp"
+                    android:background="@drawable/payment_ui_drawable"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/_3sdp"
+                    android:paddingRight="@dimen/_3sdp"
+                    android:weightSum="1.0">
+
+                    <TextView
+                        style="@style/LayoutWeightHorizontal"
+                        android:layout_weight=".55"
+                        android:gravity="left|center_vertical"
+                        android:text="Candidate ID:"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/DarkGray"
+                        android:textSize="@dimen/_8sdp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/candidate_id"
+                        style="@style/LayoutWeightHorizontal"
+                        android:layout_weight=".45"
+                        android:gravity="left|center_vertical"
+                        android:text="@={questionModel.candidate_login_id}"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/green"
+                        android:textSize="@dimen/_8sdp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginLeft="@dimen/_2sdp"
+                    android:layout_marginRight="@dimen/_2sdp"
+                    android:background="@drawable/payment_ui_drawable"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/_3sdp"
+                    android:paddingRight="@dimen/_3sdp"
+                    android:weightSum="1.0">
+
+                    <TextView
+                        style="@style/LayoutWeightHorizontal"
+                        android:layout_weight=".55"
+                        android:gravity="left|center_vertical"
+                        android:text="Candidate Name:"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/DarkGray"
+                        android:textSize="@dimen/_8sdp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/candidate_name"
+                        style="@style/LayoutWeightHorizontal"
+                        android:layout_weight=".45"
+                        android:gravity="left|center_vertical"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/green"
+                        android:textSize="@dimen/_8sdp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginLeft="@dimen/_2sdp"
+                    android:layout_marginRight="@dimen/_2sdp"
+                    android:background="@drawable/payment_ui_drawable"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/_3sdp"
+                    android:paddingRight="@dimen/_3sdp"
+                    android:weightSum="1.0">
+
+                    <TextView
+                        style="@style/LayoutWeightHorizontal"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".55"
+                        android:gravity="left|center_vertical"
+                        android:text="Total Questions:"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/DarkGray"
+                        android:textSize="@dimen/_8sdp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/total_questions"
+                        style="@style/LayoutWeightHorizontal"
+                        android:layout_weight=".45"
+                        android:gravity="left|center_vertical"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/green"
+                        android:textSize="@dimen/_8sdp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_weight="0.31"
+                    android:background="@drawable/payment_ui_drawable"
+                    android:elevation="@dimen/_14sdp"
+                    android:minHeight="@dimen/_25sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    tools:context="com.akhil.myapplication.MainActivity">
+
+
+                    <TextView
+                        android:id="@+id/question_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_7sdp"
+                        android:layout_marginRight="@dimen/_7sdp"
+                        android:layout_marginTop="40dp"
+                        android:gravity="left"
+                        android:padding="@dimen/_2sdp"
+                        android:text="@={questionModel.question}"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/green"
+                        android:textSize="@dimen/_8sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintHorizontal_bias="0.002"
+                        app:layout_constraintLeft_toLeftOf="@+id/linearLayout"
+                        app:layout_constraintRight_toRightOf="@+id/linearLayout"
+                        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_14sdp"
+                        android:layout_marginRight="@dimen/_14sdp"
+                        android:weightSum="1"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/question_tv">
+
+                        <RadioGroup
+                            android:id="@+id/radio_root"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/_14sdp"
+                            android:layout_marginRight="@dimen/_14sdp"
+                            android:layout_marginTop="@dimen/_21sdp"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/opt_a_rb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_4sdp"
+                                android:layout_marginTop="@dimen/_17sdp"
+                                android:button="@drawable/check_box_drawable"
+                                android:buttonTint="@color/nav_color"
+                                android:paddingLeft="@dimen/_3sdp"
+                                android:text="@={questionModel.optionA}"
+                                android:textColor="@color/nav_color"
+                                android:textSize="@dimen/_8sdp" />
+
+                            <RadioButton
+                                android:id="@+id/opt_b_rb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_4sdp"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:button="@drawable/check_box_drawable"
+                                android:buttonTint="@color/nav_color"
+                                android:paddingLeft="@dimen/_3sdp"
+                                android:text="@={questionModel.optionB}"
+                                android:textColor="@color/nav_color"
+                                android:textSize="@dimen/_8sdp" />
+
+                            <RadioButton
+                                android:id="@+id/opt_c_rb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_4sdp"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:button="@drawable/check_box_drawable"
+                                android:buttonTint="@color/nav_color"
+                                android:paddingLeft="@dimen/_3sdp"
+                                android:text="@={questionModel.optionC}"
+                                android:textColor="@color/nav_color"
+                                android:textSize="@dimen/_8sdp" />
+
+                            <RadioButton
+                                android:id="@+id/opt_d_rb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_4sdp"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:button="@drawable/check_box_drawable"
+                                android:buttonTint="@color/nav_color"
+                                android:paddingLeft="@dimen/_3sdp"
+                                android:text="@={questionModel.optionD}"
+                                android:textColor="@color/nav_color"
+                                android:textSize="@dimen/_8sdp" />
+
+                        </RadioGroup>
+
+
+                        <LinearLayout
+                            android:id="@+id/image_root"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_21sdp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/optAIv"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp" />
+
+                            <ImageView
+                                android:id="@+id/optBIv"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp"  />
+
+                            <ImageView
+                                android:id="@+id/optCIv"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp"   />
+
+                            <ImageView
+                                android:id="@+id/optDIv"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_14sdp"
+                        android:layout_marginRight="@dimen/_14sdp"
+                        android:layout_marginTop="@dimen/_14sdp"
+                        android:background="@drawable/payment_ui_drawable"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/_3sdp"
+                        android:paddingRight="@dimen/_3sdp"
+                        android:weightSum="1.0"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/qty_tv1"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_weight=".40"
+                            android:gravity="left|center_vertical"
+                            android:text="Question No.1"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_8sdp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_weight=".30">
+
+                            <SeekBar
+                                android:id="@+id/seekBar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="right"
+                                android:layout_weight="1" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_weight=".15"
+                            android:gravity="right|center_vertical"
+                            android:text="Marks:"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_8sdp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/marks"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_weight=".15"
+                            android:gravity="right|center_vertical"
+                            android:text="@={questionModel.marks}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_8sdp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/new_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:weightSum="3.0">
+
+                    <Button
+                        android:id="@+id/pre_bt"
+                        style="@style/LayoutWeightHorizontal"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:layout_marginRight="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/prev_drawable"
+                        android:gravity="center"
+                        android:onClick="@{()->activity.pre()}"
+                        android:text="Previous"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/review_bt"
+                        style="@style/LayoutWeightHorizontal"
+                        android:layout_weight="1"
+                        android:background="@drawable/review_drawable"
+                        android:gravity="center"
+                        android:onClick="@{()->activity.review()}"
+                        android:text="Mark As Review"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/next_bt"
+                        style="@style/LayoutWeightHorizontal"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:layout_marginRight="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/next_drawable"
+                        android:gravity="center"
+                        android:onClick="next"
+                        android:text="Save and Next"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="@dimen/_240sdp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/nav_color"
+            android:choiceMode="singleChoice"
+            android:divider="@null"
+            android:fitsSystemWindows="false">
+
+            <ScrollView
+                android:layout_width="@dimen/_240sdp"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/AliceBlue"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <TextView
+                        style="@style/LayoutWeightVertical"
+                        android:layout_weight=".1"
+                        android:gravity="center"
+                        android:text="Question Palette"
+                        android:textAlignment="gravity"
+                        android:textAllCaps="true"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/row1"
+                        style="@style/LayoutWeightVertical"
+                        android:layout_weight=".1"
+                        android:weightSum="5">
+
+                        <Button
+                            android:id="@+id/row1_bt1"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(0)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row1_bt2"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(1)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row1_bt3"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(2)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row1_bt4"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(3)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row1_bt5"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(4)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/row2"
+                        style="@style/LayoutWeightVertical"
+                        android:layout_weight=".1"
+                        android:weightSum="5">
+
+                        <Button
+                            android:id="@+id/row2_bt1"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(5)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row2_bt2"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(6)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row2_bt3"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(7)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row2_bt4"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(8)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row2_bt5"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(9)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/row3"
+                        style="@style/LayoutWeightVertical"
+                        android:layout_weight=".1"
+                        android:weightSum="5">
+
+                        <Button
+                            android:id="@+id/row3_bt1"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(10)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row3_bt2"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(11)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row3_bt3"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(12)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row3_bt4"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(13)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row3_bt5"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(14)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/row4"
+                        style="@style/LayoutWeightVertical"
+                        android:layout_weight=".1"
+                        android:weightSum="5">
+
+                        <Button
+                            android:id="@+id/row4_bt1"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(15)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row4_bt2"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(16)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row4_bt3"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(17)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row4_bt4"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(18)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row4_bt5"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(19)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/row5"
+                        style="@style/LayoutWeightVertical"
+                        android:layout_weight=".1"
+                        android:weightSum="5">
+
+                        <Button
+                            android:id="@+id/row5_bt1"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(20)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row5_bt2"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(21)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row5_bt3"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(22)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row5_bt4"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(23)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row5_bt5"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(24)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/row6"
+                        style="@style/LayoutWeightVertical"
+                        android:layout_weight=".1"
+                        android:weightSum="5">
+
+                        <Button
+                            android:id="@+id/row6_bt1"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(25)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row6_bt2"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(26)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row6_bt3"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(27)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row6_bt4"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(28)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row6_bt5"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(29)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/row7"
+                        style="@style/LayoutWeightVertical"
+                        android:layout_weight=".1"
+                        android:weightSum="5">
+
+                        <Button
+                            android:id="@+id/row7_bt1"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(30)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row7_bt2"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(31)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row7_bt3"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(32)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row7_bt4"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(33)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row7_bt5"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(34)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/row8"
+                        style="@style/LayoutWeightVertical"
+                        android:layout_weight=".1"
+                        android:weightSum="5">
+
+                        <Button
+                            android:id="@+id/row8_bt1"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(35)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row8_bt2"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(36)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row8_bt3"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(37)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row8_bt4"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(38)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row8_bt5"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(39)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/row9"
+                        style="@style/LayoutWeightVertical"
+                        android:layout_weight=".1"
+                        android:weightSum="5">
+
+                        <Button
+                            android:id="@+id/row9_bt1"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(40)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row9_bt2"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(41)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row9_bt3"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(42)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row9_bt4"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(43)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row9_bt5"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(44)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/row10"
+                        style="@style/LayoutWeightVertical"
+                        android:layout_weight=".1"
+                        android:weightSum="5">
+
+                        <Button
+                            android:id="@+id/row10_bt1"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(45)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row10_bt2"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(46)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row10_bt3"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(47)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row10_bt4"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(48)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row10_bt5"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(49)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/row11"
+                        style="@style/LayoutWeightVertical"
+                        android:layout_weight=".1"
+                        android:weightSum="5">
+
+                        <Button
+                            android:id="@+id/row11_bt1"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(50)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row11_bt2"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(51)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row11_bt3"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(52)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row11_bt4"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(53)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row11_bt5"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(54)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/row12"
+                        style="@style/LayoutWeightVertical"
+                        android:layout_weight=".1"
+                        android:weightSum="5">
+
+                        <Button
+                            android:id="@+id/row12_bt1"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(55)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row12_bt2"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(56)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row12_bt3"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(57)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row12_bt4"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(58)}"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/row12_bt5"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_margin="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:onClick="@{()->activity.goUpdateQty(59)}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_width="match_parent"
+                        android:layout_weight=".1"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/submit"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginBottom="@dimen/_3sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/grid_bg_green"
+                            android:text="Submit"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

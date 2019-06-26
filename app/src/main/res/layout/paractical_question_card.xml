@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="practical"
+            type="com.tsa.exam.model.PracLoginAssModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:weightSum="1.0">
+
+        <TextView
+            android:id="@+id/activity_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/BlueViolet"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/practical_q"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/green"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:id="@+id/radio_root"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/yes_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:buttonTint="@color/purple"
+                android:text="yes"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/no_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:buttonTint="@color/purple"
+                android:text="No"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/marks"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="80dp"
+                android:background="@drawable/payment_ui_drawable3"
+                android:gravity="center"
+                android:hint="Marks"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textAlignment="gravity"
+                android:textColor="@color/LightGrey"
+                android:visibility="gone" />
+        </RadioGroup>
+
+    </LinearLayout>
+</layout>

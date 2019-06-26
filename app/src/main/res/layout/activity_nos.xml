@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/practical_q"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/green"
+        android:text="Question Step-1"
+        android:textSize="@dimen/_10ssp"
+        android:textStyle="bold" />
+
+    <lib.kingja.switchbutton.SwitchMultiButton
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/switchmultibutton"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:padding="8dp"
+        app:strokeRadius="5dp"
+        app:strokeWidth="1dp"
+        app:selectedTab="0"
+        app:selectedColor="@color/green"
+        app:switchTabs="@array/switch_tabs"
+        app:typeface="DeVinneTxtBT.ttf"
+        app:textSize="@dimen/_8ssp" />
+
+</LinearLayout>

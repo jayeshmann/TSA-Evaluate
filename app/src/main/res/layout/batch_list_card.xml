@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:weightSum="1"
+    android:minHeight="@dimen/_80sdp"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="1"
+        android:gravity="center_vertical"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@drawable/empty_boarder"
+        android:elevation="4dp"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_7sdp"
+            android:layout_marginBottom="@dimen/_3sdp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/black"
+                android:text="Batch ID:          "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/batch_id"
+                android:textStyle="bold"
+                android:textColor="@color/Gray"
+                android:textSize="@dimen/_8ssp"
+                android:text="0000000000"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_7sdp"
+            android:layout_marginBottom="@dimen/_3sdp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/_8ssp"
+                android:text="Reg Date:          "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/reg_date"
+                android:textColor="@color/Gray"
+                android:textStyle="bold"
+                android:textSize="@dimen/_8ssp"
+                android:text="0000000000"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:visibility="gone"
+            android:layout_marginBottom="@dimen/_5sdp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/_5ssp"
+                android:text="Start Date:        "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/exam_assement"
+                android:textColor="@color/Gray"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:text="0000000000"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:visibility="gone"
+            android:layout_marginBottom="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/_10ssp"
+                android:text="Assessors ID:   "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ass_id"
+                android:textColor="@color/Gray"
+                android:textStyle="bold"
+                android:textSize="@dimen/_10ssp"                android:text="0000000000"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_3sdp">
+
+            <Button
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:textStyle="bold"
+                android:textSize="@dimen/_7ssp"
+                android:id="@+id/view_candidates"
+                android:background="@drawable/grid_bg_red"
+                android:textColor="@color/white"
+                android:text="View"/>
+            <Button
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:id="@+id/track_button"
+                android:textStyle="bold"
+                android:textSize="@dimen/_7ssp"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:background="@drawable/grid_bg_green"
+                android:textColor="@color/white"
+                android:text="View All"/>
+            <Button
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:id="@+id/add_candidate"
+                android:textStyle="bold"
+                android:textSize="@dimen/_7ssp"
+                android:layout_marginLeft="@dimen/_2sdp"
+                android:background="@drawable/rounded_corner"
+                android:textColor="@color/white"
+                android:text="Select"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="Tag In"/>
+                <ImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:id="@+id/geotag_in"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/white"
+                    android:src="@drawable/gps_in" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="Tag Out"/>
+
+                <ImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:id="@+id/geotag_out"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_10ssp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:textColor="@color/white"
+                    android:src="@drawable/gps_out"
+                    android:text="GeoTag Out"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:textStyle="bold"
+            android:textSize="@dimen/_10ssp"
+            android:id="@+id/add_prac"
+            android:background="@drawable/edittext_background"
+            android:textColor="@color/green"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:text="Add Practical Questions"/>
+
+    </LinearLayout>
+
+</LinearLayout>

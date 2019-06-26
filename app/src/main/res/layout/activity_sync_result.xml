@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="top"
+    tools:context="com.akhil.myapplication.SyncResultActivity"
+    android:weightSum="1"
+    android:id="@+id/linearLayout3">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:textAlignment="gravity"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="Sync Theory Examination Result"
+        android:background="@color/colorAccent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#fff"
+        android:layout_gravity="top"
+        android:gravity="center"
+        android:id="@+id/root1"
+        android:elevation="4dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/candidate1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".8"
+            android:clickable="true"
+            android:drawableLeft="@drawable/ic_account_circle_grey_24dp"
+            android:drawablePadding="15dp"
+            android:gravity="center_vertical"
+            android:padding="20dp"
+            android:text="Akhil Tripathi"
+            android:textAlignment="gravity" />
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:id="@+id/sync1"
+            android:src="@drawable/ic_sync_black_24dp"
+            android:layout_weight=".2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#fff"
+        android:gravity="center"
+        android:id="@+id/root2"
+        android:elevation="4dp"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/candidate2"
+            android:gravity="center_vertical"
+            android:textAlignment="gravity"
+            android:layout_weight=".8"
+            android:drawablePadding="15dp"
+            android:drawableLeft="@drawable/ic_account_circle_grey_24dp"
+            android:clickable="true"
+            android:padding="20dp"
+            android:text="Akhil Tripathi" />
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:id="@+id/sync2"
+            android:src="@drawable/ic_sync_black_24dp"
+            android:layout_weight=".2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#fff"
+        android:gravity="center"
+        android:id="@+id/root3"
+        android:elevation="4dp"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/candidate3"
+            android:gravity="center_vertical"
+            android:textAlignment="gravity"
+            android:layout_weight=".8"
+            android:drawablePadding="15dp"
+            android:drawableLeft="@drawable/ic_account_circle_grey_24dp"
+            android:clickable="true"
+            android:padding="20dp"
+            android:text="Akhil Tripathi" />
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:id="@+id/sync3"
+            android:src="@drawable/ic_sync_black_24dp"
+            android:layout_weight=".2"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:textAlignment="gravity"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="Sync Practical Examination Result"
+        android:background="@color/colorAccent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#fff"
+        android:layout_gravity="top"
+        android:gravity="center"
+        android:elevation="4dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/candidate_p1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".8"
+            android:clickable="true"
+            android:drawableLeft="@drawable/ic_account_circle_grey_24dp"
+            android:drawablePadding="15dp"
+            android:gravity="center_vertical"
+            android:padding="20dp"
+            android:text="Akhil Tripathi"
+            android:textAlignment="gravity" />
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:id="@+id/sync_p1"
+            android:src="@drawable/ic_sync_black_24dp"
+            android:layout_weight=".2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#fff"
+        android:gravity="center"
+        android:elevation="4dp"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/candidate_p2"
+            android:gravity="center_vertical"
+            android:textAlignment="gravity"
+            android:layout_weight=".8"
+            android:drawablePadding="15dp"
+            android:drawableLeft="@drawable/ic_account_circle_grey_24dp"
+            android:clickable="true"
+            android:padding="20dp"
+            android:text="Akhil Tripathi" />
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:id="@+id/sync_p2"
+            android:src="@drawable/ic_sync_black_24dp"
+            android:layout_weight=".2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#fff"
+        android:gravity="center"
+        android:id="@+id/root_p3"
+        android:elevation="4dp"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/candidate_p3"
+            android:gravity="center_vertical"
+            android:textAlignment="gravity"
+            android:layout_weight=".8"
+            android:drawablePadding="15dp"
+            android:drawableLeft="@drawable/ic_account_circle_grey_24dp"
+            android:clickable="true"
+            android:padding="20dp"
+            android:text="Akhil Tripathi" />
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:id="@+id/sync_p3"
+            android:src="@drawable/ic_sync_black_24dp"
+            android:layout_weight=".2"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:textAlignment="gravity"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="Sync Candidate Images"
+        android:background="@color/colorAccent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#fff"
+        android:layout_gravity="top"
+        android:gravity="center"
+        android:elevation="4dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/candidate_i1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".8"
+            android:clickable="true"
+            android:drawableLeft="@drawable/ic_account_circle_grey_24dp"
+            android:drawablePadding="15dp"
+            android:gravity="center_vertical"
+            android:padding="20dp"
+            android:text="Candidate ID"
+            android:textAlignment="gravity" />
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:id="@+id/sync_i1"
+            android:src="@drawable/ic_sync_black_24dp"
+            android:layout_weight=".2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#fff"
+        android:gravity="center"
+        android:elevation="4dp"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/candidate_i2"
+            android:gravity="center_vertical"
+            android:textAlignment="gravity"
+            android:layout_weight=".8"
+            android:drawablePadding="15dp"
+            android:drawableLeft="@drawable/ic_account_circle_grey_24dp"
+            android:clickable="true"
+            android:padding="20dp"
+            android:text="Akhil Tripathi" />
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:id="@+id/sync_i2"
+            android:src="@drawable/ic_sync_black_24dp"
+            android:layout_weight=".2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#fff"
+        android:gravity="center"
+        android:id="@+id/root_i3"
+        android:elevation="4dp"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/candidate_i3"
+            android:gravity="center_vertical"
+            android:textAlignment="gravity"
+            android:layout_weight=".8"
+            android:drawablePadding="15dp"
+            android:drawableLeft="@drawable/ic_account_circle_grey_24dp"
+            android:clickable="true"
+            android:padding="20dp"
+            android:text="Candidate ID" />
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:id="@+id/sync_i3"
+            android:src="@drawable/ic_sync_black_24dp"
+            android:layout_weight=".2"/>
+
+    </LinearLayout>
+</LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:clickable="true"
+            app:fabSize="normal"
+            app:srcCompat="@android:drawable/ic_menu_compass"
+            android:layout_marginLeft="499dp"
+            app:layout_constraintLeft_toLeftOf="@+id/scrollView"
+            app:layout_constraintBottom_toBottomOf="@+id/scrollView"
+            android:layout_marginBottom="0dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

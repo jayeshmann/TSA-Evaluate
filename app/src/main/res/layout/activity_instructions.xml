@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1.0">
+
+            <include
+                layout="@layout/instruction_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/instruction_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:paddingLeft="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Instructions\nनिर्देश"
+                    android:textAlignment="gravity"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_20sdp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/i1"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:text="To enable the Start Exam button carry out following activites :-
+        \n स्टार्ट एग्जाम बटन को चालू करने के लिए निम्नलिखित गतिविधियां पूरी की जाती हैं: -"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_orange_dark"
+                android:text="For capturing Student Id :-\n छात्र आईडी को कैप्चर करने के लिए"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_12sdp" />
+
+
+            <TextView
+                android:id="@+id/instruction1"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:text="@string/ie1"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/instruction2"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:text="@string/ie2"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/instruction3"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:text="@string/ie3"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/instruction4"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:textColor="@color/Gray"
+                android:text="@string/ie4"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/instruction5"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:text="@string/ie5"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:layout_weight=".1"
+                android:id="@+id/instruction12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_orange_dark"
+                android:text="For Exam/Assessment:-\n परीक्षा / असेसमेंट के लिए"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/number_of_qt"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:text="@string/ie5"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/exam_timming"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:text="Timing of the exam 50 Min \n  परीक्षा का समय 50 min होगा।"
+                
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+
+            <TextView
+                android:layout_weight=".1"
+                android:id="@+id/instruction13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/_20sdp"
+                android:textColor="@color/Gray"
+                android:paddingLeft="@dimen/_12sdp"
+                android:text="@string/ie6"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/instruction7"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:textColor="@color/Gray"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:text="@string/ie7"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/instruction8"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:textColor="@color/Gray"
+                android:text="@string/ie8"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/instruction9"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:textColor="@color/Gray"
+                android:text="@string/ie9"
+                
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/instruction10"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:textColor="@color/Gray"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:text="@string/ie10"
+                
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/instruction6"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:textColor="@color/Gray"
+                android:minHeight="@dimen/_20sdp"
+                android:visibility="gone"
+                android:paddingLeft="@dimen/_12sdp"
+                android:text="@string/ie6"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/instruction14"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:textColor="@color/Gray"
+                android:minHeight="@dimen/_20sdp"
+                android:visibility="gone"
+                android:paddingLeft="@dimen/_12sdp"
+                android:text="@string/ie7"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+
+            <TextView
+                android:id="@+id/instruction15"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:textColor="@color/Gray"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:text="@string/ie8"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/instruction16"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:textColor="@color/Gray"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:text="@string/ie9"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/instruction17"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:textColor="@color/Gray"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:text="@string/ie10"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/instruction18"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:textColor="@color/Gray"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:text="@string/ie11"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/instruction19"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:textColor="@color/Gray"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:text="@string/ie12"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/instruction20"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:textColor="@color/Gray"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:text="@string/ie13"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/instruction21"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:textColor="@color/Gray"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:text="@string/ie14"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+
+            <TextView
+                android:id="@+id/instruction22"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:textColor="@color/Gray"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:text="@string/ie15"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+
+            <TextView
+                android:id="@+id/instruction11"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:textColor="@color/Gray"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:text="@string/ie16"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/instruction23"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:textColor="@color/Gray"
+                android:minHeight="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_12sdp"
+                android:text="@string/ie17"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/_10ssp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:textColor="@color/Orange"
+                android:textSize="@dimen/_10ssp"
+                android:textAlignment="gravity"
+                android:text="@string/ie18"/>
+
+            <Button
+                android:id="@+id/start_exam"
+                android:layout_weight=".1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:layout_marginLeft="@dimen/_12sdp"
+                android:layout_marginRight="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:background="@android:color/holo_blue_bright"
+                android:text="@string/start_exame"
+                android:onClick="goToValidation"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

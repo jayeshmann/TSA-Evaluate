@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:orientation="vertical"
+    tools:context="com.tsa.exam.TestActivity">
+
+    <include layout="@layout/custom_toolbar"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_12sdp"
+        android:gravity="top"
+        android:layout_gravity="top"
+        android:textColor="@color/black"
+        android:padding="@dimen/_22sdp"
+        android:text="@string/pin_instruction"/>
+
+    <Button
+       android:layout_height="@dimen/_40sdp"
+       android:layout_width="match_parent"
+       android:text="Start Pinning"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+       android:textSize="@dimen/_15sdp"
+        android:id="@+id/start_pinning"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_gravity="center"
+       android:textAlignment="gravity"
+       android:background="@drawable/grid_bg_gold"
+       android:onClick="startPinning"/>
+
+    <Button
+        android:layout_height="@dimen/_40sdp"
+        android:layout_width="match_parent"
+        android:text="Start Exam"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:id="@+id/start_exam"
+        android:textSize="@dimen/_10sdp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:textAlignment="gravity"
+        android:background="@drawable/grid_bg_green"
+        android:onClick="startExam"/>
+
+</LinearLayout>

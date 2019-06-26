@@ -1,0 +1,78 @@
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_gravity="top"
+    android:background="@color/nav_color"
+
+    android:gravity="left">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+
+        android:weightSum="1.0">
+
+
+
+
+
+        <TextView
+            android:id="@+id/chronometer1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginStart="50dp"
+            android:textAlignment="gravity"
+            android:text="fffffff"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_weight="0.28" />
+
+
+        <TextureView
+            android:id="@+id/textureView"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+
+        <ImageButton
+            android:id="@+id/videoOnlineImageButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:contentDescription="@string/video_button"
+            android:src="@mipmap/btn_video_online" />
+        <ImageButton
+            android:id="@+id/cameraImageButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/camera_button"
+            android:src="@mipmap/btn_camera"
+            android:layout_marginStart="20dp"
+            />
+
+        <Chronometer
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ivdeo_chronometer"
+            android:visibility="invisible"
+            android:layout_marginTop="10dp"
+            android:textColor="#ff0000"
+            android:textSize="25dp" />
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</androidx.appcompat.widget.Toolbar>
+
+
+
+

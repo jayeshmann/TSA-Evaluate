@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/candidate_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/isdatlogo"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="47dp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="30dp" />
+
+    <ImageView
+        android:id="@+id/aadhar_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/isdatlogo"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="@+id/candidate_image"
+        app:layout_constraintLeft_toLeftOf="@+id/candidate_image"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="38dp"
+        app:layout_constraintTop_toBottomOf="@+id/candidate_image"
+        android:layout_marginEnd="8dp" />
+
+    <ImageView
+        android:id="@+id/other_id_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/isdatlogo"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="@+id/aadhar_image"
+        app:layout_constraintLeft_toLeftOf="@+id/aadhar_image"
+        android:layout_marginTop="43dp"
+        app:layout_constraintTop_toBottomOf="@+id/aadhar_image"
+        android:layout_marginEnd="8dp" />
+
+    <Button
+        android:id="@+id/candidate_iv"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:text="Capture Candidate Image"
+        android:onClick="capture1"
+        app:layout_constraintBottom_toBottomOf="@+id/candidate_image"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toTopOf="@+id/candidate_image"
+        android:layout_marginTop="8dp"
+        app:layout_constraintVertical_bias="0.903"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/candidate_name_et"
+        android:background="@drawable/capture_image_button"
+        app:layout_constraintRight_toRightOf="@+id/candidate_name_et"
+        app:layout_constraintHorizontal_bias="0.375"
+        android:layout_marginStart="8dp" />
+
+    <Button
+        android:id="@+id/aadhar_iv"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="Capture Aadhar Image"
+        android:onClick="capture2"
+        android:background="@drawable/capture_image_button"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/aadhar_number_et"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/aadhar_number_et"
+        app:layout_constraintRight_toRightOf="@+id/aadhar_number_et"
+        app:layout_constraintHorizontal_bias="0.375"
+        android:layout_marginStart="8dp" />
+
+    <Button
+        android:id="@+id/other_iv"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="Capture Other ID Image"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:onClick="capture3"
+        android:background="@drawable/capture_image_button"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="@+id/other_id_et"
+        app:layout_constraintLeft_toLeftOf="@+id/other_id_et"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/other_id_et"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginEnd="8dp" />
+
+    <EditText
+        android:id="@+id/candidate_name_et"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:visibility="invisible"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/candidate_image"
+        app:layout_constraintTop_toTopOf="@+id/candidate_image"
+        android:layout_marginTop="8dp"
+        app:layout_constraintVertical_bias="0.134"
+        app:layout_constraintLeft_toRightOf="@+id/candidate_image"
+        android:layout_marginLeft="47dp"
+        android:layout_marginStart="47dp" />
+
+    <EditText
+        android:id="@+id/aadhar_number_et"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:ems="10"
+        android:textColor="@color/green"
+        android:inputType="textPersonName"
+        android:hint="Enter Aadhar Number"
+        app:layout_constraintTop_toTopOf="@+id/aadhar_image"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/aadhar_image"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/aadhar_image"
+        android:layout_marginLeft="47dp"
+        android:layout_marginStart="47dp" />
+
+    <EditText
+        android:id="@+id/other_id_et"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:ems="10"
+        android:textColor="@color/green"
+        android:inputType="textPersonName"
+        android:hint="Enter Other ID Number"
+        app:layout_constraintTop_toTopOf="@+id/other_id_image"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/other_id_image"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/other_id_image"
+        android:layout_marginLeft="51dp"
+        android:layout_marginStart="51dp" />
+
+    <Button
+        android:id="@+id/save_and_continue"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:textColor="@color/white"
+        android:paddingLeft="60dp"
+        android:paddingRight="60dp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:textSize="25dp"
+        android:background="@drawable/answered_drawable"
+        android:text="Save and Continue"
+        android:onClick="goToExaminationPage"
+        android:layout_marginTop="110dp"
+        app:layout_constraintTop_toBottomOf="@+id/other_iv"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

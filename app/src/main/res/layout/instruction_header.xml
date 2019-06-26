@@ -1,0 +1,50 @@
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_gravity="top"
+    android:background="@color/nav_color"
+    android:gravity="left">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:weightSum="1.0">
+
+        <ImageView
+            android:id="@+id/back_button"
+            style="@style/LayoutWeightHorizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_weight=".3"
+            android:src="@drawable/isdatlogo"
+            android:padding="4dp" />
+
+        <LinearLayout
+            style="@style/LayoutWeightHorizontal"
+            android:layout_weight=".25"></LinearLayout>
+
+        <ImageView
+            android:id="@+id/map"
+            style="@style/LayoutWeightHorizontal"
+            android:layout_weight=".15"
+            android:padding="12dp" />
+
+        <ImageView
+            android:id="@+id/share"
+            style="@style/LayoutWeightHorizontal"
+            android:layout_weight=".15"
+            android:padding="12dp" />
+
+        <ImageView
+            style="@style/LayoutWeightHorizontal"
+            android:layout_weight=".15"
+            android:padding="10dp"
+            android:onClick="selectLanguage"
+            android:visibility="gone"
+            android:id="@+id/language" />
+
+    </LinearLayout>
+
+</androidx.appcompat.widget.Toolbar>

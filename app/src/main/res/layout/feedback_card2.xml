@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.tsa.exam.MainActivity" />
+
+        <variable
+            name="questionModel"
+            type="com.tsa.exam.model.QuestionModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1.0">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/feedback_q_tv"
+            android:textSize="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:textStyle="bold"
+            android:text="1.   yyyyyyyyyyyyyyyyyyyyyyyyy"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/opy_rb1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold"
+                android:buttonTint="@color/purple"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:text="yes"/>
+
+            <RadioButton
+            android:id="@+id/opy_rb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:textSize="@dimen/_15sdp"
+            android:buttonTint="@color/purple"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/_25sdp"/>
+
+            <RadioButton
+                android:id="@+id/opy_rb3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:textSize="@dimen/_15sdp"
+                android:buttonTint="@color/purple"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/_25sdp"/>
+        </RadioGroup>
+
+
+    </LinearLayout>
+</layout>

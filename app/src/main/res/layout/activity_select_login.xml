@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.tsa.exam.SelectLoginActivity" />
+
+        <variable
+            name="questionModel"
+            type="com.tsa.exam.model.QuestionModel" />
+    </data>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:weightSum="1"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.akhil.myapplication.SelectLoginActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_100sdp"
+        app:srcCompat="@drawable/isdatlogo"
+        android:layout_marginLeft="@dimen/_8sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="@dimen/_8sdp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_weight=".25"
+        android:layout_marginEnd="@dimen/_20sdp" />
+
+    <Button
+        android:id="@+id/login_as_assessor"
+        android:layout_weight=".175"
+        style="@style/LayoutWeightVertical"
+        android:text="Login As Assessor"
+        android:textSize="@dimen/_15sdp"
+        android:gravity="center"
+        android:textAlignment="gravity"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:background="@drawable/login_buttons_drawable"
+        android:onClick="@{()->activity.assessorLogin()}"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"/>
+
+    <Button
+        android:id="@+id/login_as_candidate"
+        android:layout_weight=".175"
+        style="@style/LayoutWeightVertical"
+        android:text="Login As Candidate"
+        android:textSize="@dimen/_15sdp"
+        android:gravity="center"
+        android:textAlignment="gravity"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:onClick="@{()->activity.candidateLogin()}"
+        android:background="@drawable/login_buttons_drawable"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_weight=".175"
+        style="@style/LayoutWeightVertical"
+        android:text="Login To Sync Result"
+        android:textSize="@dimen/_15sdp"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:textAlignment="gravity"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:onClick="@{()->activity.syncLogin()}"
+        android:background="@drawable/login_buttons_drawable"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_weight=".175"
+        style="@style/LayoutWeightVertical"
+        android:textSize="@dimen/_15sdp"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@drawable/login_buttons_drawable"
+        android:onClick="@{()->activity.practicalLogin()}"
+        android:text="Login for Practical/Viva"
+        android:gravity="center"
+        android:textAlignment="gravity"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_10sdp"/>
+
+    <Button
+        android:id="@+id/button13"
+        style="@style/LayoutWeightVertical"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_weight=".175"
+        android:background="@drawable/login_buttons_drawable"
+        android:gravity="center"
+        android:onClick="@{()->activity.practicalSyncLogin()}"
+        android:text="Sync Practical/Viva"
+        android:textAlignment="gravity"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15sdp"
+        android:textStyle="bold" />
+
+</LinearLayout>
+</layout>

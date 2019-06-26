@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/instruction_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Orange"
+            android:layout_margin="10dp"
+            android:textSize="30dp"
+            android:text="@string/thaks_message"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:text="@string/feed_back_ins"/>
+
+
+        <include
+            android:id="@+id/card1"
+            layout="@layout/feedback_card"/>
+
+        <include
+            android:id="@+id/card2"
+            layout="@layout/feedback_card"/>
+
+        <include
+            android:id="@+id/card3"
+            layout="@layout/feedback_card"/>
+
+        <include
+            android:id="@+id/card4"
+            layout="@layout/feedback_card"/>
+
+        <include
+            android:id="@+id/card5"
+            layout="@layout/feedback_card"/>
+
+        <include
+            android:id="@+id/card6"
+            layout="@layout/feedback_card"/>
+
+        <include
+            android:id="@+id/card7"
+            layout="@layout/feedback_card"/>
+
+        <include
+            android:id="@+id/card8"
+            layout="@layout/feedback_card2"/>
+
+        <include
+            android:id="@+id/card9"
+            layout="@layout/feedback_card2"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:textStyle="bold"
+            android:text="10.  Any Other Points"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="20dp"
+            android:id="@+id/feedback_q_et" />
+
+        <Button
+            android:id="@+id/start_exam"
+            android:layout_weight=".1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/grid_bg_red"
+            android:text="Submit Feedback"
+            android:onClick="submitExam"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    </ScrollView>
+
+    </layout>

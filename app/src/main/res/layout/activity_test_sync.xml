@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tsa.exam.TestSyncActivity">
+
+    <include layout="@layout/home_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/rounded_layout"
+        android:weightSum="1.0">
+
+        <Button
+            android:id="@+id/theory"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:background="@drawable/grid_bg_green"
+            android:text="Theory "
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/practical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:background="@drawable/white_background"
+
+            android:text="Practical"
+            android:textColor="@color/green"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold"/>
+        <!--android:onClick="syncPractical"-->
+    </LinearLayout>
+
+    <!--<ListView-->
+        <!--android:id="@+id/sync_theory"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:divider="@null"></ListView>-->
+
+
+
+</LinearLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="1"
+    android:gravity="top"
+    android:layout_marginLeft="@dimen/_10sdp"
+    android:layout_marginRight="@dimen/_10sdp"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:background="@drawable/empty_boarder"
+    android:elevation="@dimen/_4sdp"
+    android:id="@+id/root1"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<TextView
+    android:id="@+id/candidate1"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight=".8"
+    android:clickable="true"
+    android:drawableLeft="@drawable/user"
+    android:drawablePadding="@dimen/_10sdp"
+    android:textSize="@dimen/_10sdp"
+    android:gravity="center_vertical"
+    android:padding="@dimen/_10sdp"
+    android:textColor="@color/black"
+    android:text="Akhil Tripathi"
+    android:textAlignment="gravity" />
+
+<ImageView
+    android:layout_width="@dimen/_30sdp"
+    android:layout_height="@dimen/_30sdp"
+    android:layout_gravity="center"
+    android:id="@+id/sync1"
+    android:visibility="visible"
+    android:src="@drawable/sync"
+    android:layout_weight=".2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SYNCED SUCCESS"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/test_synced"/>
+
+</LinearLayout>
+</LinearLayout>

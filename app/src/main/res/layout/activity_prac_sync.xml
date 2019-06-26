@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".Prac_syncActivity">
+
+    <include layout="@layout/home_toolbar" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        >
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/shape_theory_sync"
+            android:layout_marginLeft="10dp"
+            android:text="Practical Sync"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/white"
+            android:id="@+id/text_prac_video_sync"
+             />
+
+        <!--<Button-->
+            <!--android:layout_width="160dp"-->
+        text_videosync       <!--android:layout_height="0dp"-->
+            <!--android:background="@drawable/shape_theory_sync"-->
+            <!--android:layout_marginLeft="30dp"-->
+            <!--android:text="Video Practical Sync"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:textSize="18sp"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:id="@+id/text_prac_video_sync"/>-->
+
+
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/sync_practical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:divider="@null">
+
+    </ListView>
+
+
+
+
+</LinearLayout>

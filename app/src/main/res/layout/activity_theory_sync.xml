@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Theory_syncActivity">
+
+    <include layout="@layout/home_toolbar" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        >
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/shape_theory_sync"
+            android:layout_marginLeft="10dp"
+            android:text="Theory Sync"
+            android:textAllCaps="false"
+            android:layout_marginRight="10dp"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:id="@+id/text_theory"/>
+
+
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/sync_theory"
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:layout_height="match_parent"
+        android:divider="@null">
+
+    </ListView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <!--<ListView-->
+            <!--android:id="@+id/sync_theory_video"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:visibility="gone"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:divider="@null"/>-->
+
+
+    <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/recycler_video"-->
+        <!--android:visibility="visible"-->
+        <!--android:layout_marginTop="10dp">-->
+    <!--</android.support.v7.widget.RecyclerView>-->
+    </LinearLayout>
+
+</LinearLayout>

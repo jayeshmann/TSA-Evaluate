@@ -1,0 +1,1006 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.tsa.exam.MainActivity" />
+
+        <variable
+            name="questionModel"
+            type="com.tsa.exam.model.QuestionModel" />
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/LightGrey"
+                android:gravity="top"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <include
+                    android:id="@+id/toolbar"
+                    layout="@layout/main_header" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/payment_ui_drawable">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/black"
+                        android:textAllCaps="true"
+                        android:textSize="20dp"
+                        android:text="@={questionModel.sector}"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout2"
+                        android:layout_width="504dp"
+                        android:layout_height="2dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="19dp"
+                        android:background="@color/LightGrey"
+                        android:orientation="vertical"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView"></LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="444dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="center"
+                        android:text="@={questionModel.jobrole}"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/DarkGray"
+                        android:textSize="18dp"
+                        app:layout_constraintHorizontal_bias="0.227"
+                        app:layout_constraintLeft_toLeftOf="@+id/linearLayout2"
+                        app:layout_constraintRight_toRightOf="@+id/linearLayout2"
+                        app:layout_constraintTop_toTopOf="@+id/linearLayout2" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/payment_ui_drawable"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:weightSum="1.0">
+
+                    <TextView
+                        style="@style/LayoutWeightHorizontal"
+                        android:layout_weight=".40"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="10dp"
+                        android:text="Time Left"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/DarkGray"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_weight=".10"
+                        android:src="@drawable/timming"></ImageView>
+
+                    <TextView
+                        style="@style/LayoutWeightHorizontal"
+                        android:layout_weight=".50"
+                        android:gravity="left|center_vertical"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/green"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/payment_ui_drawable"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:weightSum="1.0">
+
+                    <TextView
+                        style="@style/LayoutWeightHorizontal"
+                        android:layout_weight=".2"
+                        android:gravity="left|center_vertical"
+                        android:text="Candidate ID:"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/DarkGray"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/LayoutWeightHorizontal"
+                        android:layout_weight=".45"
+                        android:gravity="left|center_vertical"
+                        android:text="@={questionModel.candidate_login_id}"
+                        android:id="@+id/candidate_id"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/green"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="0.31"
+                    android:background="@drawable/payment_ui_drawable"
+                    android:elevation="8dp"
+                    android:minHeight="550dp"
+                    android:paddingBottom="20dp"
+                    tools:context="com.akhil.myapplication.MainActivity">
+
+
+                    <TextView
+                        android:id="@+id/question_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="57dp"
+                        android:gravity="left"
+                        android:padding="10dp"
+                        android:text="@={questionModel.question}"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/green"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintLeft_toLeftOf="@+id/linearLayout"
+                        app:layout_constraintRight_toRightOf="@+id/linearLayout"
+                        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="21dp"
+                        android:weightSum="1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/question_tv">
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="21dp"
+                        android:id="@+id/radio_root"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/opt_a_rb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="17dp"
+                            android:button="@drawable/check_box_drawable"
+                            android:text="@={questionModel.optionA}"
+                            android:buttonTint="@color/nav_color"
+                            android:paddingLeft="10dp"
+                            android:textColor="@color/nav_color"
+                            android:textSize="16dp" />
+
+                        <RadioButton
+                            android:id="@+id/opt_b_rb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="15dp"
+                            android:button="@drawable/check_box_drawable"
+                            android:buttonTint="@color/nav_color"
+                            android:paddingLeft="10dp"
+                            android:text="@={questionModel.optionB}"
+                            android:textColor="@color/nav_color"
+                            android:textSize="16dp" />
+
+                        <RadioButton
+                            android:id="@+id/opt_c_rb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="15dp"
+                            android:button="@drawable/check_box_drawable"
+                            android:buttonTint="@color/nav_color"
+                            android:paddingLeft="10dp"
+                            android:text="@={questionModel.optionC}"
+                            android:textColor="@color/nav_color"
+                            android:textSize="16dp" />
+
+                        <RadioButton
+                            android:id="@+id/opt_d_rb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="15dp"
+                            android:button="@drawable/check_box_drawable"
+                            android:buttonTint="@color/nav_color"
+                            android:paddingLeft="10dp"
+                            android:text="@={questionModel.optionD}"
+                            android:textColor="@color/nav_color"
+                            android:textSize="16dp" />
+
+                    </RadioGroup>
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_marginTop="21dp"
+                            android:id="@+id/image_root">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:id="@+id/optAIv"/>
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:id="@+id/optBIv"/>
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:id="@+id/optCIv"/>
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:id="@+id/optDIv"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/payment_ui_drawable"
+                        android:orientation="horizontal"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:weightSum="1.0"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/qty_tv1"
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_weight=".40"
+                            android:gravity="left|center_vertical"
+                            android:text="Question No.1"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_weight=".20"></LinearLayout>
+
+                        <TextView
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_weight=".20"
+                            android:gravity="right|center_vertical"
+                            android:text="Marks: "
+                            android:textAlignment="gravity"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            style="@style/LayoutWeightHorizontal"
+                            android:layout_weight=".20"
+                            android:id="@+id/marks"
+                            android:gravity="left|center_vertical"
+                            android:text="@={questionModel.marks}"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/new_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:weightSum="3.0">
+
+                    <Button
+                        android:id="@+id/pre_bt"
+                        style="@style/LayoutWeightHorizontal"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:gravity="center"
+                        android:textAlignment="gravity"
+                        android:layout_weight="1"
+                        android:background="@drawable/prev_drawable"
+                        android:onClick="@{()->activity.pre()}"
+                        android:text="Previous"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/review_bt"
+                        style="@style/LayoutWeightHorizontal"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textAlignment="gravity"
+                        android:background="@drawable/review_drawable"
+                        android:onClick="@{()->activity.review()}"
+                        android:text="Mark As Review"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/next_bt"
+                        style="@style/LayoutWeightHorizontal"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/next_drawable"
+                        android:gravity="center"
+                        android:onClick="next"
+                        android:text="Sava and Next"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="500dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/nav_color"
+            android:choiceMode="singleChoice"
+            android:divider="@null"
+            android:fitsSystemWindows="false">
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/AliceBlue"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".1"
+                    android:gravity="center"
+                    android:text="Question Status"
+                    android:textAlignment="gravity"
+                    android:textAllCaps="true"
+                    android:textColor="@color/red"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/row1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".1"
+                    android:weightSum="5">
+
+                    <Button
+                        android:id="@+id/row1_bt1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(0)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row1_bt2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(1)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row1_bt3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(2)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row1_bt4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(3)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row1_bt5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(4)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/row2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".1"
+                    android:weightSum="5">
+
+                    <Button
+                        android:id="@+id/row2_bt1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(5)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row2_bt2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(6)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row2_bt3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(7)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row2_bt4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(8)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row2_bt5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(9)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/row3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".1"
+                    android:weightSum="5">
+
+                    <Button
+                        android:id="@+id/row3_bt1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(10)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row3_bt2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(11)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row3_bt3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(12)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row3_bt4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(13)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row3_bt5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(14)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/row4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".1"
+                    android:weightSum="5">
+
+                    <Button
+                        android:id="@+id/row4_bt1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(15)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row4_bt2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(16)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row4_bt3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(17)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row4_bt4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(18)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row4_bt5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(19)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/row5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".1"
+                    android:weightSum="5">
+
+                    <Button
+                        android:id="@+id/row5_bt1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(20)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row5_bt2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(21)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row5_bt3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(22)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row5_bt4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(23)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row5_bt5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(24)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/row6"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".1"
+                    android:weightSum="5">
+
+                    <Button
+                        android:id="@+id/row6_bt1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(25)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row6_bt2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(26)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row6_bt3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(27)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row6_bt4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(28)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/row6_bt5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@color/red"
+                        android:onClick="@{()->activity.goUpdateQty(29)}"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:background="@color/nav_color"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:gravity="center"
+                            android:text="Unanswered"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/button3"
+                            app:layout_constraintHorizontal_bias="0.02"
+                            app:layout_constraintLeft_toRightOf="@+id/button3"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/button3"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:layout_marginBottom="-5dp"
+                            android:layout_marginLeft="63dp"
+                            android:gravity="center"
+                            android:text="Mark As Review"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/button2"
+                            app:layout_constraintLeft_toLeftOf="@+id/button2" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginTop="0dp"
+                            android:gravity="center"
+                            android:text="Answered"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toRightOf="@+id/button"
+                            app:layout_constraintTop_toTopOf="@+id/button" />
+
+                        <Button
+                            android:id="@+id/button3"
+                            android:layout_width="50dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/unanswered_drawable"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <Button
+                            android:id="@+id/button2"
+                            android:layout_width="50dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="12dp"
+                            android:background="@drawable/review_drawable"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="@+id/button"
+                            app:layout_constraintTop_toBottomOf="@+id/button" />
+
+                        <Button
+                            android:id="@+id/button"
+                            android:layout_width="50dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/next_drawable"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <Button
+                        android:id="@+id/submit"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/next_drawable"
+                        android:text="Submit"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

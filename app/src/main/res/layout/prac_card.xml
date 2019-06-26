@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="5dp"
+
+        android:layout_marginStart="5dp">
+
+
+        <TextureView
+            android:id="@+id/textureView"
+            android:layout_width="100dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp" />
+
+
+        <ImageButton
+            android:id="@+id/cameraImageButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:contentDescription="@string/camera_button"
+            android:src="@mipmap/btn_camera"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="65dp"/>
+
+        <ImageButton
+            android:id="@+id/videoOnlineImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="65dp"
+            android:contentDescription="@string/video_button"
+            android:src="@mipmap/btn_video_online" />
+
+        <Chronometer
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chronometer"
+            android:visibility="invisible"
+            android:textColor="#ff0000"
+            android:layout_marginTop="65dp"
+            android:textSize="25dp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ScrollView
+            style="@style/LayoutWeightVertical"
+            android:layout_weight=".9">
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context="com.tsa.exam.NOSPracticalActivity">
+
+                <TextView
+                    android:id="@+id/practical_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:textStyle="bold"
+                    android:text="Practical Questions"
+                    android:textColor="@color/BlueViolet"
+                    android:textSize="@dimen/_15ssp" />
+
+                <include
+                    android:id="@+id/step1"
+                    layout="@layout/activity_nos"/>
+
+                <include
+                    android:id="@+id/step2"
+                    layout="@layout/activity_nos"/>
+
+                <include
+                    android:id="@+id/step3"
+                    layout="@layout/activity_nos"/>
+
+                <include
+                    android:id="@+id/step4"
+                    layout="@layout/activity_nos"/>
+
+                <include
+                    android:id="@+id/step5"
+                    layout="@layout/activity_nos"/>
+
+                <include
+                    android:id="@+id/step6"
+                    layout="@layout/activity_nos"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            style="@style/LayoutWeightVertical"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:layout_weight=".1"
+            android:layout_gravity="bottom"
+            android:weightSum="1">
+
+            <ImageView
+                android:layout_height="@dimen/_40sdp"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_weight=".2"
+                android:gravity="right"
+                android:layout_gravity="right|center_vertical"
+                android:src="@drawable/pre"
+                android:onClick="goPrevious"
+                android:textColor="@color/white"
+                android:text="Previous"
+                android:textAlignment="gravity"/>
+
+            <ImageView
+                style="@style/LayoutWeightHorizontal"
+                android:layout_weight=".6"
+                android:onClick="submit"
+                android:src="@drawable/submit">
+
+            </ImageView>
+
+            <ImageView
+                android:layout_height="@dimen/_40sdp"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_weight=".2"
+                android:gravity="center"
+                android:src="@drawable/next"
+                android:onClick="goNext"
+                android:layout_gravity="left|center_vertical"
+                android:textColor="@color/white"
+                android:text="Previous"
+                android:textAlignment="gravity"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

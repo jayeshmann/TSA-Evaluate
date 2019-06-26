@@ -1,0 +1,163 @@
+<resources>
+    <string name="app_name">ISDAT Evaluate</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="action_settings">Settings</string>
+    <string name="admin_permission_label">Kiosk App</string>
+    <string name="admin_permission_description">Ability to run on Kiosk Mode</string>
+
+    <string name="record">Record</string>
+    <string name="stop">Stop</string>
+    <string name="description_info">Info</string>
+    <string name="permission_request">This sample needs permission for camera and audio recording.</string>
+    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
+    <string name="intro_message">intro_message</string>
+
+
+    <string name="english">English</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">user ID</string>
+    <string name="prompt_password">Passkey</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This ID is invalid</string>
+    <string name="error_invalid_password">This passkey is too short</string>
+    <string name="error_incorrect_password">This passkey is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+
+
+    <!--<string name="app_name">Camera2 Video Image</string>-->
+    <string name="video_button">Video Record Button</string>
+    <string name="camera_button">Camera Capture Button</string>
+
+    <!--English Language-->
+    <!--Instructions Strings-->
+    <string name="hindi">हिंदी</string>
+    <string name="instructionse">instructions \n निर्देश</string>
+    <string name="ie1"> At the end of the screen “ Instructions to Candidates”, click button “Start Exam”.
+    \n“उम्मीदवार के लिए निर्देश” स्क्रीन के अंत में दिए “start Exam” बटन पर क्लिक करे।</string>
+    <string name="ie2">	Candidate authentication screen with following three buttons and two text areas will appear:\n
+	नीचे दिए तीन बटन और दो टेक्स्ट एरिया के साथ उम्मीदवार प्रमाणन स्क्रीन दिखाई देगा:-\n
+o	Button Capture Candidate Image\n
+o	Button Capture Aadhar card image\n
+o	Text area for Aadhar No\n
+o	Button Capture other ID card image \n
+o	Text area for other ID No
+</string>
+    <string name="ie3">To capture candidate photograph click on "Capture Candidate Image" button.\n
+	उम्मीदवार की फोटो खींचने के लिए  "Capture Candidate Image“ बटन पर क्लिक करें।
+   </string>
+    <string name="ie4">Capture Aadhar Card/Other ID Photo as applicable or as guided by assessor.\n
+	निर्धारक द्वारा निर्देशित या उपयुक्त आधार कार्ड / अन्य आईडी फोटो कैप्चर करें।
+    </string>
+    <string name="ie5">Enter Aadhar number or Other ID number in text box as applicable or as guided by assessor.\n
+	निर्धारक द्वारा निर्देशित या उपयुक्त  आधार कार्ड नंबर/ अन्य आईडी नंबर टेक्स्ट बॉक्स में डाले।</string>
+
+    <string name="ie6">Marks are indicated against each question.\n प्रत्येक प्रश्न के साथ अंक दिए गए  हैं। </string>
+
+    <string name="ie7">There is no negative marking.\n कोई नकारात्मक अंक नहीं है|</string>
+
+    <string name="ie8">Select the appropriate choice of answer and click on appropriate radio button.
+        Click on “Save and Next” button.
+        Next question will automatically appear.\nउत्तर के उचित विकल्प का चयन करें और उपयुक्त रेडियो बटन पर क्लिक करें.
+        \n“Save and Next” बटन पर क्लिक करें  अगला प्रश्न खुद ब खुद दिखाई देगा.</string>
+
+    <string name="ie9">In case candidate is not sure of answer, he can click on tentative choice and mark it
+        for review by clicking on “Review Button” shown in yellow colour at bottom centre of screen.\n
+	    अगर उम्मीदवार उत्तर के बारे में सुनिश्चित नहीं है, तो वह अस्थायी पसंद पर क्लिक कर उसे स्क्रीन के नीचे के केंद्र में पीले रंग में दिखाए गए
+        "Review Button" पर क्लिक करके समीक्षा के लिए चिह्नित कर सकता है।</string>
+
+    <string name="ie10">In case the candidate desires to skip the question he can do so by using question palette to
+        select the next or question Number of his choice.\n
+	यदि उम्मीदवार प्रश्न को छोड़ने की इच्छा रखता है तो वह प्रश्न पटल का प्रयोग करके अपनी पसंद की अगली या प्रश्न संख्या चुनने के लिए ऐसा कर सकता है।
+    </string>
+
+    <string name="ie11">To go to question palette slide the screen from left to right.\n
+	प्रश्न पटल पर जाने के लिए स्क्रीन को बाएं से दाएं स्लाइड करें।</string>
+
+    <string name="ie12">After selection of question Number, return back to question screen by sliding the screen from right to left.
+        \n प्रश्न संख्या के चयन के बाद, स्क्रीन से दाएं से बाएं स्लाइड करके प्रश्न स्क्रीन पर वापस लौटें।</string>
+
+    <string name="ie13">After attempting all questions click on "Submit" button to submit your exam.
+        It is  given in question palette.\n सभी प्रश्नों को अटेम्प्ट करने के बाद अपनी परीक्षा को सबमिट करने के लिए "Submit" बटन पर क्लिक करें जो प्रश्न पटल में दिया गया है।
+    </string>
+
+    <string name="ie14">On completion of exam time, exam will get submitted automatically. Questions marked for review will be considered as attempted.\n
+        परीक्षा के समय की समाप्ति पर, परीक्षा स्वतः ही जमा की जाएगी। समीक्षा के लिए चिह्नित प्रश्नों को प्रयास के रूप में माना जाएगा
+    </string>
+
+    <string name="ie15">If candidate desires to submit the exam before time, he has to attempt all the questions.\n
+             यदि उम्मीदवार समय से पहले परीक्षा जमा करना चाहते हैं, तो उसे सभी प्रश्नों का जवाब देना होगा ।
+    </string>
+
+    <string name="ie16">To review the questions, candidate has to go to question pallet to select the question for review.
+        \n प्रश्नों की समीक्षा करने के लिए, उम्मीदवार को समीक्षा के लिए सवाल चुनने के लिए प्रश्न पटल का प्रयोग करना चाहिए।</string>
+
+    <string name="ie17">For any further clarification candidates may contact  Assessor.\n
+        किसी भी स्पष्टीकरण के लिए असेसर से संपर्क करें। </string>
+
+    <string name="ie18"><b>Wish you All the Best \n शुभकामनाएं</b></string>
+
+    <!--Start Examination-->
+    <string name="start_exame">Start Exam</string>
+
+    <!--Hindi Language-->
+    <string name="instructionsh">अनुदेश</string>
+    <string name="ih1">परीक्षा में 5 प्रश्न शामिल हैं</string>
+    <string name="ih2">कोई नकारात्मक अंकन नहीं है</string>
+    <string name="ih3">सही उत्तर निर्दिष्ट करने के लिए उपयुक्त रेडियो बटन चुनें।</string>
+    <string name="ih4">अपनी परीक्षा प्रस्तुत करने के लिए "सबमिट करें" बटन क्लिक करें</string>
+    <string name="ih5">ऑनलाइन टेस्ट शुरू करने के लिए नीचे "प्रारंभिक परीक्षा" बटन पर क्लिक करें</string>
+    <string name="start_examh">परीक्षा प्रारंभ</string>
+
+    <string name="feedback_1">1.  Were the instructions provided before starting of the examination understandable? \n क्या परीक्षा शुरू होने से पहले दिए गए निर्देश समझने योग्य थे?</string>
+    <string name="feedback_2">2.  Did Assessor brief you about assessment before start of the exam? \n क्या परीक्षक ने परीक्षा शुरू होने से पहले आपको परीक्षा के बारे में विवरण दिया था?</string>
+    <string name="feedback_3">3.  Did assessment start at the given time? \n क्या परीक्षा सही समय पर शुरू हुई ?</string>
+    <string name="feedback_4">4.  Was question paper in desired language? \n क्या पेपर आपके द्वारा मांगी हुई भाषा में था?</string>
+    <string name="feedback_5">5.  Was the test paper readable? \n क्या प्रश्न पत्र पढ़ने योग्य था? </string>
+    <string name="feedback_6">6.  Was Time Duration  sufficient for the Test? \n क्या परीक्षा के लिए समय पर्याप्त था?</string>
+    <string name="feedback_7">7.  Could you understand the language of the question paper? \n क्या आप परीक्षा की भाषा समझ पा रहे थे?</string>
+    <string name="feedback_8">8.  How was the question paper? \n प्रश्न पत्र कैसा था ?</string>
+    <string name="feedback_9">9.  How was the behaviour of assessor? \n परीक्षक का व्यव्हार कैसा था ?</string>
+
+    <string name="thaks_message">Thank You, you have successfully submitted the Test.</string>
+    <string name="feed_back_ins">Help us to improve assessment quality by answering under mentioned questions.</string>
+
+    <string name="eassy">Easy</string>
+
+    <string name="mediam">Medium</string>
+    <string name="hard">Hard</string>
+
+    <string name="satisfactory">Satisfactory</string>
+    <string name="good">Good</string>
+    <string name="excellent">Excellent</string>
+    <string name="title_activity_batch_details">BatchDetailsActivity</string>
+
+    <string name="login_popup1_eng">Please add candidates before exam.</string>
+    <string name="login_popup1_hin">परीक्षा से पहले उम्मीदवारों को जोड़ दें|</string>
+    <string name="login_popup2_eng">please complete theory examination before taking practical/viva examination</string>
+    <string name="login_popup2_hin">व्यावहारिक/मौखिक परीक्षा लेने से पहले कृपया सिद्धांत परीक्षा पूर्ण करे</string>
+    <string name="login_popup3_eng">please complete theory and practical/viva exam to syncing the candidate result </string>
+    <string name="login_popup3_hin">उम्मीदवार के परिणाम को सिंक्रनाइज़ करने के लिए कृपया सिद्धांत और व्यावहारिक/मौखिक  परीक्षा पूरी करें</string>
+    <string name="not_device_owner">not owner</string>
+
+    <string name="pin_instruction">To Start The Exam Please Click on the Start Pinning Button and Then select <b>" start "</b> Option from popup\n
+        परीक्षा शुरू करने के लिए कृपया प्रारंभ पिनिंग बटन पर क्लिक करें और फिर पॉपअप से <b>" start "</b> विकल्प चुनें</string>
+
+    <string name="pin_instruction2">Please start pinning before examination \n कृपया परीक्षा से पहले पिनिंग शुरू करें</string>
+    <string name="correct">Correct</string>
+    <string name="incorrect">InCorrect</string>
+
+    <string-array name="switch_tabs">
+        <item>InCorrect</item>
+        <item>Correct</item>
+    </string-array>
+    <string name="title_activity_video">VideoActivity</string>
+    <string name="title_activity_theory_andvideo__activitysync">Theory_andvideo_Activitysync
+    </string>
+    <string name="title_activity_theory_sync">Theory_syncActivity</string>
+    <string name="title_activity_prac_sync">Prac_syncActivity</string>
+
+</resources>
