@@ -65,7 +65,6 @@ public class SelectLoginActivity extends AppCompatActivity implements EasyPermis
             Manifest.permission.READ_CONTACTS,
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.SYSTEM_ALERT_WINDOW,
             Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.INTERNET,
             Manifest.permission.ACCESS_NETWORK_STATE
@@ -88,23 +87,16 @@ public class SelectLoginActivity extends AppCompatActivity implements EasyPermis
     }
 
     @AfterPermissionGranted(All_PERM)
-    public void permissionTask() {
-        if (hasAppPermissions()) {
-
-            // Have permissions, do the thing!
-            //Toast.makeText(this, "TODO: things", Toast.LENGTH_LONG).show();
+    private void permissionTask() {
+        String[] perms = permissions;
+        if (EasyPermissions.hasPermissions(this, perms)) {
+            // Already have permission, do the thing
+            // ...
         } else {
-            // Ask for both permissions
-            EasyPermissions.requestPermissions(
-                    this,
-                    getString(R.string.rationale_ask),
-                    All_PERM,
-                    permissions);
+            // Do not have permissions, request them now
+            EasyPermissions.requestPermissions(this, "You need to provide these permissions to continue!",
+                    All_PERM, perms);
         }
-    }
-
-    private boolean hasAppPermissions() {
-        return EasyPermissions.hasPermissions(this, permissions);
     }
 
     @Override
@@ -118,12 +110,14 @@ public class SelectLoginActivity extends AppCompatActivity implements EasyPermis
     @Override
     public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
         Log.d(TAG, "onPermissionsGranted:" + requestCode + ":" + perms.size());
+        permissionTask();
     }
 
     @Override
     public void onPermissionsDenied(int requestCode, @NonNull List<String> perms) {
         Log.d(TAG, "onPermissionsDenied:" + requestCode + ":" + perms.size());
-
+        Log.d(TAG, "onPermissionsDenied:" + requestCode + ":" + perms);
+        permissionTask();
         // (Optional) Check whether the user denied any permissions and checked "NEVER ASK AGAIN."
         // This will display a dialog directing them to enable the permission in app settings.
         if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)) {
@@ -131,6 +125,15 @@ public class SelectLoginActivity extends AppCompatActivity implements EasyPermis
         }
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == AppSettingsDialog.DEFAULT_SETTINGS_REQ_CODE) {
+            // Do something after user returned from app settings screen, like showing a Toast.
+            permissionTask();
+        }
+    }
 
 
     @Override
