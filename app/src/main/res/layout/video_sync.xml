@@ -9,8 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@color/LightGrey"
-        >
+        android:background="@color/LightGrey">
 
 
     <TextureView
@@ -28,11 +27,11 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_16ssp"
             android:layout_marginTop="62dp"
-            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
             android:id="@+id/text_cand_id"/>
 
         <ImageView
-            android:layout_width="@dimen/_30sdp"
+            android:layout_width="0dp"
             android:layout_height="@dimen/_30sdp"
             android:layout_gravity="center"
             android:id="@+id/sync4"
