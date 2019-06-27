@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:text="Candidate Name:  "
                 android:textColor="@color/black"
-                android:textSize="18dp"
+                android:textSize="@dimen/_8ssp"
                 android:textStyle="bold" />
 
             <TextView
@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:text="0000000000"
                 android:textColor="@color/Gray"
-                android:textSize="18dp"
+                android:textSize="@dimen/_8ssp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:text="Candidate ID:        "
                 android:textColor="@color/black"
-                android:textSize="18dp"
+                android:textSize="@dimen/_8ssp"
                 android:textStyle="bold" />
 
             <TextView
@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:text="0000000000"
                 android:textColor="@color/Gray"
-                android:textSize="18dp"
+                android:textSize="@dimen/_8ssp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:text="Batch ID:               "
                 android:textColor="@color/black"
-                android:textSize="18dp"
+                android:textSize="@dimen/_8ssp"
                 android:textStyle="bold" />
 
             <TextView
@@ -88,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:text="0000000000"
                 android:textColor="@color/Gray"
-                android:textSize="18dp"
+                android:textSize="@dimen/_8ssp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -110,7 +110,7 @@
                 android:paddingRight="8dp"
                 android:text="Add Candidate"
                 android:textColor="@color/white"
-                android:textSize="14dp"
+                android:textSize="@dimen/_14ssp"
                 android:textStyle="bold" />
 
         </LinearLayout>

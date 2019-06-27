@@ -24,7 +24,7 @@
     android:clickable="true"
     android:drawableLeft="@drawable/user"
     android:drawablePadding="@dimen/_10sdp"
-    android:textSize="@dimen/_10sdp"
+    android:textSize="@dimen/_10ssp"
     android:gravity="center_vertical"
     android:padding="@dimen/_10sdp"
     android:textColor="@color/black"

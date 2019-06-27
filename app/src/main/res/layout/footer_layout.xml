@@ -10,7 +10,7 @@
         android:layout_marginRight="50dp"
         android:id="@+id/sumbit"
         android:text="Submit"
-        android:textSize="25dp"
+        android:textSize="@dimen/_25ssp"
         android:textColor="@color/white"
         android:background="@drawable/capture_image_button" />
 

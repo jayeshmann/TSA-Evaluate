@@ -48,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="No"
-            android:textSize="@dimen/_15sdp"
+                android:textSize="@dimen/_15ssp"
             android:buttonTint="@color/purple"
             android:textStyle="bold"
             android:layout_marginLeft="@dimen/_25sdp"/>
@@ -58,7 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="No"
-                android:textSize="@dimen/_15sdp"
+                android:textSize="@dimen/_15ssp"
                 android:buttonTint="@color/purple"
                 android:textStyle="bold"
                 android:layout_marginLeft="@dimen/_25sdp"/>

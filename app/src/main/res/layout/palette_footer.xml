@@ -103,7 +103,7 @@
             android:id="@+id/textView2"
             android:layout_width="100dp"
             android:layout_height="30dp"
-            android:textSize="16dp"
+            android:textSize="@dimen/_16ssp"
             android:text="Legend :"
             android:gravity="center"
             android:textColor="@color/white"
