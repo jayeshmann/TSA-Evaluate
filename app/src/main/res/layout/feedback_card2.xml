@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/feedback_q_tv"
-            android:textSize="@dimen/_12sdp"
+            android:textSize="@dimen/_12ssp"
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginLeft="@dimen/_15sdp"
             android:textStyle="bold"

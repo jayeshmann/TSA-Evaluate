@@ -82,7 +82,7 @@
                 android:id="@+id/exam_assement"
                 android:textColor="@color/Gray"
                 android:textStyle="bold"
-                android:textSize="18dp"
+                android:textSize="@dimen/_18ssp"
                 android:text="0000000000"/>
         </LinearLayout>
 

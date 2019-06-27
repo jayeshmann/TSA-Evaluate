@@ -31,7 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:textSize="22dp"
+                android:textSize="@dimen/_22ssp"
                 android:layout_weight=".3"
                 android:gravity="center"
                 android:textStyle="bold"
@@ -55,7 +55,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="Candidate ID:"
-            android:textSize="20dp"
+            android:textSize="@dimen/_20ssp"
             android:gravity="left|center_vertical"
             android:paddingLeft="20dp"
             android:textStyle="bold"
@@ -69,7 +69,7 @@
             android:layout_height="match_parent"
             android:textColor="@color/white"
             android:id="@+id/can_id"
-            android:textSize="22dp"
+            android:textSize="@dimen/_22ssp"
             android:layout_weight=".5"
             android:gravity="left|center_vertical"
             android:textAllCaps="true"
@@ -92,7 +92,7 @@
             android:textColor="@color/white"
             android:gravity="left|center_vertical"
             android:paddingLeft="20dp"
-            android:textSize="22dp"
+            android:textSize="@dimen/_22ssp"
             android:layout_weight=".5"/>
 
         <TextView
@@ -100,7 +100,7 @@
             android:layout_height="match_parent"
             android:textColor="@color/white"
             android:id="@+id/can_name"
-            android:textSize="22dp"
+            android:textSize="@dimen/_22ssp"
             android:layout_weight=".5"
             android:gravity="left|center_vertical"
             android:textAllCaps="true"
@@ -123,7 +123,7 @@
             android:textColor="@color/white"
             android:gravity="left|center_vertical"
             android:paddingLeft="20dp"
-            android:textSize="22dp"
+            android:textSize="@dimen/_22ssp"
             android:layout_weight=".5"/>
 
         <Chronometer
@@ -131,7 +131,7 @@
             android:layout_height="match_parent"
             android:textColor="@color/white"
             android:id="@+id/simpleChronometer"
-            android:textSize="22dp"
+            android:textSize="@dimen/_22ssp"
             android:layout_weight=".5"
             android:gravity="left|center_vertical"
             android:textAllCaps="true"
@@ -166,7 +166,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/BlueViolet"
-                    android:textSize="18dp" />
+                    android:textSize="@dimen/_18ssp" />
 
                 <TextView
                     android:id="@+id/root1_practical_q"
@@ -175,7 +175,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/green"
-                    android:textSize="25dp"
+                    android:textSize="@dimen/_25ssp"
                     android:textStyle="bold" />
 
                 <RadioGroup
@@ -195,7 +195,7 @@
                         android:buttonTint="@color/purple"
                         android:text="Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                     <RadioButton
@@ -206,7 +206,7 @@
                         android:buttonTint="@color/purple"
                         android:text="partially Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
 
@@ -218,7 +218,7 @@
                         android:buttonTint="@color/purple"
                         android:text="InCorrect"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                 </RadioGroup>
@@ -242,7 +242,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/BlueViolet"
-                    android:textSize="18dp" />
+                    android:textSize="@dimen/_18ssp" />
 
                 <TextView
                     android:id="@+id/root2_practical_q"
@@ -251,7 +251,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/green"
-                    android:textSize="25dp"
+                    android:textSize="@dimen/_25ssp"
                     android:textStyle="bold" />
 
                 <RadioGroup
@@ -271,7 +271,7 @@
                         android:buttonTint="@color/purple"
                         android:text="Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                     <RadioButton
@@ -282,7 +282,7 @@
                         android:buttonTint="@color/purple"
                         android:text="partially Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
 
@@ -294,7 +294,7 @@
                         android:buttonTint="@color/purple"
                         android:text="InCorrect"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                    
@@ -320,7 +320,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/BlueViolet"
-                    android:textSize="18dp" />
+                    android:textSize="@dimen/_18ssp" />
 
                 <TextView
                     android:id="@+id/root3_practical_q"
@@ -329,7 +329,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/green"
-                    android:textSize="25dp"
+                    android:textSize="@dimen/_25ssp"
                     android:textStyle="bold" />
 
                 <RadioGroup
@@ -348,7 +348,7 @@
                         android:buttonTint="@color/purple"
                         android:text="Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                     <RadioButton
@@ -359,7 +359,7 @@
                         android:buttonTint="@color/purple"
                         android:text="partially Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
 
@@ -371,7 +371,7 @@
                         android:buttonTint="@color/purple"
                         android:text="InCorrect"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                 </RadioGroup>
@@ -395,7 +395,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/BlueViolet"
-                    android:textSize="18dp" />
+                    android:textSize="@dimen/_18ssp" />
 
                 <TextView
                     android:id="@+id/root4_practical_q"
@@ -404,7 +404,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/green"
-                    android:textSize="25dp"
+                    android:textSize="@dimen/_25ssp"
                     android:textStyle="bold" />
 
                 <RadioGroup
@@ -423,7 +423,7 @@
                         android:buttonTint="@color/purple"
                         android:text="Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                     <RadioButton
@@ -434,7 +434,7 @@
                         android:buttonTint="@color/purple"
                         android:text="partially Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
 
@@ -446,7 +446,7 @@
                         android:buttonTint="@color/purple"
                         android:text="InCorrect"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                 </RadioGroup>
@@ -469,7 +469,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/BlueViolet"
-                    android:textSize="18dp" />
+                    android:textSize="@dimen/_18ssp" />
 
                 <TextView
                     android:id="@+id/root5_practical_q"
@@ -478,7 +478,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/green"
-                    android:textSize="25dp"
+                    android:textSize="@dimen/_25ssp"
                     android:textStyle="bold" />
 
                 <RadioGroup
@@ -497,7 +497,7 @@
                         android:buttonTint="@color/purple"
                         android:text="Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                     <RadioButton
@@ -508,7 +508,7 @@
                         android:buttonTint="@color/purple"
                         android:text="partially Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
 
@@ -520,7 +520,7 @@
                         android:buttonTint="@color/purple"
                         android:text="InCorrect"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                 </RadioGroup>
@@ -544,7 +544,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/BlueViolet"
-                    android:textSize="18dp" />
+                    android:textSize="@dimen/_18ssp" />
 
                 <TextView
                     android:id="@+id/root6_practical_q"
@@ -553,7 +553,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/green"
-                    android:textSize="25dp"
+                    android:textSize="@dimen/_25ssp"
                     android:textStyle="bold" />
 
                 <RadioGroup
@@ -572,7 +572,7 @@
                         android:buttonTint="@color/purple"
                         android:text="Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                     <RadioButton
@@ -583,7 +583,7 @@
                         android:buttonTint="@color/purple"
                         android:text="partially Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
 
@@ -595,7 +595,7 @@
                         android:buttonTint="@color/purple"
                         android:text="InCorrect"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                 </RadioGroup>
@@ -618,7 +618,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/BlueViolet"
-                    android:textSize="18dp" />
+                    android:textSize="@dimen/_18ssp" />
 
                 <TextView
                     android:id="@+id/root7_practical_q"
@@ -627,7 +627,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/green"
-                    android:textSize="25dp"
+                    android:textSize="@dimen/_25ssp"
                     android:textStyle="bold" />
 
                 <RadioGroup
@@ -646,7 +646,7 @@
                         android:buttonTint="@color/purple"
                         android:text="Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                     <RadioButton
@@ -657,7 +657,7 @@
                         android:buttonTint="@color/purple"
                         android:text="partially Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
 
@@ -669,7 +669,7 @@
                         android:buttonTint="@color/purple"
                         android:text="InCorrect"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                                    </RadioGroup>
@@ -692,7 +692,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/BlueViolet"
-                    android:textSize="18dp" />
+                    android:textSize="@dimen/_18ssp" />
 
                 <TextView
                     android:id="@+id/root8_practical_q"
@@ -701,7 +701,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/green"
-                    android:textSize="25dp"
+                    android:textSize="@dimen/_25ssp"
                     android:textStyle="bold" />
 
                 <RadioGroup
@@ -719,7 +719,7 @@
                         android:buttonTint="@color/purple"
                         android:text="Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                    android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                     <RadioButton
@@ -730,7 +730,7 @@
                         android:buttonTint="@color/purple"
                         android:text="partially Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
 
@@ -742,7 +742,7 @@
                         android:buttonTint="@color/purple"
                         android:text="InCorrect"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
 
@@ -766,7 +766,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/BlueViolet"
-                    android:textSize="18dp" />
+                    android:textSize="@dimen/_18ssp" />
 
                 <TextView
                     android:id="@+id/root9_practical_q"
@@ -775,7 +775,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/green"
-                    android:textSize="25dp"
+                    android:textSize="@dimen/_25ssp"
                     android:textStyle="bold" />
 
                 <RadioGroup
@@ -794,7 +794,7 @@
                         android:buttonTint="@color/purple"
                         android:text="Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                     <RadioButton
@@ -805,7 +805,7 @@
                         android:buttonTint="@color/purple"
                         android:text="partially Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
 
@@ -817,7 +817,7 @@
                         android:buttonTint="@color/purple"
                         android:text="InCorrect"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                 </RadioGroup>
@@ -840,7 +840,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/BlueViolet"
-                    android:textSize="18dp" />
+                    android:textSize="@dimen/_18ssp" />
 
                 <TextView
                     android:id="@+id/root10_practical_q"
@@ -849,7 +849,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/green"
-                    android:textSize="25dp"
+                    android:textSize="@dimen/_25ssp"
                     android:textStyle="bold" />
 
                 <RadioGroup
@@ -868,7 +868,7 @@
                         android:buttonTint="@color/purple"
                         android:text="Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                     <RadioButton
@@ -879,7 +879,7 @@
                         android:buttonTint="@color/purple"
                         android:text="partially Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
 
@@ -891,7 +891,7 @@
                         android:buttonTint="@color/purple"
                         android:text="InCorrect"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
 
@@ -915,7 +915,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/BlueViolet"
-                    android:textSize="18dp" />
+                    android:textSize="@dimen/_18ssp" />
 
                 <TextView
                     android:id="@+id/root11_practical_q"
@@ -924,7 +924,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/green"
-                    android:textSize="25dp"
+                    android:textSize="@dimen/_25ssp"
                     android:textStyle="bold" />
 
                 <RadioGroup
@@ -943,7 +943,7 @@
                         android:buttonTint="@color/purple"
                         android:text="Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                     <RadioButton
@@ -954,7 +954,7 @@
                         android:buttonTint="@color/purple"
                         android:text="partially Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
 
@@ -966,7 +966,7 @@
                         android:buttonTint="@color/purple"
                         android:text="InCorrect"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                 </RadioGroup>
@@ -989,7 +989,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/BlueViolet"
-                    android:textSize="18dp" />
+                    android:textSize="@dimen/_18ssp" />
 
                 <TextView
                     android:id="@+id/root12_practical_q"
@@ -998,7 +998,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/green"
-                    android:textSize="25dp"
+                    android:textSize="@dimen/_25ssp"
                     android:textStyle="bold" />
 
                 <RadioGroup
@@ -1017,7 +1017,7 @@
                         android:buttonTint="@color/purple"
                         android:text="Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                     <RadioButton
@@ -1028,7 +1028,7 @@
                         android:buttonTint="@color/purple"
                         android:text="partially Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
 
@@ -1040,7 +1040,7 @@
                         android:buttonTint="@color/purple"
                         android:text="InCorrect"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                 </RadioGroup>
@@ -1063,7 +1063,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/BlueViolet"
-                    android:textSize="18dp" />
+                    android:textSize="@dimen/_18ssp" />
 
                 <TextView
                     android:id="@+id/root13_practical_q"
@@ -1072,7 +1072,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/green"
-                    android:textSize="25dp"
+                    android:textSize="@dimen/_25ssp"
                     android:textStyle="bold" />
 
                 <RadioGroup
@@ -1090,7 +1090,7 @@
                         android:buttonTint="@color/purple"
                         android:text="Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                     <RadioButton
@@ -1101,7 +1101,7 @@
                         android:buttonTint="@color/purple"
                         android:text="partially Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
 
@@ -1113,7 +1113,7 @@
                         android:buttonTint="@color/purple"
                         android:text="InCorrect"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
 
@@ -1137,7 +1137,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/BlueViolet"
-                    android:textSize="18dp" />
+                    android:textSize="@dimen/_18ssp" />
 
                 <TextView
                     android:id="@+id/root14_practical_q"
@@ -1146,7 +1146,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/green"
-                    android:textSize="25dp"
+                    android:textSize="@dimen/_25ssp"
                     android:textStyle="bold" />
 
                 <RadioGroup
@@ -1165,7 +1165,7 @@
                         android:buttonTint="@color/purple"
                         android:text="Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                     <RadioButton
@@ -1176,7 +1176,7 @@
                         android:buttonTint="@color/purple"
                         android:text="partially Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
 
@@ -1188,7 +1188,7 @@
                         android:buttonTint="@color/purple"
                         android:text="InCorrect"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
 
@@ -1212,7 +1212,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/BlueViolet"
-                    android:textSize="18dp" />
+                    android:textSize="@dimen/_18ssp" />
 
                 <TextView
                     android:id="@+id/root15_practical_q"
@@ -1221,7 +1221,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/green"
-                    android:textSize="25dp"
+                    android:textSize="@dimen/_25ssp"
                     android:textStyle="bold" />
 
                 <RadioGroup
@@ -1240,7 +1240,7 @@
                         android:buttonTint="@color/purple"
                         android:text="Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                     <RadioButton
@@ -1251,7 +1251,7 @@
                         android:buttonTint="@color/purple"
                         android:text="partially Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
 
@@ -1263,7 +1263,7 @@
                         android:buttonTint="@color/purple"
                         android:text="InCorrect"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                 </RadioGroup>
@@ -1286,7 +1286,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/BlueViolet"
-                    android:textSize="18dp" />
+                    android:textSize="@dimen/_18ssp" />
 
                 <TextView
                     android:id="@+id/root16_practical_q"
@@ -1295,7 +1295,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/green"
-                    android:textSize="25dp"
+                    android:textSize="@dimen/_25ssp"
                     android:textStyle="bold" />
 
                 <RadioGroup
@@ -1314,7 +1314,7 @@
                         android:buttonTint="@color/purple"
                         android:text="Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                     <RadioButton
@@ -1325,7 +1325,7 @@
                         android:buttonTint="@color/purple"
                         android:text="partially Correct"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
 
@@ -1337,7 +1337,7 @@
                         android:buttonTint="@color/purple"
                         android:text="InCorrect"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="@dimen/_20ssp"
                         android:textStyle="bold" />
 
                 </RadioGroup>
@@ -1354,7 +1354,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:text="Submit"
-        android:textSize="25dp"
+        android:textSize="@dimen/_25ssp"
         android:onClick="submitPractical"
         android:textColor="@color/white"
         android:background="@drawable/capture_image_button"

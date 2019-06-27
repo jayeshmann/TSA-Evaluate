@@ -22,7 +22,7 @@
             android:background="@drawable/grid_bg_green"
             android:text="Theory "
             android:textColor="@color/white"
-            android:textSize="@dimen/_10sdp"
+            android:textSize="@dimen/_10ssp"
             android:textStyle="bold" />
 
         <Button
@@ -34,7 +34,7 @@
 
             android:text="Practical"
             android:textColor="@color/green"
-            android:textSize="@dimen/_10sdp"
+            android:textSize="@dimen/_10ssp"
             android:textStyle="bold"/>
         <!--android:onClick="syncPractical"-->
     </LinearLayout>

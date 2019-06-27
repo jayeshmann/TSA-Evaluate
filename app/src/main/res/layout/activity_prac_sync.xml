@@ -24,7 +24,7 @@
             android:layout_marginLeft="10dp"
             android:text="Practical Sync"
             android:textAllCaps="false"
-            android:textSize="18sp"
+            android:textSize="@dimen/_18ssp"
             android:layout_marginRight="10dp"
             android:textColor="@color/white"
             android:id="@+id/text_prac_video_sync"

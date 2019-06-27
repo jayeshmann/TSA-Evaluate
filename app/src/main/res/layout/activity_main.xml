@@ -17,10 +17,10 @@
             name="isVisible"
             type="boolean" />
 
-        <data>
+
 
             <import type="android.text.Html" />
-        </data>
+
     </data>
 
     <androidx.drawerlayout.widget.DrawerLayout
@@ -121,7 +121,7 @@
                         android:text="Candidate ID:"
                         android:textAlignment="gravity"
                         android:textColor="@color/DarkGray"
-                        android:textSize="@dimen/_8sdp"
+                        android:textSize="@dimen/_8ssp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -132,7 +132,7 @@
                         android:text="@={questionModel.candidate_login_id}"
                         android:textAlignment="gravity"
                         android:textColor="@color/green"
-                        android:textSize="@dimen/_8sdp"
+                        android:textSize="@dimen/_8ssp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -154,7 +154,7 @@
                         android:text="Candidate Name:"
                         android:textAlignment="gravity"
                         android:textColor="@color/DarkGray"
-                        android:textSize="@dimen/_8sdp"
+                        android:textSize="@dimen/_8ssp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -164,7 +164,7 @@
                         android:gravity="left|center_vertical"
                         android:textAlignment="gravity"
                         android:textColor="@color/green"
-                        android:textSize="@dimen/_8sdp"
+                        android:textSize="@dimen/_8ssp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -187,7 +187,7 @@
                         android:text="Total Questions:"
                         android:textAlignment="gravity"
                         android:textColor="@color/DarkGray"
-                        android:textSize="@dimen/_8sdp"
+                        android:textSize="@dimen/_8ssp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -197,7 +197,7 @@
                         android:gravity="left|center_vertical"
                         android:textAlignment="gravity"
                         android:textColor="@color/green"
-                        android:textSize="@dimen/_8sdp"
+                        android:textSize="@dimen/_8ssp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -227,7 +227,7 @@
                         android:text="@={questionModel.question}"
                         android:textAlignment="gravity"
                         android:textColor="@color/green"
-                        android:textSize="@dimen/_8sdp"
+                        android:textSize="@dimen/_8ssp"
                         android:textStyle="bold"
                         app:layout_constraintHorizontal_bias="0.002"
                         app:layout_constraintLeft_toLeftOf="@+id/linearLayout"
@@ -265,7 +265,7 @@
                                 android:paddingLeft="@dimen/_3sdp"
                                 android:text="@={questionModel.optionA}"
                                 android:textColor="@color/nav_color"
-                                android:textSize="@dimen/_8sdp" />
+                                android:textSize="@dimen/_8ssp" />
 
                             <RadioButton
                                 android:id="@+id/opt_b_rb"
@@ -278,7 +278,7 @@
                                 android:paddingLeft="@dimen/_3sdp"
                                 android:text="@={questionModel.optionB}"
                                 android:textColor="@color/nav_color"
-                                android:textSize="@dimen/_8sdp" />
+                                android:textSize="@dimen/_8ssp" />
 
                             <RadioButton
                                 android:id="@+id/opt_c_rb"
@@ -291,7 +291,7 @@
                                 android:paddingLeft="@dimen/_3sdp"
                                 android:text="@={questionModel.optionC}"
                                 android:textColor="@color/nav_color"
-                                android:textSize="@dimen/_8sdp" />
+                                android:textSize="@dimen/_8ssp" />
 
                             <RadioButton
                                 android:id="@+id/opt_d_rb"
@@ -304,7 +304,7 @@
                                 android:paddingLeft="@dimen/_3sdp"
                                 android:text="@={questionModel.optionD}"
                                 android:textColor="@color/nav_color"
-                                android:textSize="@dimen/_8sdp" />
+                                android:textSize="@dimen/_8ssp" />
 
                         </RadioGroup>
 
@@ -363,7 +363,7 @@
                             android:text="Question No.1"
                             android:textAlignment="gravity"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/_8sdp"
+                            android:textSize="@dimen/_8ssp"
                             android:textStyle="bold" />
 
                         <LinearLayout
@@ -385,7 +385,7 @@
                             android:text="Marks:"
                             android:textAlignment="gravity"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/_8sdp"
+                            android:textSize="@dimen/_8ssp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -396,7 +396,7 @@
                             android:text="@={questionModel.marks}"
                             android:textAlignment="gravity"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/_8sdp"
+                            android:textSize="@dimen/_8ssp"
                             android:textStyle="bold" />
                     </LinearLayout>
 
@@ -483,7 +483,7 @@
                         android:textAlignment="gravity"
                         android:textAllCaps="true"
                         android:textColor="@color/red"
-                        android:textSize="@dimen/_12sdp"
+                        android:textSize="@dimen/_12ssp"
                         android:textStyle="bold" />
 
                     <LinearLayout
@@ -502,7 +502,7 @@
                             android:onClick="@{()->activity.goUpdateQty(0)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -516,7 +516,7 @@
                             android:onClick="@{()->activity.goUpdateQty(1)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -531,7 +531,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -545,7 +545,7 @@
                             android:onClick="@{()->activity.goUpdateQty(3)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -559,7 +559,7 @@
                             android:onClick="@{()->activity.goUpdateQty(4)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
                     </LinearLayout>
@@ -581,7 +581,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -596,7 +596,7 @@
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
 
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -611,7 +611,7 @@
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
 
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -626,7 +626,7 @@
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
 
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -641,7 +641,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
                     </LinearLayout>
@@ -663,7 +663,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -678,7 +678,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -693,7 +693,7 @@
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
 
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -708,7 +708,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -723,7 +723,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
                     </LinearLayout>
@@ -745,7 +745,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -760,7 +760,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -775,7 +775,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -790,7 +790,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -805,7 +805,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
                     </LinearLayout>
@@ -827,7 +827,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -842,7 +842,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -857,7 +857,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -872,7 +872,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -887,7 +887,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
                     </LinearLayout>
@@ -909,7 +909,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -924,7 +924,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -939,7 +939,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -954,7 +954,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -969,7 +969,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
                     </LinearLayout>
@@ -991,7 +991,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1006,7 +1006,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1020,7 +1020,7 @@
                             android:onClick="@{()->activity.goUpdateQty(32)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1034,7 +1034,7 @@
                             android:onClick="@{()->activity.goUpdateQty(33)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1049,7 +1049,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
                     </LinearLayout>
@@ -1071,7 +1071,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1086,7 +1086,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1100,7 +1100,7 @@
                             android:onClick="@{()->activity.goUpdateQty(37)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1114,7 +1114,7 @@
                             android:onClick="@{()->activity.goUpdateQty(38)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1128,7 +1128,7 @@
                             android:onClick="@{()->activity.goUpdateQty(39)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
                     </LinearLayout>
@@ -1149,7 +1149,7 @@
                             android:onClick="@{()->activity.goUpdateQty(40)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1163,7 +1163,7 @@
                             android:onClick="@{()->activity.goUpdateQty(41)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1177,7 +1177,7 @@
                             android:onClick="@{()->activity.goUpdateQty(42)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1191,7 +1191,7 @@
                             android:onClick="@{()->activity.goUpdateQty(43)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1205,7 +1205,7 @@
                             android:onClick="@{()->activity.goUpdateQty(44)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
                     </LinearLayout>
@@ -1226,7 +1226,7 @@
                             android:onClick="@{()->activity.goUpdateQty(45)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1240,7 +1240,7 @@
                             android:onClick="@{()->activity.goUpdateQty(46)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1254,7 +1254,7 @@
                             android:onClick="@{()->activity.goUpdateQty(47)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1268,7 +1268,7 @@
                             android:onClick="@{()->activity.goUpdateQty(48)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1282,7 +1282,7 @@
                             android:onClick="@{()->activity.goUpdateQty(49)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
                     </LinearLayout>
@@ -1303,7 +1303,7 @@
                             android:onClick="@{()->activity.goUpdateQty(50)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1317,7 +1317,7 @@
                             android:onClick="@{()->activity.goUpdateQty(51)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1331,7 +1331,7 @@
                             android:onClick="@{()->activity.goUpdateQty(52)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1345,7 +1345,7 @@
                             android:onClick="@{()->activity.goUpdateQty(53)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1359,7 +1359,7 @@
                             android:onClick="@{()->activity.goUpdateQty(54)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
                     </LinearLayout>
@@ -1380,7 +1380,7 @@
                             android:onClick="@{()->activity.goUpdateQty(55)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1394,7 +1394,7 @@
                             android:onClick="@{()->activity.goUpdateQty(56)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1408,7 +1408,7 @@
                             android:onClick="@{()->activity.goUpdateQty(57)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1423,7 +1423,7 @@
                             android:textAlignment="gravity"
 
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
 
@@ -1437,7 +1437,7 @@
                             android:onClick="@{()->activity.goUpdateQty(59)}"
                             android:textAlignment="gravity"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/_10sdp"
+                            android:textSize="@dimen/_10ssp"
                             android:textStyle="bold"
                             android:visibility="visible" />
                     </LinearLayout>
