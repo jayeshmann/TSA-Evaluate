@@ -7,9 +7,16 @@
     android:orientation="vertical"
     tools:context="com.tsa.exam.NOSPracticalActivity">
 
+   <FrameLayout
+       android:id="@+id/container"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/_200sdp"
+       android:background="#000"
+       tools:context="com.tsa.exam.NOSPracticalActivity" />
+
    <ListView
        android:layout_width="match_parent"
        android:layout_height="match_parent"
-       android:id="@+id/practical_q"></ListView>
+       android:id="@+id/practical_q" />
 
 </LinearLayout>

@@ -60,11 +60,11 @@ import lib.kingja.switchbutton.SwitchMultiButton;
 public class NOSPracticalActivity extends AppCompatActivity {
     private Context context;
     private ArrayList<NOSPracticalModel> nosPracticalModelArrayList;
-    int stepLayout[] = new int[]{R.id.step1, R.id.step2, R.id.step3, R.id.step4, R.id.step5, R.id.step6};
+    int[] stepLayout = new int[]{R.id.step1, R.id.step2, R.id.step3, R.id.step4, R.id.step5, R.id.step6};
     TextView pQuestion;
-    TextView stepQ[] = new TextView[6];
-    SwitchMultiButton mSwitchMultiButton[] = new SwitchMultiButton[6];
-    View stepView[] = new View[6];
+    TextView[] stepQ = new TextView[6];
+    SwitchMultiButton[] mSwitchMultiButton = new SwitchMultiButton[6];
+    View[] stepView = new View[6];
     private int questionCount = 0;
     private int questionArraylength = 0;
     EvaluateDB evaluateDB;
@@ -299,11 +299,16 @@ public class NOSPracticalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.prac_card);
 
+        if (null == savedInstanceState) {
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.container, Camera2VideoFragment.newInstance())
+                    .commit();
+        }
 
         createVideoFolder();
         createImageFolder();
 
-        mChronometer = (Chronometer) findViewById(R.id.chronometer);
+        /*mChronometer = (Chronometer) findViewById(R.id.chronometer);
         mTextureView = (AutoFitTextureView) findViewById(R.id.textureView);
         mStillImageButton = (ImageButton) findViewById(R.id.cameraImageButton2);
         mStillImageButton.setOnClickListener(new View.OnClickListener() {
@@ -369,7 +374,7 @@ public class NOSPracticalActivity extends AppCompatActivity {
         init();
         nosPracticalModelArrayList = new ArrayList<>();
         //getPracticalQuestions();
-        getQuestionsFromDb(canLoginID);
+        getQuestionsFromDb(canLoginID);*/
     }
 
 
@@ -787,8 +792,8 @@ public class NOSPracticalActivity extends AppCompatActivity {
         evaluateDB = EvaluateDB.getInstance(NOSPracticalActivity.this);
         for (int i = 0; i < stepLayout.length; i++) {
             stepView[i] = findViewById(stepLayout[i]);
-            stepQ[i] = (TextView) stepView[i].findViewById(R.id.practical_q);
-            mSwitchMultiButton[i] = (SwitchMultiButton) stepView[i].findViewById(R.id.switchmultibutton);
+            stepQ[i] = stepView[i].findViewById(R.id.practical_q);
+            mSwitchMultiButton[i] = stepView[i].findViewById(R.id.switchmultibutton);
             final int localI = i;
             mSwitchMultiButton[i].setOnSwitchListener(new SwitchMultiButton.OnSwitchListener() {
                 @Override
@@ -859,7 +864,7 @@ public class NOSPracticalActivity extends AppCompatActivity {
                 }
             });
         }
-        pQuestion = (TextView) findViewById(R.id.practical_tv);
+        pQuestion = findViewById(R.id.practical_tv);
     }
 
     public void setQuestion(int position) {

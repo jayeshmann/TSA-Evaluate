@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
@@ -12,6 +13,8 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.ContextThemeWrapper;
+
+import android.util.Log;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -32,6 +35,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Map;
 import android.Manifest;
 import android.util.Size;
@@ -39,30 +43,120 @@ import android.graphics.Matrix;
 import java.util.concurrent.TimeUnit;
 import io.realm.Realm;
 import io.realm.RealmResults;
+import pub.devrel.easypermissions.AfterPermissionGranted;
+import pub.devrel.easypermissions.AppSettingsDialog;
+import pub.devrel.easypermissions.EasyPermissions;
 
-public class SelectLoginActivity extends AppCompatActivity {
+
+public class SelectLoginActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
 
     ActivitySelectLoginBinding binding;
     private Realm mRealm;
     private DatabaseHandler databaseHandler;
     SelectLoginActivity slActivity;
 
+    private static final String TAG = "SelectLoginActivity";
+    private static final int All_PERM = 123;
+    private static final String[] permissions = {
+            Manifest.permission.CAMERA,
+            Manifest.permission.RECORD_AUDIO,
+            Manifest.permission.ACCESS_WIFI_STATE,
+            Manifest.permission.GET_ACCOUNTS,
+            Manifest.permission.READ_CONTACTS,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.SYSTEM_ALERT_WINDOW,
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.INTERNET,
+            Manifest.permission.ACCESS_NETWORK_STATE
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
         binding = DataBindingUtil.setContentView(this, R.layout.activity_select_login);
         binding.setActivity(this);
         Realm.init(getApplicationContext());
         mRealm = Realm.getDefaultInstance();
         databaseHandler=new DatabaseHandler(SelectLoginActivity.this);
 
+        //Ask Permissions
+        permissionTask();
+
         if(GLOBAL.assname!=null)
             addAssesser();
     }
 
+    @AfterPermissionGranted(All_PERM)
+    public void permissionTask() {
+        if (hasAppPermissions()) {
+
+            // Have permissions, do the thing!
+            //Toast.makeText(this, "TODO: things", Toast.LENGTH_LONG).show();
+        } else {
+            // Ask for both permissions
+            EasyPermissions.requestPermissions(
+                    this,
+                    getString(R.string.rationale_ask),
+                    All_PERM,
+                    permissions);
+        }
+    }
+
+    private boolean hasAppPermissions() {
+        return EasyPermissions.hasPermissions(this, permissions);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        // Forward results to EasyPermissions
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
+    @Override
+    public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
+        Log.d(TAG, "onPermissionsGranted:" + requestCode + ":" + perms.size());
+    }
+
+    @Override
+    public void onPermissionsDenied(int requestCode, @NonNull List<String> perms) {
+        Log.d(TAG, "onPermissionsDenied:" + requestCode + ":" + perms.size());
+
+        // (Optional) Check whether the user denied any permissions and checked "NEVER ASK AGAIN."
+        // This will display a dialog directing them to enable the permission in app settings.
+        if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)) {
+            new AppSettingsDialog.Builder(this).build().show();
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == AppSettingsDialog.DEFAULT_SETTINGS_REQ_CODE) {
+            String yes = getString(R.string.yes);
+            String no = getString(R.string.no);
+
+            // Do something after user returned from app settings screen, like showing a Toast.
+            Toast.makeText(
+                    this,
+                    getString(R.string.returned_from_app_settings_to_activity),
+                    Toast.LENGTH_LONG)
+                    .show();
+        }
+    }
+
+    @Override
+    public void onRationaleAccepted(int requestCode) {
+        Log.d(TAG, "onRationaleAccepted:" + requestCode);
+    }
+
+    @Override
+    public void onRationaleDenied(int requestCode) {
+        Log.d(TAG, "onRationaleDenied:" + requestCode);
+    }
 
     @Override
     public void onBackPressed() {

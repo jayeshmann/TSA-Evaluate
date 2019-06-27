@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ISDAT Evaluate</string>
+    <string name="app_name">TSA Evaluate</string>
     <string name="title_activity_login">Sign in</string>
     <string name="action_settings">Settings</string>
     <string name="admin_permission_label">Kiosk App</string>
@@ -159,5 +159,8 @@ o	Text area for other ID No
     </string>
     <string name="title_activity_theory_sync">Theory_syncActivity</string>
     <string name="title_activity_prac_sync">Prac_syncActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
