@@ -131,32 +131,7 @@ public class SelectLoginActivity extends AppCompatActivity implements EasyPermis
         }
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == AppSettingsDialog.DEFAULT_SETTINGS_REQ_CODE) {
-            String yes = getString(R.string.yes);
-            String no = getString(R.string.no);
-
-            // Do something after user returned from app settings screen, like showing a Toast.
-            Toast.makeText(
-                    this,
-                    getString(R.string.returned_from_app_settings_to_activity),
-                    Toast.LENGTH_LONG)
-                    .show();
-        }
-    }
-
-    @Override
-    public void onRationaleAccepted(int requestCode) {
-        Log.d(TAG, "onRationaleAccepted:" + requestCode);
-    }
-
-    @Override
-    public void onRationaleDenied(int requestCode) {
-        Log.d(TAG, "onRationaleDenied:" + requestCode);
-    }
 
     @Override
     public void onBackPressed() {

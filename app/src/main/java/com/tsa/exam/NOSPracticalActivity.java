@@ -29,6 +29,10 @@ import android.os.HandlerThread;
 import android.os.SystemClock;
 import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.util.Log;
 import android.util.Size;
 import android.util.SparseIntArray;
@@ -76,7 +80,7 @@ public class NOSPracticalActivity extends AppCompatActivity {
     public static String fileName;
     private AutoFitTextureView mTextureView;
     private static final String TAG = "Camera2VideoImageActivi";
-
+    Camera2VideoFragment camera2VideoFragment = new Camera2VideoFragment();
     private static final int REQUEST_CAMERA_PERMISSION_RESULT = 0;
     private static final int REQUEST_WRITE_EXTERNAL_STORAGE_PERMISSION_RESULT = 1;
     private static final int STATE_PREVIEW = 0;
@@ -168,6 +172,8 @@ public class NOSPracticalActivity extends AppCompatActivity {
                     mBackgroundHandler.post(new ImageSaver(reader.acquireLatestImage()));
                 }
             };
+
+
     private class ImageSaver implements Runnable {
 
         private final Image mImage;
@@ -300,9 +306,11 @@ public class NOSPracticalActivity extends AppCompatActivity {
         setContentView(R.layout.prac_card);
 
         if (null == savedInstanceState) {
-            getFragmentManager().beginTransaction()
-                    .replace(R.id.container, Camera2VideoFragment.newInstance())
-                    .commit();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            Camera2VideoFragment fragment = new Camera2VideoFragment();
+            fragmentTransaction.add(R.id.container, fragment);
+            fragmentTransaction.commit();
         }
 
         createVideoFolder();

@@ -751,8 +751,7 @@ public class Camera2VideoFragment extends Fragment implements View.OnClickListen
                     .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            FragmentCompat.requestPermissions(parent, VIDEO_PERMISSIONS,
-                                    REQUEST_VIDEO_PERMISSIONS);
+
                         }
                     })
                     .setNegativeButton(android.R.string.cancel,
