@@ -61,7 +61,7 @@
         <Switch
             android:id="@+id/switch1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight=".1"
             android:layout_gravity="right"
             android:gravity="right"
@@ -85,6 +85,7 @@
                 android:inputType="textPassword"
                 android:drawablePadding="@dimen/_7sdp"
                 android:maxLines="1"
+                android:autofillHints=""
                 android:singleLine="true" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -94,8 +95,8 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_30sdp"
             android:textColor="@color/white"
-            android:text="Loging"
-            android:background="@android:color/holo_orange_dark"
+            android:background="@color/newLoginbtn"
+            android:text="@string/login"
             android:layout_marginTop="@dimen/_30sdp"
             android:layout_marginLeft="@dimen/_20sdp"
             android:layout_marginRight="@dimen/_20sdp"/>

@@ -255,7 +255,8 @@
 
     <!--Transparent-->
     <color name="colorTransparent">#29000000</color>
-
-
+    <!--Added by Jayesh-->
+    <color name="newLogin">#03A9F4</color>
+    <color name="newLoginbtn">#4CAF50</color>
 
 </resources>

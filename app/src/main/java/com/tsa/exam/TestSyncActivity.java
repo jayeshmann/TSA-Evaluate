@@ -38,6 +38,7 @@ public class TestSyncActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
+        startActivity(new Intent(TestSyncActivity.this, SelectLoginActivity.class));
     }
 
     //
@@ -46,7 +47,7 @@ public class TestSyncActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_sync);
 
-        theory = (Button) findViewById(R.id.theory);
+        theory = findViewById(R.id.theory);
         theory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,7 +56,7 @@ public class TestSyncActivity extends AppCompatActivity {
             }
         });
 
-        practical = (Button) findViewById(R.id.practical);
+        practical = findViewById(R.id.practical);
         practical.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,7 +69,7 @@ public class TestSyncActivity extends AppCompatActivity {
 //        theory=(Button)findViewById(R.id.theory);
 //        practical=(Button)findViewById(R.id.practical);
 //
-      home=(ImageView)findViewById(R.id.home);
+        home = findViewById(R.id.home);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
