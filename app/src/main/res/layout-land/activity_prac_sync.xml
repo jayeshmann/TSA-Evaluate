@@ -13,33 +13,31 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginTop="5dp"
-        >
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/text_prac_video_sync"
+            android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@drawable/shape_theory_sync"
             android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/shape_theory_sync"
             android:text="Practical Sync"
             android:textAllCaps="false"
-            android:layout_width="160dp"
-            android:layout_marginRight="10dp"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="@dimen/_18ssp" />
 
-        <Button
-            android:id="@+id/btn_videosync"
-            android:layout_width="160dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="25dp"
-            android:layout_toRightOf="@+id/text_prac_video_sync"
-            android:background="@drawable/shape_theory_sync"
-            android:text="Video Sync"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+        <!--<Button-->
+        <!--android:layout_width="160dp"-->
+        text_videosync       <!--android:layout_height="0dp"-->
+        <!--android:background="@drawable/shape_theory_sync"-->
+        <!--android:layout_marginLeft="30dp"-->
+        <!--android:text="Video Practical Sync"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:textSize="18sp"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:id="@+id/text_prac_video_sync"/>-->
 
 
     </RelativeLayout>
@@ -48,28 +46,10 @@
         android:id="@+id/sync_practical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="visible"
-        android:divider="@null">
-
-    </ListView>
-
-    <ListView
-        android:id="@+id/sync_video"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:divider="@null"
         android:visibility="visible">
 
     </ListView>
-
-    <!-- <android.support.v7.widget.RecyclerView
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:id="@+id/recylist"
-         >
-     </android.support.v7.widget.RecyclerView>
-
- -->
 
 
 </LinearLayout>

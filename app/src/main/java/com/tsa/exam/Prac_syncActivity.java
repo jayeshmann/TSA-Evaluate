@@ -1,18 +1,21 @@
 package com.tsa.exam;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.app.Activity;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import com.tsa.exam.adapters.NOSPracSyncAdapter;
 import com.tsa.exam.adapters.TestSyncAdaptar;
-
+import com.tsa.exam.adapters.Video_Adapter;
 import com.tsa.exam.database.DatabaseHandler;
 import com.tsa.exam.database.EvaluateDB;
 import com.tsa.exam.model.NOSPracticalModel;
@@ -22,26 +25,24 @@ import java.util.ArrayList;
 
 public class Prac_syncActivity extends Activity {
 
-    private ArrayList<ResultModel> resultModelArrayList;
+    Video_Adapter video_adapter;
+    LinearLayoutManager layoutManager;
     //   private ListView theoryResultListView;
     private ListView practicalResultListView;
+    private ArrayList<ResultModel> resultModelArrayList = new ArrayList<>();
     private TestSyncAdaptar testSyncAdaptar;
     private DatabaseHandler databaseHandler;
     private ImageView home;
 
     private NOSPracSyncAdapter nosPracSyncAdapter;
-    private ArrayList<NOSPracticalModel> nosPracticalModelArrayList;
+    private ArrayList<NOSPracticalModel> resultModels;
     private Context context;
     EvaluateDB evaluateDB;
-
-//    RecyclerView recycler_videos;
-//    Video_Adapter video_adapter;
-//    LinearLayoutManager layoutManager;
-//    ArrayList<VideoModel> video_list = new ArrayList<>();
+    private ListView sync_videolistview;
+    private ArrayList<NOSPracticalModel> nosPracticalModelArrayList = new ArrayList<>();
 
     private Button text_practical;
-    private Button text_prac_video_sync;
-
+    private Button btn_videosync;
 
 
     @Override
@@ -49,33 +50,37 @@ public class Prac_syncActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prac_sync);
 
-        context=Prac_syncActivity.this;
+        context = Prac_syncActivity.this;
         evaluateDB = EvaluateDB.getInstance(context);
+        sync_videolistview = findViewById(R.id.sync_video);
+        text_practical = findViewById(R.id.text_prac_video_sync);
+        practicalResultListView = findViewById(R.id.sync_practical);
 
-        text_practical = (Button)findViewById(R.id.text_prac_video_sync) ;
+        btn_videosync = findViewById(R.id.btn_videosync);
+        btn_videosync.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        practicalResultListView = (ListView) findViewById(R.id.sync_practical);
+                sync_videolistview.setVisibility(View.VISIBLE);
+                databaseHandler = new DatabaseHandler(getApplicationContext());
 
-//        recycler_videos = (RecyclerView)findViewById(R.id.recycler_videos);
-//
-//        layoutManager=new LinearLayoutManager(this);
-//        recycler_videos.setLayoutManager(layoutManager);
-//
-//
-//        video_adapter=new Video_Adapter(this,video_list);
-//        recycler_videos.setAdapter(video_adapter);
-//        recycler_videos.setFocusable(false);
+                //////////Refresh Theory Result///////////////
+                refresh();
+                //////////////////////////////////////////////
+//                getQuestionsFromDb();
 
+            }
+        });
 
-
+        // resultModelArrayList = databaseHandler.getAllResult();
+        video_adapter = new Video_Adapter(nosPracticalModelArrayList, Prac_syncActivity.this);
+        sync_videolistview.setAdapter(video_adapter);
 
         text_practical.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 practicalResultListView.setVisibility(View.VISIBLE);
-
-
                 databaseHandler = new DatabaseHandler(getApplicationContext());
 
                 //////////Refresh Theory Result///////////////
@@ -87,13 +92,11 @@ public class Prac_syncActivity extends Activity {
         });
 
 
-
-
-        home=(ImageView)findViewById(R.id.home);
+        home = findViewById(R.id.home);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Prac_syncActivity.this,SelectLoginActivity.class));
+                startActivity(new Intent(Prac_syncActivity.this, SelectLoginActivity.class));
             }
         });
 
@@ -138,6 +141,7 @@ public class Prac_syncActivity extends Activity {
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
                 practicalResultListView.setAdapter(nosPracSyncAdapter);
+
             }
         }.execute();
 

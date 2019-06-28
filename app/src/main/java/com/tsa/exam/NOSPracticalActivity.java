@@ -306,19 +306,19 @@ public class NOSPracticalActivity extends AppCompatActivity {
         setContentView(R.layout.prac_card);
 
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
+        /*FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             Camera2VideoFragment fragment = new Camera2VideoFragment();
             fragmentTransaction.add(R.id.container, fragment);
             fragmentTransaction.commit();
-
+*/
 
         createVideoFolder();
         createImageFolder();
 
-        /*mChronometer = (Chronometer) findViewById(R.id.chronometer);
-        mTextureView = (AutoFitTextureView) findViewById(R.id.textureView);
-        mStillImageButton = (ImageButton) findViewById(R.id.cameraImageButton2);
+        mChronometer = findViewById(R.id.chronometer);
+        mTextureView = findViewById(R.id.textureView);
+        mStillImageButton = findViewById(R.id.cameraImageButton2);
         mStillImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -328,7 +328,7 @@ public class NOSPracticalActivity extends AppCompatActivity {
                 lockFocus();
             }
         });
-        mRecordImageButton = (ImageButton) findViewById(R.id.videoOnlineImageButton);
+        mRecordImageButton = findViewById(R.id.videoOnlineImageButton);
         mRecordImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -382,7 +382,7 @@ public class NOSPracticalActivity extends AppCompatActivity {
         init();
         nosPracticalModelArrayList = new ArrayList<>();
         //getPracticalQuestions();
-        getQuestionsFromDb(canLoginID);*/
+        getQuestionsFromDb(canLoginID);
     }
 
 
