@@ -1,11 +1,12 @@
-<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:fab="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_backgrounds"
     android:focusable="true"
-    android:focusableInTouchMode="true"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:focusableInTouchMode="true">
 
 
     <ImageButton
@@ -14,46 +15,46 @@
         android:layout_height="@dimen/_100sdp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/_10sdp"
-        android:src="@drawable/isdatlogo"
         android:background="@drawable/profile_circular_border_imageview"
         android:elevation="@dimen/_5sdp"
         android:padding="@dimen/_20sdp"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/isdatlogo" />
 
     <LinearLayout
         android:id="@+id/profile_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_60sdp"
         android:layout_marginRight="@dimen/_30sdp"
         android:layout_marginBottom="@dimen/_30sdp"
-        android:layout_marginTop="@dimen/_60sdp"
         android:background="#8EFAF9F4"
-        android:orientation="vertical"
-        android:weightSum="1"
         android:elevation="@dimen/_4sdp"
+        android:orientation="vertical"
         android:paddingBottom="@dimen/_24sdp"
-        android:layout_centerHorizontal="true">
+        android:weightSum="1">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_marginTop="@dimen/_100sdp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_100sdp">
 
             <AutoCompleteTextView
                 android:id="@+id/email"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_25sdp"
                 android:layout_marginRight="@dimen/_25sdp"
-                android:paddingBottom="@dimen/_2sdp"
-                android:layout_height="wrap_content"
-                android:hint="@string/prompt_email"
-                android:textSize="@dimen/_12ssp"
-                android:drawablePadding="@dimen/_7sdp"
-                android:inputType="textEmailAddress"
                 android:drawableLeft="@drawable/ic_email_black_24dp"
+                android:drawablePadding="@dimen/_7sdp"
+                android:hint="@string/prompt_email"
+                android:inputType="textEmailAddress"
                 android:maxLines="1"
-                android:singleLine="true" />
+                android:paddingBottom="@dimen/_2sdp"
+                android:singleLine="true"
+                android:textSize="@dimen/_12ssp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -62,10 +63,10 @@
             android:id="@+id/switch1"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight=".1"
             android:layout_gravity="right"
-            android:gravity="right"
-            android:layout_marginRight="@dimen/_25sdp"/>
+            android:layout_marginRight="@dimen/_25sdp"
+            android:layout_weight=".1"
+            android:gravity="right" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -74,19 +75,19 @@
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_25sdp"
                 android:layout_marginRight="@dimen/_25sdp"
-                android:paddingBottom="@dimen/_2sdp"
-                android:layout_height="wrap_content"
+                android:autofillHints=""
                 android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
+                android:drawablePadding="@dimen/_7sdp"
                 android:hint="@string/prompt_password"
-                android:textSize="@dimen/_12ssp"
                 android:imeActionLabel="@string/action_sign_in_short"
                 android:inputType="textPassword"
-                android:drawablePadding="@dimen/_7sdp"
                 android:maxLines="1"
-                android:autofillHints=""
-                android:singleLine="true" />
+                android:paddingBottom="@dimen/_2sdp"
+                android:singleLine="true"
+                android:textSize="@dimen/_12ssp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -94,12 +95,12 @@
             android:id="@+id/email_sign_in_button"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_30sdp"
-            android:textColor="@color/white"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_20sdp"
             android:background="@color/newLoginbtn"
             android:text="@string/login"
-            android:layout_marginTop="@dimen/_30sdp"
-            android:layout_marginLeft="@dimen/_20sdp"
-            android:layout_marginRight="@dimen/_20sdp"/>
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

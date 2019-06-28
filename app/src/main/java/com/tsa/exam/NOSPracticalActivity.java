@@ -305,13 +305,13 @@ public class NOSPracticalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.prac_card);
 
-        if (null == savedInstanceState) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             Camera2VideoFragment fragment = new Camera2VideoFragment();
             fragmentTransaction.add(R.id.container, fragment);
             fragmentTransaction.commit();
-        }
+
 
         createVideoFolder();
         createImageFolder();
