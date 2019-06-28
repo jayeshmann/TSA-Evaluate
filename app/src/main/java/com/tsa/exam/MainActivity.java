@@ -91,7 +91,10 @@ import java.util.List;
 
 import io.realm.Realm;
 //for cameraX
-
+import android.Manifest;
+import android.util.Size;
+import android.graphics.Matrix;
+import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -388,15 +391,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        mChronometer = findViewById(R.id.ivdeo_chronometer);
-        mTextureView = findViewById(R.id.textureView);
-        mStillImageButton = findViewById(R.id.cameraImageButton3);
+        mChronometer = (Chronometer) findViewById(R.id.ivdeo_chronometer);
+        mTextureView = (TextureView) findViewById(R.id.textureView);
+        mStillImageButton = (ImageButton)findViewById(R.id.cameraImageButton3) ;
 
 
 
         init();
         startExam();
-        totalQTv = findViewById(R.id.total_questions);
+        totalQTv = (TextView) findViewById(R.id.total_questions);
         totalQTv.setText("" + NUMBER_OF_QUESTIONS);
 
 
@@ -414,7 +417,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mRecordImageButton = findViewById(R.id.videoOnlineImageButtons);
+        mRecordImageButton = (ImageButton) findViewById(R.id.videoOnlineImageButtons);
         mRecordImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -893,14 +896,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void init() {
-        button = findViewById(R.id.submit);
+        button = (Button) findViewById(R.id.submit);
         @SuppressLint("RestrictedApi") final ContextThemeWrapper con = new ContextThemeWrapper(this, R.style.AlertS);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (isSubmitable()) {
                     android.app.AlertDialog dialog = new AlertDialog.Builder(con)
-                            .setIcon(R.drawable.logo)
+                            .setIcon(R.drawable.logonew)
                             .setMessage("You have attempted all questions\n" +
                                     "आपने सभी प्रश्नों का जवाब दे दिया है?\n" +
                                     "Do you want to Submit?\n" +
@@ -915,7 +918,7 @@ public class MainActivity extends AppCompatActivity {
                             .show();
 
 
-                    TextView textView = dialog.findViewById(android.R.id.message);
+                    TextView textView = (TextView) dialog.findViewById(android.R.id.message);
                     textView.setTextSize(18);
                 } else {
                     Toast.makeText(MainActivity.this, "Please Attempt All Questions", Toast.LENGTH_SHORT).show();
@@ -923,7 +926,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        seekbar = findViewById(R.id.seekBar);
+        seekbar = (SeekBar) findViewById(R.id.seekBar);
         seekbar.setProgress(15);
         seekbar.setMax(25);
         seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -993,16 +996,16 @@ public class MainActivity extends AppCompatActivity {
 
         questionNumber = binding.qtyTv1;
 
-        toolbar = findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
 
-        chronometer = findViewById(R.id.chronometer1);
+        chronometer = (TextView) findViewById(R.id.chronometer1);
 
         qtyTv = binding.questionTv;
 
     }
 
     public void setCheked(int position) {
-        RadioGroup radioGroup = binding.radioRoot;
+        RadioGroup radioGroup = (RadioGroup) binding.radioRoot;
         radioGroup.clearCheck();
         switch (position) {
             case 0:
@@ -1063,7 +1066,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setPallate(ArrayList<QuestionModel> questionModelArrayList) {
-        int[] qStatusId = new int[]{R.id.row1_bt1, R.id.row1_bt2, R.id.row1_bt3, R.id.row1_bt4, R.id.row1_bt5,
+        int qStatusId[] = new int[]{R.id.row1_bt1, R.id.row1_bt2, R.id.row1_bt3, R.id.row1_bt4, R.id.row1_bt5,
                 R.id.row2_bt1, R.id.row2_bt2, R.id.row2_bt3, R.id.row2_bt4, R.id.row2_bt5,
                 R.id.row3_bt1, R.id.row3_bt2, R.id.row3_bt3, R.id.row3_bt4, R.id.row3_bt5,
                 R.id.row4_bt1, R.id.row4_bt2, R.id.row4_bt3, R.id.row4_bt4, R.id.row4_bt5,
@@ -1076,10 +1079,10 @@ public class MainActivity extends AppCompatActivity {
                 R.id.row11_bt1, R.id.row11_bt2, R.id.row11_bt3, R.id.row11_bt4, R.id.row11_bt5,
                 R.id.row12_bt1, R.id.row12_bt2, R.id.row12_bt3, R.id.row12_bt4, R.id.row12_bt5};
 
-        Button[] qStatus = new Button[qStatusId.length];
+        Button qStatus[] = new Button[qStatusId.length];
 
         for (int i = 0; i < qStatusId.length; i++) {
-            qStatus[i] = findViewById(qStatusId[i]);
+            qStatus[i] = (Button) findViewById(qStatusId[i]);
             if (i < NUMBER_OF_QUESTIONS) {
                 qStatus[i].setVisibility(View.VISIBLE);
                 qStatus[i].setClickable(true);
@@ -1335,7 +1338,11 @@ public class MainActivity extends AppCompatActivity {
             return true;
         } else if (optCRb.isChecked()) {
             return true;
-        } else return optDRb.isChecked();
+        } else if (optDRb.isChecked()) {
+            return true;
+        } else {
+            return false;
+        }
 
     }
 

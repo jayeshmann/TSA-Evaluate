@@ -62,12 +62,12 @@ public class TestActivity extends AppCompatActivity {
             //Toast.makeText(context, json.getString("msg"), Toast.LENGTH_SHORT).show();
             @SuppressLint("RestrictedApi") final ContextThemeWrapper con = new ContextThemeWrapper(TestActivity.this, R.style.AlertS);
             android.app.AlertDialog dialog=new AlertDialog.Builder(con)
-                    .setIcon(R.drawable.logo)
+                    .setIcon(R.drawable.isdatlogo)
                     .setMessage(getResources().getString(R.string.pin_instruction2))
                     .setPositiveButton("OK", null)
                     .show();
 
-            TextView textView = dialog.findViewById(android.R.id.message);
+            TextView textView = (TextView) dialog.findViewById(android.R.id.message);
             textView.setTextSize(18);
         }
     }

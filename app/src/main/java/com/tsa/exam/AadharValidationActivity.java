@@ -61,12 +61,12 @@ public class AadharValidationActivity extends AppCompatActivity {
     }
 
     private void init() {
-        candidateImage = findViewById(R.id.candidate_image);
-        aadharImage = findViewById(R.id.aadhar_image);
-        otherIDImage = findViewById(R.id.other_id_image);
-        aadharID = findViewById(R.id.aadhar_number_et);
-        otherID = findViewById(R.id.other_id_et);
-        name = findViewById(R.id.candidate_name_et);
+        candidateImage = (ImageView)findViewById(R.id.candidate_image);
+        aadharImage  = (ImageView)findViewById(R.id.aadhar_image);
+        otherIDImage  = (ImageView)findViewById(R.id.other_id_image);
+        aadharID   = (EditText) findViewById(R.id.aadhar_number_et);
+        otherID  = (EditText)findViewById(R.id.other_id_et);
+        name  = (EditText)findViewById(R.id.candidate_name_et);
     }
 
     public void goToExaminationPage(View view) {
@@ -184,24 +184,24 @@ public class AadharValidationActivity extends AppCompatActivity {
                     aadharTime, aadharDate, canDate,canTime), AadharValidationActivity.this);
             //Toast.makeText(this, "SuccessFully Loged in", Toast.LENGTH_SHORT).show();
             android.app.AlertDialog dialog= new AlertDialog.Builder(AadharValidationActivity.this)
-                    .setIcon(R.drawable.logo)
+                    .setIcon(R.drawable.isdatlogo)
                     .setMessage("SuccessFully Loged in")
                     .setPositiveButton("OK", null)
                     .show();
 
-            TextView textView = dialog.findViewById(android.R.id.message);
+            TextView textView = (TextView) dialog.findViewById(android.R.id.message);
             textView.setTextSize(30);
             startActivity(new Intent(AadharValidationActivity.this, TestActivity.class));
 
         } else {
             //Toast.makeText(this, "Failed to Login", Toast.LENGTH_SHORT).show();
             android.app.AlertDialog dialog= new AlertDialog.Builder(AadharValidationActivity.this)
-                    .setIcon(R.drawable.logo)
+                    .setIcon(R.drawable.isdatlogo)
                     .setMessage("Failed to Login")
                     .setPositiveButton("OK", null)
                     .show();
 
-            TextView textView = dialog.findViewById(android.R.id.message);
+            TextView textView = (TextView) dialog.findViewById(android.R.id.message);
             textView.setTextSize(30);
 
 
