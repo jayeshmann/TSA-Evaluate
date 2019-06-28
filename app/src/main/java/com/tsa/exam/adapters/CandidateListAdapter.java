@@ -101,21 +101,6 @@ public class CandidateListAdapter extends RecyclerView.Adapter<CandidateListAdap
         return candidateDetailsModelArrayList.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
-        TextView candiadeUserId;
-        TextView candidateName;
-        Button addCandidate;
-        TextView batchID;
-
-        public ViewHolder(View view) {
-            super(view);
-            candiadeUserId = (TextView) view.findViewById(R.id.candiade_user_id);
-            candidateName = (TextView) view.findViewById(R.id.candidate_name);
-            batchID = (TextView) view.findViewById(R.id.batch_id);
-            addCandidate = (Button) view.findViewById(R.id.add_candidate);
-        }
-    }
-
     public void insaertCandidate(final int position) {
         //Showing the progress dialog
         final ProgressDialog progress = new ProgressDialog(context);
@@ -140,7 +125,7 @@ public class CandidateListAdapter extends RecyclerView.Adapter<CandidateListAdap
                                 msg="Candidate Is not Added Due To Slow Network";
                             }
                             android.app.AlertDialog dialog = new AlertDialog.Builder(con)
-                                    .setIcon(R.drawable.isdatlogo)
+                                    .setIcon(R.drawable.logo)
                                     .setMessage(msg)
                                     .setPositiveButton("OK", null)
                                     .show();
@@ -148,7 +133,7 @@ public class CandidateListAdapter extends RecyclerView.Adapter<CandidateListAdap
                             //Refreshing the candidate list
                             ((CandidateListActivity) context).refresh(null);
 
-                            TextView textView = (TextView) dialog.findViewById(android.R.id.message);
+                            TextView textView = dialog.findViewById(android.R.id.message);
                             textView.setTextSize(30);
 
                             /////////////////////////////////////////////////////////////////////////////////////////////
@@ -197,6 +182,21 @@ public class CandidateListAdapter extends RecyclerView.Adapter<CandidateListAdap
 
         //Adding request to the queue
         requestQueue.add(stringRequest);
+    }
+
+    class ViewHolder extends RecyclerView.ViewHolder {
+        TextView candiadeUserId;
+        TextView candidateName;
+        Button addCandidate;
+        TextView batchID;
+
+        public ViewHolder(View view) {
+            super(view);
+            candiadeUserId = view.findViewById(R.id.candiade_user_id);
+            candidateName = view.findViewById(R.id.candidate_name);
+            batchID = view.findViewById(R.id.batch_id);
+            addCandidate = view.findViewById(R.id.add_candidate);
+        }
     }
 
     public void parseJson(String myJson) throws JSONException {

@@ -19,7 +19,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_weight=".3"
-            app:srcCompat="@drawable/isdatlogo"/>
+            app:srcCompat="@drawable/logo" />
 
         <Button
             android:id="@+id/candidate_iv"
@@ -51,7 +51,7 @@
         android:id="@+id/aadhar_image"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        app:srcCompat="@drawable/isdatlogo"/>
+        app:srcCompat="@drawable/logo" />
 
         <EditText
             android:id="@+id/aadhar_number_et"
@@ -92,7 +92,7 @@
             android:id="@+id/other_id_image"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            app:srcCompat="@drawable/isdatlogo"/>
+            app:srcCompat="@drawable/logo" />
 
 
             <EditText

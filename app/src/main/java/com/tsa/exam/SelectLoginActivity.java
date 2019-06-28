@@ -5,11 +5,8 @@ import android.app.AlertDialog;
 import android.content.Intent;
 
 import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.ContextThemeWrapper;
@@ -38,9 +35,7 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 import android.Manifest;
-import android.util.Size;
-import android.graphics.Matrix;
-import java.util.concurrent.TimeUnit;
+
 import io.realm.Realm;
 import io.realm.RealmResults;
 import pub.devrel.easypermissions.AfterPermissionGranted;
@@ -159,7 +154,7 @@ public class SelectLoginActivity extends AppCompatActivity implements EasyPermis
             @SuppressLint("RestrictedApi") final ContextThemeWrapper con = new ContextThemeWrapper(SelectLoginActivity.this, R.style.AlertS);
 
             new AlertDialog.Builder(con)
-                    .setIcon(R.drawable.logonew)
+                    .setIcon(R.drawable.logo)
                     .setMessage(getResources().getString(R.string.login_popup1_eng) +
                             "\n" + getResources().getString(R.string.login_popup1_hin) )
                     .setPositiveButton("OK", null)
