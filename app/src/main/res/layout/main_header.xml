@@ -33,10 +33,10 @@
             android:layout_weight="0.28" />
 
 
-        <TextureView
+        <com.tsa.exam.AutoFitTextureView
             android:id="@+id/textureView"
-            android:layout_width="100dp"
-            android:layout_height="100dp" />
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="wrap_content" />
 
         <ImageButton
             android:id="@+id/videoOnlineImageButtons"

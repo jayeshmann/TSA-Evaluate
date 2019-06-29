@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int STATE_PREVIEW = 0;
     private static final int STATE_WAIT_LOCK = 1;
     private int mCaptureState = STATE_PREVIEW;
-    private TextureView mTextureView;
+    private AutoFitTextureView mTextureView;
 
 
     private TextureView.SurfaceTextureListener mSurfaceTextureListener = new TextureView.SurfaceTextureListener() {
@@ -391,15 +391,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        mChronometer = (Chronometer) findViewById(R.id.ivdeo_chronometer);
-        mTextureView = (TextureView) findViewById(R.id.textureView);
-        mStillImageButton = (ImageButton)findViewById(R.id.cameraImageButton3) ;
+        mChronometer = findViewById(R.id.ivdeo_chronometer);
+        mTextureView = findViewById(R.id.textureView);
+        mStillImageButton = findViewById(R.id.cameraImageButton3);
 
 
 
         init();
         startExam();
-        totalQTv = (TextView) findViewById(R.id.total_questions);
+        totalQTv = findViewById(R.id.total_questions);
         totalQTv.setText("" + NUMBER_OF_QUESTIONS);
 
 
@@ -417,7 +417,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mRecordImageButton = (ImageButton) findViewById(R.id.videoOnlineImageButtons);
+        mRecordImageButton = findViewById(R.id.videoOnlineImageButtons);
         mRecordImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -896,7 +896,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void init() {
-        button = (Button) findViewById(R.id.submit);
+        button = findViewById(R.id.submit);
         @SuppressLint("RestrictedApi") final ContextThemeWrapper con = new ContextThemeWrapper(this, R.style.AlertS);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -918,7 +918,7 @@ public class MainActivity extends AppCompatActivity {
                             .show();
 
 
-                    TextView textView = (TextView) dialog.findViewById(android.R.id.message);
+                    TextView textView = dialog.findViewById(android.R.id.message);
                     textView.setTextSize(18);
                 } else {
                     Toast.makeText(MainActivity.this, "Please Attempt All Questions", Toast.LENGTH_SHORT).show();
@@ -926,7 +926,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        seekbar = (SeekBar) findViewById(R.id.seekBar);
+        seekbar = findViewById(R.id.seekBar);
         seekbar.setProgress(15);
         seekbar.setMax(25);
         seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -996,16 +996,16 @@ public class MainActivity extends AppCompatActivity {
 
         questionNumber = binding.qtyTv1;
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
 
-        chronometer = (TextView) findViewById(R.id.chronometer1);
+        chronometer = findViewById(R.id.chronometer1);
 
         qtyTv = binding.questionTv;
 
     }
 
     public void setCheked(int position) {
-        RadioGroup radioGroup = (RadioGroup) binding.radioRoot;
+        RadioGroup radioGroup = binding.radioRoot;
         radioGroup.clearCheck();
         switch (position) {
             case 0:
@@ -1066,7 +1066,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setPallate(ArrayList<QuestionModel> questionModelArrayList) {
-        int qStatusId[] = new int[]{R.id.row1_bt1, R.id.row1_bt2, R.id.row1_bt3, R.id.row1_bt4, R.id.row1_bt5,
+        int[] qStatusId = new int[]{R.id.row1_bt1, R.id.row1_bt2, R.id.row1_bt3, R.id.row1_bt4, R.id.row1_bt5,
                 R.id.row2_bt1, R.id.row2_bt2, R.id.row2_bt3, R.id.row2_bt4, R.id.row2_bt5,
                 R.id.row3_bt1, R.id.row3_bt2, R.id.row3_bt3, R.id.row3_bt4, R.id.row3_bt5,
                 R.id.row4_bt1, R.id.row4_bt2, R.id.row4_bt3, R.id.row4_bt4, R.id.row4_bt5,
@@ -1079,10 +1079,10 @@ public class MainActivity extends AppCompatActivity {
                 R.id.row11_bt1, R.id.row11_bt2, R.id.row11_bt3, R.id.row11_bt4, R.id.row11_bt5,
                 R.id.row12_bt1, R.id.row12_bt2, R.id.row12_bt3, R.id.row12_bt4, R.id.row12_bt5};
 
-        Button qStatus[] = new Button[qStatusId.length];
+        Button[] qStatus = new Button[qStatusId.length];
 
         for (int i = 0; i < qStatusId.length; i++) {
-            qStatus[i] = (Button) findViewById(qStatusId[i]);
+            qStatus[i] = findViewById(qStatusId[i]);
             if (i < NUMBER_OF_QUESTIONS) {
                 qStatus[i].setVisibility(View.VISIBLE);
                 qStatus[i].setClickable(true);
@@ -1338,11 +1338,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         } else if (optCRb.isChecked()) {
             return true;
-        } else if (optDRb.isChecked()) {
-            return true;
-        } else {
-            return false;
-        }
+        } else return optDRb.isChecked();
 
     }
 
