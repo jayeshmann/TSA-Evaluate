@@ -18,7 +18,7 @@
             style="@style/LayoutWeightHorizontal"
             android:layout_marginLeft="10dp"
             android:layout_weight=".3"
-            android:src="@drawable/isdatlogo"
+            android:src="@drawable/teckutive"
             android:padding="4dp" />
 
         <LinearLayout

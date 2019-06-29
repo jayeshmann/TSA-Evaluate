@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,8 +22,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.tsa.exam.MainActivity;
 import com.tsa.exam.NOSPracticalActivity;
+import com.tsa.exam.Prac_VideoActivity;
 import com.tsa.exam.R;
 import com.tsa.exam.Utill.GLOBAL;
 import com.tsa.exam.database.DatabaseHandler;
@@ -42,30 +43,29 @@ import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
 
-/**
- * Created by Akhil Tripathi on 04-09-2017.
- */
-
-public class NOSPracSyncAdapter extends BaseAdapter {
-    private Context context;
-    private ArrayList<NOSPracticalModel> pracResultModels;
-    private ArrayList<NOSPracticalModel> nosPracticalModelArrayList;
+public class Prac_VideoAdapter extends BaseAdapter {
+    public static final String TAG = "ReqTag";
     EvaluateDB evaluateDB;
+    private Context context;
+    private ArrayList<ResultModel> pracvideoarraylist;
+    private ArrayList<NOSPracticalModel> nosPracticalModelArrayList;
 
-    public NOSPracSyncAdapter(Context context, ArrayList<NOSPracticalModel> pracResultModels) {
+    public Prac_VideoAdapter(ArrayList<ResultModel> pracvideoarraylist, Prac_VideoActivity context) {
+
+        this.pracvideoarraylist = pracvideoarraylist;
         this.context = context;
-        this.pracResultModels = pracResultModels;
-        evaluateDB = EvaluateDB.getInstance(context);
+
+
     }
 
     @Override
     public int getCount() {
-        return pracResultModels.size();
+        return pracvideoarraylist.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return pracResultModels.get(position);
+        return pracvideoarraylist.get(position);
     }
 
     @Override
@@ -75,24 +75,22 @@ public class NOSPracSyncAdapter extends BaseAdapter {
 
     @Override
     public View getView(final int position, View view, ViewGroup parent) {
-        final ViewHolder holder;
-        final NOSPracticalModel nosPracticalModel=pracResultModels.get(position);
+        final Prac_VideoAdapter.ViewHolder holder;
         if (view != null) {
             holder = (ViewHolder) view.getTag();
         } else {
-            LayoutInflater mInflater = (LayoutInflater)
-                    context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater mInflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
             view = mInflater.inflate(R.layout.sync_card, parent, false);
             holder = new ViewHolder(view);
             view.setTag(holder);
         }
 
-        holder.canID.setText(pracResultModels.get(position).getCandidateLoginId());
+        holder.canID.setText(pracvideoarraylist.get(position).getCandidateLoginID());
 
         holder.sync.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getQuestionsFromDb(nosPracticalModel.getCandidateLoginId());
+//                getQuestionsFromDb(.());
 
                 // rashmi
                 holder.sync.setVisibility(View.GONE);
@@ -148,11 +146,11 @@ public class NOSPracSyncAdapter extends BaseAdapter {
 
         /////////////////////////////////extra///////////////////////////////\
 
-       /* DatabaseHandler databaseHandler = new DatabaseHandler(context);
+        DatabaseHandler databaseHandler = new DatabaseHandler(context);
         //ResultModel localResultModel = databaseHandler.getResult(candidateID).get(0);
-        String exam_id = nosPracticalModelArrayList.get(0).getExamId();
-        String batch_id = nosPracticalModelArrayList.get(0).getBatchId();
-        String candidate_i = nosPracticalModelArrayList.get(0).getCandidateLoginId();
+        String exam_id = pracvideoarraylist.get(0).getExamID();
+        String batch_id = pracvideoarraylist.get(0).getBatchID();
+        String candidate_i = pracvideoarraylist.get(0).getCandidateLoginID();
         //String candidate_i = localResultModel.getCandidateLoginID();
         Toast.makeText(context, candidate_i, Toast.LENGTH_LONG).show();
         /// String batch_id = localResultModel.getBatchID();
@@ -188,7 +186,6 @@ public class NOSPracSyncAdapter extends BaseAdapter {
         databaseHandler.addVidDb(candidate_i, batch_id, exam_id, vid);
 
         ////////////////////////////////end///////////////////////////////
-*/
 
 
     }
@@ -202,7 +199,7 @@ public class NOSPracSyncAdapter extends BaseAdapter {
         String nos = "", question_id = "", total_marks = "", step1_marks = "", step2_marks = "",
                 step3_marks = "", step4_marks = "", step5_marks = "", step6_marks = "";
 
-        for (int i = 0; i < nosPracticalModelArrayList.size(); i++) {
+        for (int i = 0; i < pracvideoarraylist.size(); i++) {
             NOSPracticalModel localModel = nosPracticalModelArrayList.get(i);
             question_id = question_id + "*" + localModel.getQid();
             nos = nos + "*" + localModel.getNos();
@@ -286,20 +283,8 @@ public class NOSPracSyncAdapter extends BaseAdapter {
         submitResult(params);
     }
 
-    static class ViewHolder {
-        TextView canID;
-        ImageView sync;
-        TextView test_synced;
-
-        public ViewHolder(View view) {
-            canID = view.findViewById(R.id.candidate1);
-            sync = view.findViewById(R.id.sync1);
-
-            test_synced = view.findViewById(R.id.test_synced);
-        }
-    }
     /////////////////////////////////////extra////////////////////////
-  /*  private void addVideoSer(byte [] bytes, final String candidate_id, final String batch_id, final String exam_id) {
+    private void addVideoSer(byte[] bytes, final String candidate_id, final String batch_id, final String exam_id) {
 
         String uploadUrl = "http://tsassessors.in/ISDAT/evaluate_app/assessor_api/upload_candidate_pvideos.php";
         final RequestQueue rQueue;
@@ -316,7 +301,7 @@ public class NOSPracSyncAdapter extends BaseAdapter {
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(context, response, Toast.LENGTH_LONG).show();
-                        Log.e("Test done","Abcd");
+                        Log.e("Test done", "Abcd");
 
 //                        try {
 //                            JSONObject json = new JSONObject(response);
@@ -343,9 +328,9 @@ public class NOSPracSyncAdapter extends BaseAdapter {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("candidate_id",candidate_id );
-                params.put("batch_id",batch_id);
-                params.put("exam_id",exam_id);
+                params.put("candidate_id", candidate_id);
+                params.put("batch_id", batch_id);
+                params.put("exam_id", exam_id);
                 params.put("video", encodedFile);
 
                 return params;
@@ -354,8 +339,7 @@ public class NOSPracSyncAdapter extends BaseAdapter {
         };
         rQueue = Volley.newRequestQueue(context);
         rQueue.add(stringRequest);
-    }*/
-    ///////////////////////////end//////////////////////////////////////
+    }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public void getQuestionsFromDb(final String canID) {
@@ -363,7 +347,7 @@ public class NOSPracSyncAdapter extends BaseAdapter {
             @Override
             protected Void doInBackground(Void... params) {
                 nosPracticalModelArrayList = (ArrayList<NOSPracticalModel>) evaluateDB.getNosDao().loadUserById(canID);
-               Log.e("ffffff",nosPracticalModelArrayList.toString());
+                Log.e("ffffff", nosPracticalModelArrayList.toString());
                 return null;
             }
 
@@ -376,6 +360,7 @@ public class NOSPracSyncAdapter extends BaseAdapter {
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     }
+    ///////////////////////////end//////////////////////////////////////
 
     public NOSPracticalModel getOptMarks(final String canID, final String qID) {
         final NOSPracticalModel[] optMarks = {new NOSPracticalModel()};
@@ -396,5 +381,19 @@ public class NOSPracSyncAdapter extends BaseAdapter {
         return optMarks[0];
     }
 
+    static class ViewHolder {
+        TextView canID;
+        ImageView sync;
+        TextView test_synced;
+
+        public ViewHolder(View view) {
+            canID = view.findViewById(R.id.candidate1);
+            sync = view.findViewById(R.id.sync1);
+
+            test_synced = view.findViewById(R.id.test_synced);
+        }
+    }
+
 
 }
+

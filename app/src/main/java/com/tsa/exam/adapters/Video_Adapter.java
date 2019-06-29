@@ -1,3 +1,4 @@
+/*
 package com.tsa.exam.adapters;
 
 import android.app.Activity;
@@ -105,7 +106,8 @@ public class Video_Adapter extends BaseAdapter {
 
     public void submit() {
 
-    /* /int i = 0; i < nosPracticalModelArrayList.size(); i++) {
+    */
+/* /int i = 0; i < nosPracticalModelArrayList.size(); i++) {
               NOSPracticalModel localModel = nosPracticalModelArrayList.get(i);
               question_id = question_id + "*" + localModel.getQid();
               nos = nos + "*" + localModel.getNos();
@@ -185,13 +187,15 @@ public class Video_Adapter extends BaseAdapter {
           params.put("step6_marks", step6_marks);
 
           Log.e("params", params.toString());
-*/
+*//*
+
         submitResult();
     }
 
     public void submitResult() {
         //Showing the progress dialog
-       /* final ProgressDialog progressDialog = new ProgressDialog(context);
+       */
+/* final ProgressDialog progressDialog = new ProgressDialog(context);
         progressDialog.setTitle("processing");
         progressDialog.show();
 
@@ -231,7 +235,8 @@ public class Video_Adapter extends BaseAdapter {
         RequestQueue requestQueue = Volley.newRequestQueue(context);
 
         //Adding request to the queue
-        requestQueue.add(stringRequest);*/
+        requestQueue.add(stringRequest);*//*
+
 
         /////////////////////////////////extra///////////////////////////////\
 
@@ -366,3 +371,4 @@ public class Video_Adapter extends BaseAdapter {
 
 
 
+*/

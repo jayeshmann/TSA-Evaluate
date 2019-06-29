@@ -73,7 +73,7 @@ public class BatchDetailsActivity extends AppCompatActivity {
 
     private void init() {
         nosPracticalModelArrayList=new ArrayList<>();
-        listView = (ListView) findViewById(R.id.candidate_list);
+        listView = findViewById(R.id.candidate_list);
         context=BatchDetailsActivity.this;
         evaluateDB = EvaluateDB.getInstance(context);
     }
@@ -126,7 +126,7 @@ public class BatchDetailsActivity extends AppCompatActivity {
 
                             @SuppressLint("RestrictedApi") final ContextThemeWrapper con = new ContextThemeWrapper(BatchDetailsActivity.this, R.style.AlertS);
                             new AlertDialog.Builder(con)
-                                    .setIcon(R.drawable.isdatlogo)
+                                    .setIcon(R.drawable.teckutive)
                                     .setMessage(json.getString("msg"))
                                     .setPositiveButton("OK", null)
                                     .show();
@@ -193,7 +193,7 @@ public class BatchDetailsActivity extends AppCompatActivity {
 
                             @SuppressLint("RestrictedApi") final ContextThemeWrapper con = new ContextThemeWrapper(BatchDetailsActivity.this, R.style.AlertS);
                             new AlertDialog.Builder(con)
-                                    .setIcon(R.drawable.isdatlogo)
+                                    .setIcon(R.drawable.teckutive)
                                     .setMessage(json.getString("msg"))
                                     .setPositiveButton("OK", null)
                                     .show();
@@ -265,7 +265,7 @@ public class BatchDetailsActivity extends AppCompatActivity {
 
             @SuppressLint("RestrictedApi") final ContextThemeWrapper con = new ContextThemeWrapper(BatchDetailsActivity.this, R.style.AlertS);
             new AlertDialog.Builder(con)
-                    .setIcon(R.drawable.isdatlogo)
+                    .setIcon(R.drawable.teckutive)
                     .setMessage(address + ":" + address)
                     .setPositiveButton("OK", null)
                     .show();

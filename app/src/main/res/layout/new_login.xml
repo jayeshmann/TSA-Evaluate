@@ -19,7 +19,7 @@
         android:elevation="@dimen/_5sdp"
         android:padding="@dimen/_20sdp"
         android:scaleType="centerCrop"
-        android:src="@drawable/isdatlogo" />
+        android:src="@drawable/teckutive" />
 
     <LinearLayout
         android:id="@+id/profile_layout"

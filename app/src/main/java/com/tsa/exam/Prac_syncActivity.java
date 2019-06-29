@@ -12,10 +12,14 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.tsa.exam.adapters.NOSPracSyncAdapter;
+import com.tsa.exam.adapters.PracVideoAdapter;
 import com.tsa.exam.adapters.TestSyncAdaptar;
+/*
 import com.tsa.exam.adapters.Video_Adapter;
+*/
 import com.tsa.exam.database.DatabaseHandler;
 import com.tsa.exam.database.EvaluateDB;
 import com.tsa.exam.model.NOSPracticalModel;
@@ -25,9 +29,8 @@ import java.util.ArrayList;
 
 public class Prac_syncActivity extends Activity {
 
-    Video_Adapter video_adapter;
-    LinearLayoutManager layoutManager;
-    //   private ListView theoryResultListView;
+    /*Video_Adapter video_adapter;*/
+
     private ListView practicalResultListView;
     private ArrayList<ResultModel> resultModelArrayList = new ArrayList<>();
     private TestSyncAdaptar testSyncAdaptar;
@@ -44,6 +47,10 @@ public class Prac_syncActivity extends Activity {
     private Button text_practical;
     private Button btn_videosync;
 
+    PracVideoAdapter pracVideoAdapter;
+    LinearLayoutManager layoutManager;
+    //  Recycler view
+    private RecyclerView recylist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,29 +59,27 @@ public class Prac_syncActivity extends Activity {
 
         context = Prac_syncActivity.this;
         evaluateDB = EvaluateDB.getInstance(context);
-        sync_videolistview = findViewById(R.id.sync_video);
         text_practical = findViewById(R.id.text_prac_video_sync);
         practicalResultListView = findViewById(R.id.sync_practical);
+///  Recyclerview code
+       /* recylist = (RecyclerView)findViewById(R.id.recycler_prac);
 
+
+        pracVideoAdapter=new PracVideoAdapter(this,nosPracticalModelArrayList);
+        recylist.setAdapter(pracVideoAdapter);
+        recylist.setFocusable(false);
+*/
         btn_videosync = findViewById(R.id.btn_videosync);
         btn_videosync.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                sync_videolistview.setVisibility(View.VISIBLE);
-                databaseHandler = new DatabaseHandler(getApplicationContext());
-
-                //////////Refresh Theory Result///////////////
-                refresh();
-                //////////////////////////////////////////////
-//                getQuestionsFromDb();
+                Intent practical = new Intent(Prac_syncActivity.this, Prac_VideoActivity.class);
+                startActivity(practical);
 
             }
         });
 
-        // resultModelArrayList = databaseHandler.getAllResult();
-        video_adapter = new Video_Adapter(nosPracticalModelArrayList, Prac_syncActivity.this);
-        sync_videolistview.setAdapter(video_adapter);
 
         text_practical.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,19 +107,6 @@ public class Prac_syncActivity extends Activity {
 
 
         }
-
-
-
-//        text_practical.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-////                theory.setTextColor(getResources().getColor(R.color.white));
-////                practical.setTextColor(getResources().getColor(R.color.green));
-//                practicalResultListView.setVisibility(View.VISIBLE);
-////                theoryResultListView.setVisibility(View.GONE);
-//            }
-//        });
-
 
 
     public void refresh()
