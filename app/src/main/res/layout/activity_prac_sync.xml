@@ -53,23 +53,22 @@
 
     </ListView>
 
-    <ListView
-        android:id="@+id/sync_video"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:divider="@null"
-        android:visibility="visible">
-
-    </ListView>
-
-    <!-- <android.support.v7.widget.RecyclerView
+    <!-- <ListView
+         android:id="@+id/sync_video"
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
-         android:id="@+id/recylist"
-         >
-     </android.support.v7.widget.RecyclerView>
+         android:divider="@null"
+         android:visibility="visible">
 
- -->
+     </ListView>-->
+
+    <!--<android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recycler_prac"
+        >
+    </android.support.v7.widget.RecyclerView>
+-->
 
 
 </LinearLayout>

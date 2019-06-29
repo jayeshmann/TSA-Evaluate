@@ -15,21 +15,23 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
     <uses-feature android:name="android.hardware.camera2" />
 
-
-
     <application
+
         android:allowBackup="false"
-        android:icon="@drawable/isdatlogo"
+        android:icon="@drawable/teckutive"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
 
-        <uses-library android:name="org.apache.http.legacy" android:required="false" />
 
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
 
         <receiver
             android:name=".DeviceAdminReceiver"
@@ -45,7 +47,6 @@
                 <action android:name="android.intent.action.PROFILE_PROVISIONING_COMPLETE" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
-
         </receiver>
 
         <activity
@@ -104,8 +105,7 @@
         <activity
             android:name=".PracticalActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <!-- <activity -->
+            android:theme="@style/Theme.AppCompat.NoActionBar" /> <!-- <activity -->
         <!-- android:name=".NOSPracticalActivity" -->
         <!-- android:label="Ca" -->
         <!-- android:screenOrientation="portrait" /> -->
@@ -117,14 +117,10 @@
             android:name=".TestSyncActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-
-
         <activity
             android:name=".NOSPracticalActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
-
         <activity
             android:name=".PracticalLoginActivity"
             android:screenOrientation="portrait" />
@@ -143,17 +139,22 @@
         <activity
             android:name=".VideoActivity"
             android:label="@string/title_activity_video"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light" />
         <activity
             android:name=".Theory_syncActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Prac_syncActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
 
-        </activity>
+        <activity
+            android:name=".Prac_VideoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light" />
+
+
     </application>
 
 </manifest>

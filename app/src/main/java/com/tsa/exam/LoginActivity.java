@@ -131,7 +131,7 @@ public class LoginActivity extends AppCompatActivity {
         //logo change
 
         Glide.with(LoginActivity.this).asBitmap()
-                .load(R.drawable.isdatlogo)
+                .load(R.drawable.teckutive)
                 .centerCrop().into(new BitmapImageViewTarget(userProfilePhoto) {
             @Override
             protected void setResource(Bitmap resource) {
@@ -210,7 +210,7 @@ public class LoginActivity extends AppCompatActivity {
                                 @SuppressLint("RestrictedApi") final ContextThemeWrapper con = new ContextThemeWrapper(LoginActivity.this, R.style.AlertS);
 
                                 android.app.AlertDialog dialog = new AlertDialog.Builder(con)
-                                        .setIcon(R.drawable.isdatlogo)
+                                        .setIcon(R.drawable.teckutive)
                                         .setMessage(message)
                                         .setPositiveButton("OK", null)
                                         .show();
@@ -293,7 +293,7 @@ public class LoginActivity extends AppCompatActivity {
         if (userName.trim().equals("")) {
             //Toast.makeText(this, "SuccessFully Loged in", Toast.LENGTH_SHORT).show();
             android.app.AlertDialog dialog = new AlertDialog.Builder(LoginActivity.this)
-                    .setIcon(R.drawable.isdatlogo)
+                    .setIcon(R.drawable.teckutive)
                     .setMessage("Please Enter userName")
                     .setPositiveButton("OK", null)
                     .show();
@@ -306,7 +306,7 @@ public class LoginActivity extends AppCompatActivity {
             //Toast.makeText(this, "Please Enter Password", Toast.LENGTH_SHORT).show();
             //Toast.makeText(this, "SuccessFully Loged in", Toast.LENGTH_SHORT).show();
             android.app.AlertDialog dialog = new AlertDialog.Builder(LoginActivity.this)
-                    .setIcon(R.drawable.isdatlogo)
+                    .setIcon(R.drawable.teckutive)
                     .setMessage("Please Enter Password")
                     .setPositiveButton("OK", null)
                     .show();

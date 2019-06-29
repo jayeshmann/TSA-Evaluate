@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Theory_syncActivity">
+
+    <include layout="@layout/home_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/rounded_layout"
+        android:weightSum="1.0">
+
+        <Button
+            android:id="@+id/text_theory"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:background="@drawable/grid_bg_green"
+            android:text="Theory Sync "
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/video_sync_without_theory"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:background="@drawable/white_background"
+            android:text="Video Sync"
+            android:textColor="@color/green"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold" />
+        <!--android:onClick="syncPractical"-->
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/sync_theory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:visibility="visible">
+
+    </ListView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <!--<ListView-->
+        <!--android:id="@+id/sync_theory_video"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:visibility="gone"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:divider="@null"/>-->
+
+
+        <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/recycler_video"-->
+        <!--android:visibility="visible"-->
+        <!--android:layout_marginTop="10dp">-->
+        <!--</android.support.v7.widget.RecyclerView>-->
+    </LinearLayout>
+
+</LinearLayout>
