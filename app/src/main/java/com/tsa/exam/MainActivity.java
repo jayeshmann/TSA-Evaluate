@@ -968,7 +968,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
         optCRb = binding.optCRb;
         optCRb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
