@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int STATE_PREVIEW = 0;
     private static final int STATE_WAIT_LOCK = 1;
     private int mCaptureState = STATE_PREVIEW;
-    private AutoFitTextureView mTextureView;
+    private TextureView mTextureView;
 
 
     private TextureView.SurfaceTextureListener mSurfaceTextureListener = new TextureView.SurfaceTextureListener() {
@@ -968,6 +968,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
         optCRb = binding.optCRb;
         optCRb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
