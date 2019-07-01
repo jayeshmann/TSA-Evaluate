@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".VideoActivity">
+
+
+    <include layout="@layout/home_toolbar" />
+
+
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="70dp"
+               android:background="@drawable/rounded_layout"
+               android:weightSum="1.0">
+
+               <Button
+                   android:id="@+id/text_theory2"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:layout_weight=".5"
+                   android:background="@drawable/grid_bg_green"
+                   android:text=" Click here to Sync Theory Video "
+                   android:textAlignment="center"
+                   android:textAllCaps="true"
+                   android:textColor="@color/white"
+                   android:textSize="@dimen/_10sdp"
+                   android:textStyle="bold" />
+
+               <!--android:onClick="syncPractical"-->
+           </LinearLayout>
+
+           <!--android:onClick="syncPractical"-->
+
+
+       <ListView
+           android:id="@+id/sync_video_theory"
+           android:layout_width="match_parent"
+           android:visibility="visible"
+           android:layout_height="match_parent"
+           android:divider="@null">
+
+       </ListView>
+
+
+
+
+   </LinearLayout>
+

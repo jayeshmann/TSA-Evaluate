@@ -104,93 +104,18 @@ public class NOSPracSyncAdapter extends BaseAdapter {
     }
 
 
-    public void submitResult(final Map<String, String> paramas) {
-        //Showing the progress dialog
-        final ProgressDialog progressDialog = new ProgressDialog(context);
-        progressDialog.setTitle("processing");
-        progressDialog.show();
 
+    static class ViewHolder {
+        TextView canID;
+        ImageView sync;
+        TextView test_synced;
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, GLOBAL.BASE_URL + "practical/submit_nos_practical_result.php",
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String s) {
-                        Log.e("Result", s);
-                        JSONObject json = null;
-                        progressDialog.dismiss();
-                        try {
-                            json = new JSONObject(s);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                            Toast.makeText(context, "Some issue in creating Result", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError volleyError) {
-                        //Showing toast
-                        Toast.makeText(context, "" + volleyError, Toast.LENGTH_SHORT).show();
-                        progressDialog.dismiss();
-                    }
-                }) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                return paramas;
-            }
-        };
+        public ViewHolder(View view) {
+            canID = (TextView) view.findViewById(R.id.candidate1);
+            sync = (ImageView) view.findViewById(R.id.sync1);
 
-        //Creating a Request Queue
-        RequestQueue requestQueue = Volley.newRequestQueue(context);
-
-        //Adding request to the queue
-        requestQueue.add(stringRequest);
-
-        /////////////////////////////////extra///////////////////////////////\
-
-       /* DatabaseHandler databaseHandler = new DatabaseHandler(context);
-        //ResultModel localResultModel = databaseHandler.getResult(candidateID).get(0);
-        String exam_id = nosPracticalModelArrayList.get(0).getExamId();
-        String batch_id = nosPracticalModelArrayList.get(0).getBatchId();
-        String candidate_i = nosPracticalModelArrayList.get(0).getCandidateLoginId();
-        //String candidate_i = localResultModel.getCandidateLoginID();
-        Toast.makeText(context, candidate_i, Toast.LENGTH_LONG).show();
-        /// String batch_id = localResultModel.getBatchID();
-        Toast.makeText(context, batch_id, Toast.LENGTH_LONG).show();
-        // String exam_id = localResultModel.getExamID();
-        String vid = "";
-        //String path = Environment.getExternalStorageDirectory()+"//Movies//camera2VideoImage//"+ MainActivity.getFile();
-        File file = null;
-        try {
-
-
-            file = new File(NOSPracticalActivity.getFileName());
-            Toast.makeText(context, "" +
-                    "Synced Success both Exam And Video", Toast.LENGTH_LONG).show();
-
-            FileInputStream is = new FileInputStream(file);
-            byte[] bytes = new byte[(int) file.length()];
-            ByteArrayOutputStream buffer = new ByteArrayOutputStream();
-            int nRead;
-            byte[] data = new byte[1024];
-            while ((nRead = is.read(data, 0, data.length)) != -1) {
-                buffer.write(data, 0, nRead);
-            }
-            buffer.flush();
-            bytes = buffer.toByteArray();
-            vid = new String(bytes);
-
-            //addVideoSer(bytes,candidate_i,batch_id,exam_id);
-        } catch (Exception e) {
-            Toast.makeText(context, "Error in calling addvideo", Toast.LENGTH_LONG).show();
-            // Toast.makeText(context,path,Toast.LENGTH_LONG).show();
+            test_synced = (TextView)view.findViewById(R.id.test_synced);
         }
-        databaseHandler.addVidDb(candidate_i, batch_id, exam_id, vid);
-
-        ////////////////////////////////end///////////////////////////////
-*/
-
-
     }
 
     public void submit() {
@@ -286,20 +211,102 @@ public class NOSPracSyncAdapter extends BaseAdapter {
         submitResult(params);
     }
 
-    static class ViewHolder {
-        TextView canID;
-        ImageView sync;
-        TextView test_synced;
+    public void submitResult(final Map<String, String> paramas) {
+        //Showing the progress dialog
+        final ProgressDialog progressDialog = new ProgressDialog(context);
+        progressDialog.setTitle("processing");
+        progressDialog.show();
 
-        public ViewHolder(View view) {
-            canID = view.findViewById(R.id.candidate1);
-            sync = view.findViewById(R.id.sync1);
 
-            test_synced = view.findViewById(R.id.test_synced);
+
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, GLOBAL.BASE_URL + "practical/submit_nos_practical_result.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String s) {
+                        Log.e("Result", s);
+                        JSONObject json = null;
+                        progressDialog.dismiss();
+                        try {
+                            json = new JSONObject(s);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(context, "Some issue in creating Result", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        //Showing toast
+                        Toast.makeText(context, "" + volleyError, Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                return paramas;
+            }
+        };
+
+        //Creating a Request Queue
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
+
+        //Adding request to the queue
+        requestQueue.add(stringRequest);
+
+        /////////////////////////////////extra///////////////////////////////\
+
+        DatabaseHandler databaseHandler=new DatabaseHandler(context);
+        //ResultModel localResultModel = databaseHandler.getResult(candidateID).get(0);
+        String exam_id = nosPracticalModelArrayList.get(0).getExamId();
+        String batch_id = nosPracticalModelArrayList.get(0).getBatchId();
+        String candidate_i = nosPracticalModelArrayList.get(0).getCandidateLoginId();
+        //String candidate_i = localResultModel.getCandidateLoginID();
+        Toast.makeText(context,candidate_i,Toast.LENGTH_LONG).show();
+        /// String batch_id = localResultModel.getBatchID();
+        Toast.makeText(context,batch_id,Toast.LENGTH_LONG).show();
+        // String exam_id = localResultModel.getExamID();
+        String vid="";
+        //String path = Environment.getExternalStorageDirectory()+"//Movies//camera2VideoImage//"+ MainActivity.getFile();
+        File file = null;
+        try {
+
+
+            file = new File(NOSPracticalActivity.getFileName());
+            Toast.makeText(context,"" +
+                    "Synced Success both Exam And Video",Toast.LENGTH_LONG).show();
+
+            FileInputStream is = new FileInputStream(file);
+            byte[] bytes = new byte[(int) file.length()];
+            ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+            int nRead;
+            byte[] data = new byte[1024];
+            while ((nRead = is.read(data, 0, data.length)) != -1) {
+                buffer.write(data, 0, nRead);
+            }
+            buffer.flush();
+            bytes = buffer.toByteArray();
+            vid = new String(bytes);
+
+            addVideoSer(bytes,candidate_i,batch_id,exam_id);
+        }catch(Exception e){
+            Toast.makeText(context,"Error in calling addvideo",Toast.LENGTH_LONG).show();
+            // Toast.makeText(context,path,Toast.LENGTH_LONG).show();
         }
+        databaseHandler.addVidDb(candidate_i,batch_id,exam_id,vid);
+
+
+
+
+
+        ////////////////////////////////end///////////////////////////////
+
+
+
     }
     /////////////////////////////////////extra////////////////////////
-  /*  private void addVideoSer(byte [] bytes, final String candidate_id, final String batch_id, final String exam_id) {
+    private void addVideoSer(byte [] bytes, final String candidate_id, final String batch_id, final String exam_id) {
 
         String uploadUrl = "http://tsassessors.in/ISDAT/evaluate_app/assessor_api/upload_candidate_pvideos.php";
         final RequestQueue rQueue;
@@ -354,7 +361,7 @@ public class NOSPracSyncAdapter extends BaseAdapter {
         };
         rQueue = Volley.newRequestQueue(context);
         rQueue.add(stringRequest);
-    }*/
+    }
     ///////////////////////////end//////////////////////////////////////
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -363,7 +370,7 @@ public class NOSPracSyncAdapter extends BaseAdapter {
             @Override
             protected Void doInBackground(Void... params) {
                 nosPracticalModelArrayList = (ArrayList<NOSPracticalModel>) evaluateDB.getNosDao().loadUserById(canID);
-               Log.e("ffffff",nosPracticalModelArrayList.toString());
+                Log.e("ffffff",nosPracticalModelArrayList.toString());
                 return null;
             }
 

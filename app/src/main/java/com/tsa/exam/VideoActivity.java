@@ -3,7 +3,6 @@ package com.tsa.exam;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -20,21 +19,25 @@ import java.util.ArrayList;
 
 public class VideoActivity extends AppCompatActivity {
 
-    EvaluateDB evaluateDB;
     private ArrayList<ResultModel> videoModelArrayList;
     //   private ListView theoryResultListView;
     private ListView videoListView;
     private VideosyncAdapter videoSyncAdaptar;
     private DatabaseHandler databaseHandler;
     private ImageView home;
-    private Context context;
 
-    //    RecyclerView recycler_videos;
+
+    private Context context;
+    EvaluateDB evaluateDB;
+
+//    RecyclerView recycler_videos;
 //    Video_Adapter video_adapter;
 //    LinearLayoutManager layoutManager;
 //    ArrayList<VideoModel> video_list = new ArrayList<>();
+
     private Button text_practical;
     private Button text_prac_video_sync;
+
 
 
     @Override
@@ -42,12 +45,12 @@ public class VideoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
 
-        context = VideoActivity.this;
+        context= VideoActivity.this;
         evaluateDB = EvaluateDB.getInstance(context);
 
-        text_practical = findViewById(R.id.text_theory2);
+        text_practical = (Button)findViewById(R.id.text_theory2) ;
 
-        videoListView = findViewById(R.id.sync_video_theory);
+        videoListView = (ListView) findViewById(R.id.sync_video_theory);
 
 //        recycler_videos = (RecyclerView)findViewById(R.id.recycler_videos);
 //
@@ -58,6 +61,8 @@ public class VideoActivity extends AppCompatActivity {
 //        video_adapter=new Video_Adapter(this,video_list);
 //        recycler_videos.setAdapter(video_adapter);
 //        recycler_videos.setFocusable(false);
+
+
 
 
         text_practical.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +82,9 @@ public class VideoActivity extends AppCompatActivity {
         });
 
 
-        home = findViewById(R.id.home);
+
+
+        home=(ImageView)findViewById(R.id.home);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,6 +94,7 @@ public class VideoActivity extends AppCompatActivity {
 
 
     }
+
 
 
 //        text_practical.setOnClickListener(new View.OnClickListener() {
@@ -100,14 +108,18 @@ public class VideoActivity extends AppCompatActivity {
 //        });
 
 
-    public void refresh() {
-        if (videoModelArrayList != null) {
+
+    public void refresh()
+    {
+        if(videoModelArrayList!=null) {
             videoModelArrayList.clear();
         }
         videoModelArrayList = databaseHandler.getAllResult();
         videoSyncAdaptar = new VideosyncAdapter(videoModelArrayList, VideoActivity.this);
         videoListView.setAdapter(videoSyncAdaptar);
     }
+
+
 
 
 }

@@ -73,7 +73,7 @@ public class BatchDetailsActivity extends AppCompatActivity {
 
     private void init() {
         nosPracticalModelArrayList=new ArrayList<>();
-        listView = findViewById(R.id.candidate_list);
+        listView = (ListView) findViewById(R.id.candidate_list);
         context=BatchDetailsActivity.this;
         evaluateDB = EvaluateDB.getInstance(context);
     }

@@ -1,4 +1,3 @@
-/*
 package com.tsa.exam.adapters;
 
 import android.app.Activity;
@@ -76,17 +75,18 @@ public class Video_Adapter extends BaseAdapter {
 
     @Override
     public View getView(final int position, View view, ViewGroup parent) {
-        final NOSPracSyncAdapter.ViewHolder holder;
-        final NOSPracticalModel nosPracticalModel = pracResultModels.get(position);
+           final ViewHolder holder;
+        final NOSPracticalModel nosPracticalModel=pracResultModels.get(position);
         if (view != null) {
-            holder = (NOSPracSyncAdapter.ViewHolder) view.getTag();
+            holder = (ViewHolder) view.getTag();
         } else {
             LayoutInflater mInflater = (LayoutInflater)
                     context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
             view = mInflater.inflate(R.layout.sync_card, parent, false);
-            holder = new NOSPracSyncAdapter.ViewHolder(view);
+            holder = new ViewHolder(view);
             view.setTag(holder);
         }
+
 
         holder.canID.setText(pracResultModels.get(position).getCandidateLoginId());
 
@@ -106,8 +106,7 @@ public class Video_Adapter extends BaseAdapter {
 
     public void submit() {
 
-    */
-/* /int i = 0; i < nosPracticalModelArrayList.size(); i++) {
+    /* /int i = 0; i < nosPracticalModelArrayList.size(); i++) {
               NOSPracticalModel localModel = nosPracticalModelArrayList.get(i);
               question_id = question_id + "*" + localModel.getQid();
               nos = nos + "*" + localModel.getNos();
@@ -187,15 +186,13 @@ public class Video_Adapter extends BaseAdapter {
           params.put("step6_marks", step6_marks);
 
           Log.e("params", params.toString());
-*//*
-
+*/
         submitResult();
     }
 
     public void submitResult() {
         //Showing the progress dialog
-       */
-/* final ProgressDialog progressDialog = new ProgressDialog(context);
+       /* final ProgressDialog progressDialog = new ProgressDialog(context);
         progressDialog.setTitle("processing");
         progressDialog.show();
 
@@ -235,8 +232,7 @@ public class Video_Adapter extends BaseAdapter {
         RequestQueue requestQueue = Volley.newRequestQueue(context);
 
         //Adding request to the queue
-        requestQueue.add(stringRequest);*//*
-
+        requestQueue.add(stringRequest);*/
 
         /////////////////////////////////extra///////////////////////////////\
 
@@ -371,4 +367,3 @@ public class Video_Adapter extends BaseAdapter {
 
 
 
-*/

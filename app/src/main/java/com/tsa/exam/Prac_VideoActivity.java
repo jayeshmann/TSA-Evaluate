@@ -1,25 +1,22 @@
 package com.tsa.exam;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.tsa.exam.adapters.Prac_VideoAdapter;
-import com.tsa.exam.adapters.TestSyncAdaptar;
 import com.tsa.exam.database.DatabaseHandler;
-import com.tsa.exam.model.NOSPracticalModel;
 import com.tsa.exam.model.ResultModel;
 
 import java.util.ArrayList;
 
 public class Prac_VideoActivity extends AppCompatActivity {
 
-    private Prac_VideoAdapter prac_videoAdapter;
+  private Prac_VideoAdapter prac_videoAdapter;
     private ListView sync_video_practical;
     private ArrayList<ResultModel> pracvideoarraylist;
     //   Arraylist for result
@@ -33,9 +30,9 @@ public class Prac_VideoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prac__video);
-        prac_video = findViewById(R.id.prac_video);
+        prac_video = (Button)findViewById(R.id.prac_video);
 
-        sync_video_practical = findViewById(R.id.sync_video_practical);
+        sync_video_practical = (ListView)findViewById(R.id.sync_video_practical);
 /*
 
         home=(ImageView)findViewById(R.id.home);
@@ -62,11 +59,16 @@ public class Prac_VideoActivity extends AppCompatActivity {
         });
 
 
+
+
+
+
+
     }
 
     private void refresh() {
 
-        if (pracvideoarraylist != null) {
+        if(pracvideoarraylist!=null) {
             pracvideoarraylist.clear();
         }
 

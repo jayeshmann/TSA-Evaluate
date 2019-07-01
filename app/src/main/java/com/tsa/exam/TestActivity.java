@@ -67,7 +67,7 @@ public class TestActivity extends AppCompatActivity {
                     .setPositiveButton("OK", null)
                     .show();
 
-            TextView textView = dialog.findViewById(android.R.id.message);
+            TextView textView = (TextView) dialog.findViewById(android.R.id.message);
             textView.setTextSize(18);
         }
     }

@@ -12,7 +12,7 @@ import com.tsa.exam.model.NOSPracticalModel;
  * Created by RajkumarMann on 15-02-2018.
  */
 
-@Database(entities = { NOSPracticalModel.class }, version = 1,exportSchema = false)
+@Database(entities = { NOSPracticalModel.class }, version = 2,exportSchema = false)
 public abstract class EvaluateDB extends RoomDatabase {
 
     private static final String DB_NAME = "evaluatedb.db";
