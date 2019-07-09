@@ -1,11 +1,10 @@
 package com.tsa.exam;
 
-import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -14,7 +13,6 @@ import android.widget.Toast;
 
 import com.tsa.exam.adapters.NOSPracSyncAdapter;
 import com.tsa.exam.adapters.TestSyncAdaptar;
-
 import com.tsa.exam.database.DatabaseHandler;
 import com.tsa.exam.database.EvaluateDB;
 import com.tsa.exam.model.NOSPracticalModel;
@@ -41,13 +39,13 @@ public class Theory_syncActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_theory_sync);
-        context=Theory_syncActivity.this;
+        context= Theory_syncActivity.this;
         evaluateDB = EvaluateDB.getInstance(context);
 
         text_theory = findViewById(R.id.text_theory);
 
-        video_sync = findViewById(R.id.video_sync_without_theory);
-        theoryResultListView = findViewById(R.id.sync_theory);
+        video_sync = (Button)findViewById(R.id.video_sync_without_theory) ;
+        theoryResultListView = (ListView) findViewById(R.id.sync_theory);
 
 
 
@@ -68,12 +66,19 @@ public class Theory_syncActivity extends Activity {
             }
         });
 
+        video_sync.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Theory_syncActivity.this, VideoActivity.class));
+            }
+        });
+
 
         home = findViewById(R.id.home);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Theory_syncActivity.this,SelectLoginActivity.class));
+                startActivity(new Intent(Theory_syncActivity.this, SelectLoginActivity.class));
 
 
             }

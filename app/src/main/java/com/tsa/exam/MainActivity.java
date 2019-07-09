@@ -37,6 +37,7 @@ import android.os.CountDownTimer;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.os.SystemClock;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.util.Log;
@@ -206,53 +207,8 @@ public class MainActivity extends AppCompatActivity {
     private String mCameraId;
     private Size mPreviewSize;
     private Size mVideoSize;
-    private Size mImageSize;
-    private ImageReader mImageReader;
-    private final ImageReader.OnImageAvailableListener mOnImageAvailableListener = new
-            ImageReader.OnImageAvailableListener() {
-                @Override
-                public void onImageAvailable(ImageReader reader) {
-                    mBackgroundHandler.post(new MainActivity.ImageSaver(reader.acquireLatestImage()));
-                }
-            };
-    private class ImageSaver implements Runnable {
 
-        private final Image mImage;
 
-        public ImageSaver(Image image) {
-            mImage = image;
-        }
-
-        @Override
-        public void run() {
-            ByteBuffer byteBuffer = mImage.getPlanes()[0].getBuffer();
-            byte[] bytes = new byte[byteBuffer.remaining()];
-            byteBuffer.get(bytes);
-
-            FileOutputStream fileOutputStream = null;
-            try {
-                fileOutputStream = new FileOutputStream(mImageFileName);
-                fileOutputStream.write(bytes);
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                mImage.close();
-
-                Intent mediaStoreUpdateIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-                mediaStoreUpdateIntent.setData(Uri.fromFile(new File(mImageFileName)));
-                sendBroadcast(mediaStoreUpdateIntent);
-
-                if(fileOutputStream != null) {
-                    try {
-                        fileOutputStream.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-
-        }
-    }
     private MediaRecorder mMediaRecorder;
     private Chronometer mChronometer;
     private int mTotalRotation;
@@ -320,7 +276,7 @@ public class MainActivity extends AppCompatActivity {
                             if(afState == CaptureResult.CONTROL_AF_STATE_FOCUSED_LOCKED ||
                                     afState == CaptureResult.CONTROL_AF_STATE_NOT_FOCUSED_LOCKED) {
                                 Toast.makeText(getApplicationContext(), "AF Locked!", Toast.LENGTH_SHORT).show();
-                                startStillCaptureRequest();
+
                             }
                             break;
                     }
@@ -348,7 +304,7 @@ public class MainActivity extends AppCompatActivity {
                             if(afState == CaptureResult.CONTROL_AF_STATE_FOCUSED_LOCKED ||
                                     afState == CaptureResult.CONTROL_AF_STATE_NOT_FOCUSED_LOCKED) {
                                 Toast.makeText(getApplicationContext(), "AF Locked!", Toast.LENGTH_SHORT).show();
-                                startStillCaptureRequest();
+
                             }
                             break;
                     }
@@ -455,7 +411,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         createVideoFolder();
-        createImageFolder();
+
 
 
         //Coded with Love by Jayesh
@@ -465,19 +421,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (mIsRecordingVideo) {
                     mButtonVideo.setImageResource(R.mipmap.btn_video_online);
+
                     Intent mediaStoreUpdateIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
                     mediaStoreUpdateIntent.setData(Uri.fromFile(new File(mVideoFileName)));
                     sendBroadcast(mediaStoreUpdateIntent);
                     stopRecordingVideo();
-                    /*mChronometer.stop();
+
+                    mChronometer.stop();
                     mChronometer.setVisibility(View.INVISIBLE);
 
 
 
 
 
-
-                    */
 
                 } else {
 
@@ -489,9 +445,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                     startRecordingVideo();
 
-                    /*mChronometer.setBase(SystemClock.elapsedRealtime());
+                    mChronometer.setBase(SystemClock.elapsedRealtime());
                     mChronometer.setVisibility(View.VISIBLE);
-                    mChronometer.start();*/
+                    mChronometer.start();
 
 
                 }
@@ -753,39 +709,6 @@ public class MainActivity extends AppCompatActivity {
         mTextureView.setTransform(matrix);
     }
 
-    private void startStillCaptureRequest() {
-        try {
-            if (mIsRecordingVideo) {
-                mPreviewBuilder = mCameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_VIDEO_SNAPSHOT);
-            } else {
-                mPreviewBuilder = mCameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE);
-            }
-            mPreviewBuilder.addTarget(mImageReader.getSurface());
-            mPreviewBuilder.set(CaptureRequest.JPEG_ORIENTATION, mTotalRotation);
-
-            CameraCaptureSession.CaptureCallback stillCaptureCallback = new
-                    CameraCaptureSession.CaptureCallback() {
-                        @Override
-                        public void onCaptureStarted(CameraCaptureSession session, CaptureRequest request, long timestamp, long frameNumber) {
-                            super.onCaptureStarted(session, request, timestamp, frameNumber);
-
-                            try {
-                                createImageFileName();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    };
-
-            if (mIsRecordingVideo) {
-                mRecordCaptureSession.capture(mPreviewBuilder.build(), stillCaptureCallback, null);
-            } else {
-                mPreviewSession.capture(mPreviewBuilder.build(), stillCaptureCallback, null);
-            }
-        } catch (CameraAccessException e) {
-            e.printStackTrace();
-        }
-    }
 
     //Coded with love by Jayesh
     private void closeCamera() {
@@ -833,7 +756,7 @@ public class MainActivity extends AppCompatActivity {
         mMediaRecorder.setVideoSource(MediaRecorder.VideoSource.SURFACE);
         mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
         if (mNextVideoAbsolutePath == null || mNextVideoAbsolutePath.isEmpty()) {
-            mNextVideoAbsolutePath = getVideoFilePath(getApplicationContext());
+            mNextVideoAbsolutePath = getFile();
         }
 
         mMediaRecorder.setOutputFile(mNextVideoAbsolutePath);
@@ -870,7 +793,7 @@ public class MainActivity extends AppCompatActivity {
 
         //String path = Environment.getExternalStorageDirectory()+"//Movies//camera2VideoImage//"+NOSPracticalActivity.getCid();
         File videoFile = File.createTempFile(prepend, ".mp4", mVideoFolder);
-        mVideoFileName = videoFile.getAbsolutePath();
+         mVideoFileName = videoFile.getAbsolutePath();
         fileName= mVideoFileName;
         //=1;
         Toast.makeText(this,mVideoFileName,Toast.LENGTH_LONG).show();
@@ -888,7 +811,7 @@ public class MainActivity extends AppCompatActivity {
     /*public static void setnOrm(int a){
         nOrm=a;
     }*/
-    private void createImageFolder() {
+    /*private void createImageFolder() {
         File imageFile = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
         mImageFolder = new File(imageFile, "camera2VideoImage");
         if(!mImageFolder.exists()) {
@@ -904,10 +827,8 @@ public class MainActivity extends AppCompatActivity {
         mImageFileName = imageFile.getAbsolutePath();
         return imageFile;
     }
+*/
 
-    private void checkWriteStoragePermission() {
-
-    }
 
     //Coded with love by Jayesh
     private String getVideoFilePath(Context context) {

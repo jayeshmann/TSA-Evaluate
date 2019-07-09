@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -27,6 +26,10 @@ import com.tsa.exam.model.ResultModel;
 
 import java.util.ArrayList;
 
+/*
+import com.tsa.exam.adapters.Video_Adapter;
+*/
+
 public class Prac_syncActivity extends Activity {
 
     /*Video_Adapter video_adapter;*/
@@ -47,10 +50,11 @@ public class Prac_syncActivity extends Activity {
     private Button text_practical;
     private Button btn_videosync;
 
-    PracVideoAdapter pracVideoAdapter;
-    LinearLayoutManager layoutManager;
     //  Recycler view
-    private RecyclerView recylist;
+    /*private RecyclerView recylist;
+     PracVideoAdapter pracVideoAdapter;
+    LinearLayoutManager layoutManager;
+*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,7 +113,7 @@ public class Prac_syncActivity extends Activity {
         }
 
 
-    public void refresh()
+        public void refresh()
     {
         if(resultModelArrayList!=null) {
             resultModelArrayList.clear();

@@ -28,7 +28,6 @@ import com.tsa.exam.MainActivity;
 import com.tsa.exam.R;
 import com.tsa.exam.Theory_syncActivity;
 import com.tsa.exam.Utill.GLOBAL;
-import com.tsa.exam.VideoActivity;
 import com.tsa.exam.database.DatabaseHandler;
 import com.tsa.exam.model.FeedbackModel;
 import com.tsa.exam.model.ResultModel;
@@ -57,23 +56,16 @@ import io.realm.Realm;
 public class VideosyncAdapter extends BaseAdapter {
 
 
-/*
     public VideosyncAdapter(ArrayList<ResultModel> videoModelArrayList, Context context) {
         this.videoModelArrayList = videoModelArrayList;
         this.context = context;
     }
-*/
 
     public static final String TAG = "ReqTag";
 
     private ArrayList<ResultModel> videoModelArrayList;
     private Context context;
     private boolean syced;
-
-    public VideosyncAdapter(ArrayList<ResultModel> videoModelArrayList, VideoActivity videoActivity) {
-        this.videoModelArrayList = videoModelArrayList;
-        this.context = context;
-    }
 
 
     @Override
@@ -115,15 +107,16 @@ public class VideosyncAdapter extends BaseAdapter {
                 String staus = "";
 
 
+
                 Realm mRealm;
                 Realm.init(context.getApplicationContext());
                 mRealm = Realm.getDefaultInstance();
 
-                String candidateID = videoModelArrayList.get(position).getCandidateLoginID();
+                String candidateID=videoModelArrayList.get(position).getCandidateLoginID();
 
-                DatabaseHandler databaseHandler = new DatabaseHandler(context);
+                DatabaseHandler databaseHandler=new DatabaseHandler(context);
 
-                if (databaseHandler.getCandidatesByID(candidateID).size() >= position + 1) {
+                if(databaseHandler.getCandidatesByID(candidateID).size()>=position+1) {
                     loginTime = databaseHandler.getCandidatesByID(candidateID).get(position).getLoginTime();
                     logoutTime = databaseHandler.getCandidatesByID(candidateID).get(position).getLogoutTime();
                 }
@@ -132,12 +125,12 @@ public class VideosyncAdapter extends BaseAdapter {
                 if (!mRealm.isInTransaction())
                     mRealm.beginTransaction();
                 TrackModel trackModel = mRealm.where(TrackModel.class)
-                        .equalTo("candidateID", candidateID).findFirst();
+                        .equalTo("candidateID",candidateID).findFirst();
 
                 if (trackModel != null) {
                     questionID = trackModel.getQuestionID();
                     timeVisited = trackModel.getTimeVisited();
-                    staus = trackModel.getStatus();
+                    staus=trackModel.getStatus();
                 } else {
                     Toast.makeText(context, "Track Model is Null", Toast.LENGTH_SHORT).show();
                 }
@@ -151,9 +144,21 @@ public class VideosyncAdapter extends BaseAdapter {
         return view;
     }
 
+    class ViewHolder {
+        TextView canID;
+        ImageView sync;
+
+
+        public ViewHolder(View view) {
+            canID = (TextView) view.findViewById(R.id.candidate1);
+            sync = (ImageView) view.findViewById(R.id.sync1);
+        }
+    }
+
+
     ////     api calling
     ////////////////////////extra//////////////
-    private void addVideoSer(byte[] bytes, final String candidate_id, final String batch_id, final String exam_id) {
+    private void addVideoSer(byte [] bytes, final String candidate_id, final String batch_id, final String exam_id) {
 
         String uploadUrl = "http://tsassessors.in/ISDAT/evaluate_app/assessor_api/upload_candidate_videos.php";
         final RequestQueue rQueue;
@@ -170,7 +175,7 @@ public class VideosyncAdapter extends BaseAdapter {
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(context, response, Toast.LENGTH_LONG).show();
-                        Log.e("Test done", "Abcd");
+                        Log.e("Test done","Abcd");
                     }
                 },
                 new Response.ErrorListener() {
@@ -182,9 +187,9 @@ public class VideosyncAdapter extends BaseAdapter {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("candidate_id", candidate_id);
-                params.put("batch_id", batch_id);
-                params.put("exam_id", exam_id);
+                params.put("candidate_id",candidate_id );
+                params.put("batch_id",batch_id);
+                params.put("exam_id",exam_id);
                 params.put("video", encodedFile);
 
                 return params;
@@ -195,6 +200,9 @@ public class VideosyncAdapter extends BaseAdapter {
         rQueue.add(stringRequest);
     }
 
+
+    ///////////////////end///////////
+
     public void submitResult(final String candidateID, final String questionID, final String timeVisited, final String loginTime, final String logoutTime, final String status) {
 
         String cd = candidateID;
@@ -204,7 +212,7 @@ public class VideosyncAdapter extends BaseAdapter {
         final ProgressDialog progressDialog = new ProgressDialog(context);
         progressDialog.setTitle("processing");
         progressDialog.show();
-        final DatabaseHandler databaseHandler = new DatabaseHandler(context);
+        final DatabaseHandler databaseHandler=new DatabaseHandler(context);
         final StringRequest stringRequest = new StringRequest(Request.Method.POST, GLOBAL.BASE_URL + "submit_exam.php",
                 new Response.Listener<String>() {
                     @Override
@@ -221,7 +229,7 @@ public class VideosyncAdapter extends BaseAdapter {
                             String msg = json.getString("msg");
 
                             new AlertDialog.Builder(con)
-                                    .setIcon(R.drawable.isdatlogo)
+                                    .setIcon(R.drawable.teckutive)
                                     .setMessage(msg)
                                     .setPositiveButton("OK", null)
                                     .show();
@@ -231,7 +239,7 @@ public class VideosyncAdapter extends BaseAdapter {
                                 databaseHandler.clearTableCandidateAdded(candidateID);
                                 databaseHandler.clearTableResult(candidateID);
                                 /////////////////////////////////////////////////////
-                                ((Theory_syncActivity) context).refresh();
+                                ((Theory_syncActivity)context).refresh();
                             }
 
                         } catch (JSONException e) {
@@ -247,7 +255,7 @@ public class VideosyncAdapter extends BaseAdapter {
                         //Showing toast
                         Toast.makeText(context, "Slow Internet. Please sync result again" + volleyError, Toast.LENGTH_SHORT).show();
                         progressDialog.dismiss();
-                        syced = false;
+                        syced=false;
 
                     }
                 }) {
@@ -262,9 +270,9 @@ public class VideosyncAdapter extends BaseAdapter {
                 String imageAadhar = databaseHandler.getImage(candidateID).get(0).getGetCanAadharImage();
                 String imageCandidate = databaseHandler.getImage(candidateID).get(0).getGetCanAadharImage();
                 String aadharTime = databaseHandler.getImage(candidateID).get(0).getAadahrTime();
-                String aadharDate = databaseHandler.getImage(candidateID).get(0).getAadahrDate();
-                String canTime = databaseHandler.getImage(candidateID).get(0).getCanTime();
-                String canDate = databaseHandler.getImage(candidateID).get(0).getCanDate();
+                String aadharDate =  databaseHandler.getImage(candidateID).get(0).getAadahrDate();
+                String canTime =  databaseHandler.getImage(candidateID).get(0).getCanTime();
+                String canDate =  databaseHandler.getImage(candidateID).get(0).getCanDate();
 
 
                 FeedbackModel feedbackModel = databaseHandler.getFeedBackByID(candidateID);
@@ -302,10 +310,10 @@ public class VideosyncAdapter extends BaseAdapter {
                 params.put("adhar_image", "" + imageAadhar);
                 params.put("adhar_img_date", "" + aadharDate);
                 params.put("adhar_img_time", "" + aadharTime);
-                params.put("can_login_image", "" + imageCandidate);
+                params.put("can_login_image", ""+ imageCandidate);
                 params.put("cand_img_date", "" + canDate);
                 params.put("cand_img_time", "" + canTime);
-                params.put("que_action", "" + status);
+                params.put("que_action",""+status);
 
                 //returning parameters
                 return params;
@@ -321,16 +329,18 @@ public class VideosyncAdapter extends BaseAdapter {
         requestQueue.add(stringRequest);
 
 
+
+
         /////////////extra///////////
 
 
         ResultModel localResultModel = databaseHandler.getResult(candidateID).get(0);
         String candidate_i = localResultModel.getCandidateLoginID();
-        Toast.makeText(context, candidate_i, Toast.LENGTH_LONG).show();
+        Toast.makeText(context,candidate_i, Toast.LENGTH_LONG).show();
         String batch_id = localResultModel.getBatchID();
-        Toast.makeText(context, batch_id, Toast.LENGTH_LONG).show();
+        Toast.makeText(context,batch_id, Toast.LENGTH_LONG).show();
         String exam_id = localResultModel.getExamID();
-        String vid = "";
+        String vid="";
 
         //String path = Environment.getExternalStorageDirectory()+"//Movies//camera2VideoImage//"+ MainActivity.getFile();
         File file = null;
@@ -351,33 +361,19 @@ public class VideosyncAdapter extends BaseAdapter {
             bytes = buffer.toByteArray();
             vid = new String(bytes);
 
-            addVideoSer(bytes, candidate_i, batch_id, exam_id);
+            addVideoSer(bytes,candidate_i,batch_id,exam_id);
 
-        } catch (Exception e) {
+        }catch(Exception e){
 
-            Toast.makeText(context, "Error in calling addvideo", Toast.LENGTH_LONG).show();
+            Toast.makeText(context,"Error in calling addvideo", Toast.LENGTH_LONG).show();
             // Toast.makeText(context,path,Toast.LENGTH_LONG).show();
         }
-        databaseHandler.addVidDb(candidate_i, batch_id, exam_id, vid);
+        databaseHandler.addVidDb(candidate_i,batch_id,exam_id,vid);
 
 
         ////////////////end///////////////////
 
 
-    }
-
-
-    ///////////////////end///////////
-
-    class ViewHolder {
-        TextView canID;
-        ImageView sync;
-
-
-        public ViewHolder(View view) {
-            canID = view.findViewById(R.id.candidate1);
-            sync = view.findViewById(R.id.sync1);
-        }
     }
 
 }

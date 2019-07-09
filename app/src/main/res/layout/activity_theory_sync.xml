@@ -9,29 +9,36 @@
 
     <include layout="@layout/home_toolbar" />
 
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="5dp"
-        >
+        android:layout_height="70dp"
+        android:background="@drawable/rounded_layout"
+        android:weightSum="1.0">
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="@drawable/shape_theory_sync"
-            android:layout_marginLeft="10dp"
-            android:text="Theory Sync"
-            android:textAllCaps="false"
-            android:layout_marginRight="10dp"
-            android:textSize="@dimen/_18ssp"
+            android:id="@+id/text_theory"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:background="@drawable/grid_bg_green"
+            android:text="Theory Sync "
             android:textColor="@color/white"
-            android:id="@+id/text_theory"/>
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold" />
 
+        <Button
+            android:id="@+id/video_sync_without_theory"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:background="@drawable/white_background"
+            android:text="Video Sync"
+            android:textColor="@color/green"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold"/>
+        <!--android:onClick="syncPractical"-->
+    </LinearLayout>
 
-
-    </RelativeLayout>
 
     <ListView
         android:id="@+id/sync_theory"
@@ -41,6 +48,7 @@
         android:divider="@null">
 
     </ListView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,20 +56,20 @@
 
 
         <!--<ListView-->
-            <!--android:id="@+id/sync_theory_video"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:visibility="gone"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:divider="@null"/>-->
+        <!--android:id="@+id/sync_theory_video"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:visibility="gone"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:divider="@null"/>-->
 
 
-    <!--<android.support.v7.widget.RecyclerView-->
+        <!--<android.support.v7.widget.RecyclerView-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"-->
         <!--android:id="@+id/recycler_video"-->
         <!--android:visibility="visible"-->
         <!--android:layout_marginTop="10dp">-->
-    <!--</android.support.v7.widget.RecyclerView>-->
+        <!--</android.support.v7.widget.RecyclerView>-->
     </LinearLayout>
 
 </LinearLayout>

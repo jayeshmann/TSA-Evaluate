@@ -76,17 +76,18 @@ public class Video_Adapter extends BaseAdapter {
 
     @Override
     public View getView(final int position, View view, ViewGroup parent) {
-        final NOSPracSyncAdapter.ViewHolder holder;
-        final NOSPracticalModel nosPracticalModel = pracResultModels.get(position);
+           final ViewHolder holder;
+        final NOSPracticalModel nosPracticalModel=pracResultModels.get(position);
         if (view != null) {
-            holder = (NOSPracSyncAdapter.ViewHolder) view.getTag();
+            holder = (ViewHolder) view.getTag();
         } else {
             LayoutInflater mInflater = (LayoutInflater)
                     context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
             view = mInflater.inflate(R.layout.sync_card, parent, false);
-            holder = new NOSPracSyncAdapter.ViewHolder(view);
+            holder = new ViewHolder(view);
             view.setTag(holder);
         }
+
 
         holder.canID.setText(pracResultModels.get(position).getCandidateLoginId());
 
