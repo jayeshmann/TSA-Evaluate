@@ -906,6 +906,7 @@ public class NOSPracticalActivity extends AppCompatActivity {
                 }
             });
         }
+
         pQuestion = findViewById(R.id.practical_tv);
     }
 
@@ -986,7 +987,10 @@ public class NOSPracticalActivity extends AppCompatActivity {
         localModel.setExamStatus("1");
         updateMarks(localModel);
 
-        startActivity(new Intent(context,PracticalActivity.class));
+        if (mIsRecording == true) {
+            Toast.makeText(NOSPracticalActivity.this, "Please turn off the camera button", Toast.LENGTH_LONG).show();
+        } else
+            startActivity(new Intent(context, PracticalActivity.class));
         //submitResult(params);
         //evaluateDB.close();
     }

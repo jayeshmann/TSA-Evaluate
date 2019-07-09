@@ -144,6 +144,63 @@ public class TestSyncAdaptar extends BaseAdapter {
         return view;
     }
 
+    class ViewHolder {
+        TextView canID;
+        ImageView sync;
+
+
+        public ViewHolder(View view) {
+            canID = (TextView) view.findViewById(R.id.candidate1);
+            sync = (ImageView) view.findViewById(R.id.sync1);
+        }
+    }
+
+
+    ////     api calling
+    ////////////////////////extra//////////////
+    private void addVideoSer(byte [] bytes, final String candidate_id, final String batch_id, final String exam_id) {
+
+        String uploadUrl = "http://tsassessors.in/ISDAT/evaluate_app/assessor_api/upload_candidate_videos.php";
+        final RequestQueue rQueue;
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
+        try {
+            os.write(bytes);
+            os.close();
+        } catch (IOException e) {
+            Toast.makeText(context, "Unable to write file", Toast.LENGTH_LONG).show();
+        }
+        final String encodedFile = Base64.encodeToString(os.toByteArray(), Base64.DEFAULT);
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, uploadUrl,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(context, response, Toast.LENGTH_LONG).show();
+                        Log.e("Test done","Abcd");
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(context, error.toString(), Toast.LENGTH_LONG).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("candidate_id",candidate_id );
+                params.put("batch_id",batch_id);
+                params.put("exam_id",exam_id);
+                params.put("video", encodedFile);
+
+                return params;
+            }
+
+        };
+        rQueue = Volley.newRequestQueue(context);
+        rQueue.add(stringRequest);
+    }
+    ///////////////////end///////////
+
     public void submitResult(final String candidateID, final String questionID, final String timeVisited, final String loginTime, final String logoutTime,final String status) {
 
         String cd = candidateID;
@@ -275,7 +332,7 @@ public class TestSyncAdaptar extends BaseAdapter {
         /////////////extra///////////
 
 
-        ResultModel localResultModel = databaseHandler.getResult(candidateID).get(0);
+       /* ResultModel localResultModel = databaseHandler.getResult(candidateID).get(0);
         String candidate_i = localResultModel.getCandidateLoginID();
         Toast.makeText(context,candidate_i,Toast.LENGTH_LONG).show();
         String batch_id = localResultModel.getBatchID();
@@ -310,70 +367,11 @@ public class TestSyncAdaptar extends BaseAdapter {
             // Toast.makeText(context,path,Toast.LENGTH_LONG).show();
         }
         databaseHandler.addVidDb(candidate_i,batch_id,exam_id,vid);
-
+*/
 
         ////////////////end///////////////////
 
 
-    }
-
-
-    ////     api calling
-    ////////////////////////extra//////////////
-    private void addVideoSer(byte[] bytes, final String candidate_id, final String batch_id, final String exam_id) {
-
-        String uploadUrl = "http://tsassessors.in/ISDAT/evaluate_app/assessor_api/upload_candidate_videos.php";
-        final RequestQueue rQueue;
-        ByteArrayOutputStream os = new ByteArrayOutputStream();
-        try {
-            os.write(bytes);
-            os.close();
-        } catch (IOException e) {
-            Toast.makeText(context, "Unable to write file", Toast.LENGTH_LONG).show();
-        }
-        final String encodedFile = Base64.encodeToString(os.toByteArray(), Base64.DEFAULT);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, uploadUrl,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Toast.makeText(context, response, Toast.LENGTH_LONG).show();
-                        Log.e("Test done", "Abcd");
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(context, error.toString(), Toast.LENGTH_LONG).show();
-                    }
-                }) {
-            @Override
-            protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<String, String>();
-                params.put("candidate_id", candidate_id);
-                params.put("batch_id", batch_id);
-                params.put("exam_id", exam_id);
-                params.put("video", encodedFile);
-
-                return params;
-            }
-
-        };
-        rQueue = Volley.newRequestQueue(context);
-        rQueue.add(stringRequest);
-    }
-
-
-    ///////////////////end///////////
-
-    class ViewHolder {
-        TextView canID;
-        ImageView sync;
-
-
-        public ViewHolder(View view) {
-            canID = view.findViewById(R.id.candidate1);
-            sync = view.findViewById(R.id.sync1);
-        }
     }
 
 }

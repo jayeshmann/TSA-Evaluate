@@ -14,12 +14,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.tsa.exam.Utill.GLOBAL;
 import com.tsa.exam.Utill.TimeConverter;
 import com.tsa.exam.database.DatabaseHandler;
 import com.tsa.exam.model.AddedCandidatesModel;
 import com.tsa.exam.model.CandidateImages;
+
+import androidx.lifecycle.Observer;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -37,7 +40,7 @@ public class AadharValidationActivity extends AppCompatActivity {
     private EditText aadharID;
     private EditText otherID;
     private EditText name;
-
+    protected int img_valid_count = 0;
 
     private String aadharImageSt = "";
     private String canImageSt = "";
@@ -61,16 +64,24 @@ public class AadharValidationActivity extends AppCompatActivity {
     }
 
     private void init() {
-        candidateImage = findViewById(R.id.candidate_image);
-        aadharImage = findViewById(R.id.aadhar_image);
-        otherIDImage = findViewById(R.id.other_id_image);
-        aadharID = findViewById(R.id.aadhar_number_et);
-        otherID = findViewById(R.id.other_id_et);
-        name = findViewById(R.id.candidate_name_et);
+        candidateImage = (ImageView)findViewById(R.id.candidate_image);
+        aadharImage  = (ImageView)findViewById(R.id.aadhar_image);
+        otherIDImage  = (ImageView)findViewById(R.id.other_id_image);
+        aadharID   = (EditText) findViewById(R.id.aadhar_number_et);
+        otherID  = (EditText)findViewById(R.id.other_id_et);
+        name  = (EditText)findViewById(R.id.candidate_name_et);
     }
 
     public void goToExaminationPage(View view) {
-        validate();
+
+        if (img_valid_count < 2)
+        {
+            Toast.makeText(getApplicationContext(),"Please take required photos",Toast.LENGTH_LONG).show();
+        }
+
+        else {
+            validate();
+        }
     }
 
     public void capture1(View view) {
@@ -115,6 +126,7 @@ public class AadharValidationActivity extends AppCompatActivity {
                 switch (number) {
                     case 1:
                         candidateImage.setImageBitmap(thumbnail);
+                        img_valid_count+=1;
                         aadharDate = TimeConverter.getDateFromMilli();
                         aadharTime = TimeConverter.getCurrentDate();
                         getStringImage(thumbnail, 1);
@@ -123,12 +135,14 @@ public class AadharValidationActivity extends AppCompatActivity {
                         canDate = TimeConverter.getDateFromMilli();
                         canTime = TimeConverter.getCurrentDate();
                         aadharImage.setImageBitmap(thumbnail);
+                        img_valid_count+=1;
                         getStringImage(thumbnail, 2);
                         break;
                     case 3:
                         canDate = TimeConverter.getDateFromMilli();
                         canTime = TimeConverter.getCurrentDate();
                         otherIDImage.setImageBitmap(thumbnail);
+                        img_valid_count+=1;
                         getStringImage(thumbnail, 2);
                         break;
                 }
@@ -189,7 +203,7 @@ public class AadharValidationActivity extends AppCompatActivity {
                     .setPositiveButton("OK", null)
                     .show();
 
-            TextView textView = dialog.findViewById(android.R.id.message);
+            TextView textView = (TextView) dialog.findViewById(android.R.id.message);
             textView.setTextSize(30);
             startActivity(new Intent(AadharValidationActivity.this, TestActivity.class));
 
@@ -201,7 +215,7 @@ public class AadharValidationActivity extends AppCompatActivity {
                     .setPositiveButton("OK", null)
                     .show();
 
-            TextView textView = dialog.findViewById(android.R.id.message);
+            TextView textView = (TextView) dialog.findViewById(android.R.id.message);
             textView.setTextSize(30);
 
 

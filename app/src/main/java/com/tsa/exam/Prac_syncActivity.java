@@ -10,15 +10,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.tsa.exam.adapters.NOSPracSyncAdapter;
-import com.tsa.exam.adapters.PracVideoAdapter;
 import com.tsa.exam.adapters.TestSyncAdaptar;
-/*
-import com.tsa.exam.adapters.Video_Adapter;
-*/
 import com.tsa.exam.database.DatabaseHandler;
 import com.tsa.exam.database.EvaluateDB;
 import com.tsa.exam.model.NOSPracticalModel;

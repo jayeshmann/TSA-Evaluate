@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Teckutive</string>
+    <string name="app_name">Teckotive</string>
     <string name="title_activity_login">Sign in</string>
     <string name="action_settings">Settings</string>
     <string name="admin_permission_label">Kiosk App</string>

@@ -501,6 +501,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void stopRecordingVideo() {
         // UI
+
+        Toast.makeText(getApplicationContext(),"please off the video",Toast.LENGTH_LONG).show();
         mIsRecordingVideo = false;
 
         // Stop recording
@@ -620,6 +622,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Coded with love by Jayesh
+
     private void closePreviewSession() {
         if (mPreviewSession != null) {
             mPreviewSession.close();
@@ -877,6 +880,14 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (mIsRecordingVideo == true){
+                    Toast.makeText(MainActivity.this,"Please turn Off the Camera button",Toast.LENGTH_LONG).show();
+                    return;
+                }
+                else {
+                    Toast.makeText(MainActivity.this,"Please submit exam",Toast.LENGTH_LONG).show();
+                }
+
                 if (isSubmitable()) {
                     android.app.AlertDialog dialog = new AlertDialog.Builder(con)
                             .setIcon(R.drawable.logonew)
@@ -899,6 +910,10 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(MainActivity.this, "Please Attempt All Questions", Toast.LENGTH_SHORT).show();
                 }
+
+
+
+
             }
         });
 
@@ -944,7 +959,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
         optCRb = binding.optCRb;
         optCRb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -1428,6 +1442,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             questionTv.setCompoundDrawables(null, null, null, null);
         }
+
         if (questionModel.getOptionImage().equals("yes")) {
             imageRoot.setVisibility(View.VISIBLE);
             optARb.setText("");
@@ -1453,7 +1468,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /////////////////////////////////////
-    public void loadingImage() {
+        public void loadingImage() {
         if (databaseHandler.getQuestionByID(questionId, GLOBAL.loginID).size() > 0) {
             questionModel = databaseHandler.getQuestionByID(questionId, GLOBAL.loginID).get(0);
             questionNumber.setText("Question No." + (questionId + 1));

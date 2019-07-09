@@ -45,14 +45,14 @@
             android:layout_marginStart="10dp"
             android:contentDescription="@string/video_button"
             android:src="@mipmap/btn_video_online" />
-        <ImageButton
+       <!-- <ImageButton
             android:id="@+id/cameraImageButton3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/camera_button"
             android:src="@mipmap/btn_camera"
             android:layout_marginStart="20dp"
-            />
+            />-->
 
         <Chronometer
             android:layout_width="wrap_content"

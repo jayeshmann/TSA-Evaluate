@@ -253,9 +253,11 @@ public class LoginActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-    public void offLineLogin(String userName, String password) {
+        public void offLineLogin(String userName, String password) {
         DatabaseHandler databaseHandler = new DatabaseHandler(LoginActivity.this);
         ArrayList<AddedCandidatesModel> addedCandidatesModels = databaseHandler.getCandidates();
+
+
 
         boolean loginFlag = false;
 
@@ -279,6 +281,7 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(LoginActivity.this, InstructionsActivity.class);
                     startActivity(intent);
                     finish();
+
                 } else {
                     GLOBAL.candidateName = databaseHandler.getCandidatesByID(userName).get(0).getCandidateAadhar();
                     Intent intent = new Intent(LoginActivity.this, TestActivity.class);

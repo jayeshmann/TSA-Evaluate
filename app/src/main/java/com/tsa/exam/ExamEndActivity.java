@@ -15,7 +15,7 @@ import com.tsa.exam.model.FeedbackModel;
 
 
 public class ExamEndActivity extends AppCompatActivity {
-    private String[] feedBack = new String[10];
+    private String feedBack[] = new String[10];
     private boolean attempted = true;
 
     private View card1;
@@ -93,31 +93,31 @@ public class ExamEndActivity extends AppCompatActivity {
 
         card9 = findViewById(R.id.card9);
 
-        feedbackQTv1 = card1.findViewById(R.id.feedback_q_tv);
-        feedbackQTv2 = card2.findViewById(R.id.feedback_q_tv);
-        feedbackQTv3 = card3.findViewById(R.id.feedback_q_tv);
-        feedbackQTv4 = card4.findViewById(R.id.feedback_q_tv);
-        feedbackQTv5 = card5.findViewById(R.id.feedback_q_tv);
-        feedbackQTv6 = card6.findViewById(R.id.feedback_q_tv);
-        feedbackQTv7 = card7.findViewById(R.id.feedback_q_tv);
-        feedbackQTv8 = card8.findViewById(R.id.feedback_q_tv);
-        feedbackQTv9 = card9.findViewById(R.id.feedback_q_tv);
+        feedbackQTv1 = (TextView) card1.findViewById(R.id.feedback_q_tv);
+        feedbackQTv2 = (TextView) card2.findViewById(R.id.feedback_q_tv);
+        feedbackQTv3 = (TextView) card3.findViewById(R.id.feedback_q_tv);
+        feedbackQTv4 = (TextView) card4.findViewById(R.id.feedback_q_tv);
+        feedbackQTv5 = (TextView) card5.findViewById(R.id.feedback_q_tv);
+        feedbackQTv6 = (TextView) card6.findViewById(R.id.feedback_q_tv);
+        feedbackQTv7 = (TextView) card7.findViewById(R.id.feedback_q_tv);
+        feedbackQTv8 = (TextView) card8.findViewById(R.id.feedback_q_tv);
+        feedbackQTv9 = (TextView) card9.findViewById(R.id.feedback_q_tv);
 
-        opyRb1 = card8.findViewById(R.id.opy_rb1);
-        opyRb2 = card8.findViewById(R.id.opy_rb2);
-        opyRb3 = card8.findViewById(R.id.opy_rb3);
+        opyRb1 = (RadioButton) card8.findViewById(R.id.opy_rb1);
+        opyRb2 = (RadioButton) card8.findViewById(R.id.opy_rb2);
+        opyRb3 = (RadioButton) card8.findViewById(R.id.opy_rb3);
 
-        opyRb4 = card9.findViewById(R.id.opy_rb1);
-        opyRb5 = card9.findViewById(R.id.opy_rb2);
-        opyRb6 = card9.findViewById(R.id.opy_rb3);
+        opyRb4 = (RadioButton) card9.findViewById(R.id.opy_rb1);
+        opyRb5 = (RadioButton) card9.findViewById(R.id.opy_rb2);
+        opyRb6 = (RadioButton) card9.findViewById(R.id.opy_rb3);
 
-        yesRb1 = card1.findViewById(R.id.yes_rb);
-        yesRb2 = card2.findViewById(R.id.yes_rb);
-        yesRb3 = card3.findViewById(R.id.yes_rb);
-        yesRb4 = card4.findViewById(R.id.yes_rb);
-        yesRb5 = card5.findViewById(R.id.yes_rb);
-        yesRb6 = card6.findViewById(R.id.yes_rb);
-        yesRb7 = card7.findViewById(R.id.yes_rb);
+        yesRb1 = (RadioButton) card1.findViewById(R.id.yes_rb);
+        yesRb2 = (RadioButton) card2.findViewById(R.id.yes_rb);
+        yesRb3 = (RadioButton) card3.findViewById(R.id.yes_rb);
+        yesRb4 = (RadioButton) card4.findViewById(R.id.yes_rb);
+        yesRb5 = (RadioButton) card5.findViewById(R.id.yes_rb);
+        yesRb6 = (RadioButton) card6.findViewById(R.id.yes_rb);
+        yesRb7 = (RadioButton) card7.findViewById(R.id.yes_rb);
 
         feedbackQTv1.setText(getResources().getText(R.string.feedback_1));
 
@@ -264,7 +264,7 @@ public class ExamEndActivity extends AppCompatActivity {
             feedbackModels.setFeedback7(feedBack[6]);
             feedbackModels.setFeedback8(feedBack[7]);
             feedbackModels.setFeedback9(feedBack[8]);
-            EditText feedBack = findViewById(R.id.feedback_q_et);
+            EditText feedBack=(EditText)findViewById(R.id.feedback_q_et);
             feedbackModels.setFeedback10(""+feedBack.getText());
 
             DatabaseHandler databaseHandler = new DatabaseHandler(ExamEndActivity.this);

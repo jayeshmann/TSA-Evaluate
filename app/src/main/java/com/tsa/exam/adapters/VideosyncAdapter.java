@@ -102,9 +102,9 @@ public class VideosyncAdapter extends BaseAdapter {
             public void onClick(View v) {
                 String questionID = "";
                 String timeVisited = "";
-                String loginTime = "";
-                String logoutTime = "";
-                String staus = "";
+                String loginTime="";
+                String logoutTime="";
+                String staus="";
 
 
 
@@ -253,7 +253,7 @@ public class VideosyncAdapter extends BaseAdapter {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
                         //Showing toast
-                        Toast.makeText(context, "Slow Internet. Please sync result again" + volleyError, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Slow Internet. Please sync result again"+volleyError, Toast.LENGTH_SHORT).show();
                         progressDialog.dismiss();
                         syced=false;
 
